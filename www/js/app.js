@@ -32,54 +32,77 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  /*  .state('tab', {
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
+*/
+  // setup a sliding menu
+  .state('app', {
+    url: '/app',
+    abstract: true,
+    templateUrl: 'templates/menu.html',
+    controller: 'AppCtrl'
+  })
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('app.pagibig', {
+    url: '/pagibig',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'menuContent': {
+        templateUrl: 'templates/app-pagibig.html',
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
+  .state('app.marriage', {
+    url: '/marriage',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'menuContent': {
+        templateUrl: 'templates/app-marriage.html',
+      }
+    }
+  })
+
+  .state('app.passportnew', {
+    url: '/passportnew',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-passportnew.html',
+      }
+    }
+  })
+
+  .state('app.nbi', {
+    url: '/nbi',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-nbi.html',
+      }
+    }
+  })
+
+  .state('app.dash', {
+    url: '/dash',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-dash.html',
+      }
+    }
+  })
+
+  .state('app.me', {
+    url: '/me',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-me.html',
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/app/dash');
 
 });
