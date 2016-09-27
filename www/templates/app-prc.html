@@ -1,0 +1,74 @@
+
+
+<ion-view view-title="PRC ID">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-prc-proc" onclick="document.getElementById('prc-proc').style.display='block';document.getElementById('prc-req').style.display='none';">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item tab-prc-req" onclick="document.getElementById('prc-req').style.display='block';document.getElementById('prc-proc').style.display='none';">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+
+    <ion-content class="has-tabs has-header">
+
+
+        <div id="prc-proc" class="tab-views">
+            <h1>PROCEDURES</h1>
+            <ion-list>
+                <ion-item>
+                1. Download your oath form at the nearest PRC office and bring the following
+                </ion-item>
+                <ion-item>
+                2. Present duly accomplished or downloaded oath form
+                </ion-item>
+                <p>
+                    Present duly accomplished or downloaded oath form at designated counter/window (verification officer) for assessment of prescribed fees.
+                </p>
+                <ion-item>
+                3. Pay your fees
+                </ion-item>
+                <p>
+                    Proceed to the cashier window to pay the prescribed fee. Cashiers’ windows are located at the 3rd, 4th, and 5th floors of the PRC Annex Bldg and/or at the ground floor of the PRC Main Bldg.. 
+                </p>
+                <ion-item>
+                4. Accomplish registry form
+                </ion-item>
+                <p>
+                    After payment, proceed to the designated Registration counter/window. The Registration Officer will print Registry Sheet with assigned Registration / License Number to be signed and thumb marked by the Registrant.
+                </p>
+                <ion-item>
+                5. Get your claim slip
+                </ion-item>
+                <p>
+                    Upon completion of the Registry Sheet, issuance officer shall issue claim slip/stub.
+                </p>
+                <ion-item>
+                4. Claim your PRC card
+                </ion-item>
+                <p>
+                    Receive claim slip/stub and claim your Professional Identification Card as scheduled indicated on your claim slip/stub.
+                </p>
+                
+            </ion-list>
+        </div>
+        
+        <div id="prc-req" style="display: none;" class="tab-views">
+          	<h1>REQUIREMENTS</h1>
+            <ion-checkbox ng-model="filter.printed2"> One (1) documentary stamp</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed3"> One (1) passport size picture in plain background with complete name tag (for Registry of Professionals)</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed4"> Current Community Tax Certificate (cedula) </ion-checkbox>
+        </div>
+
+        <h6>Source: <a href="http://www.prc.gov.ph/registration/?id=28" target="_blank">http://www.prc.gov.ph/registration/?id=28</a></h6>
+
+        <div ng-controller="PopupCtrl">
+            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+        </div>
+      </ion-content>
+</ion-view>

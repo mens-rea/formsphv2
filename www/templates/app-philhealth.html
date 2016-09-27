@@ -1,0 +1,72 @@
+
+
+<ion-view view-title="Philhealth">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-philhealth-proc" onclick="document.getElementById('philhealth-proc').style.display='block';document.getElementById('philhealth-req').style.display='none';">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item tab-philhealth-req" onclick="document.getElementById('philhealth-req').style.display='block';document.getElementById('philhealth-proc').style.display='none';">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+
+    <ion-content class="has-tabs has-header">
+
+
+        <div id="philhealth-proc" class="tab-views">
+            <h1>PROCEDURES</h1>
+            <ion-list>
+                <ion-item>
+                1. Fill-out two (2) copies of the PhilHealth Member Registration Form
+                </ion-item>
+                <ion-item>
+                2. Submit PMRF to the nearest LHIO together with the following documents:
+                </ion-item>
+                <p>
+                For SSS pensioners</br>
+                Photocopy of Death, Disability and Retirement (DDR) indicating the date of retirement and effectivity date of pension</br>
+                Photocopy of the Retiree/Pensioner Certification indicating the effectivity date of retirement</br></br>
+                For GSIS pensioners</br>
+                Photocopy of Certification/Letter of Approval of Retirement indicating the effectivity date of retirement</br>
+                Photocopy of Service Record issued by the employer showing rendered services of not less than 120 months</br>
+                Photocopy of Certification/Retirement Gratuity from the employer indicating services of not less than 120 months</br>
+                Photocopy of retirement voucher issued by GSIS</br></br>
+                For Uniformed personnel of AFP, PNP, BJMP and BFP</br>
+                Photocopy of General/Special or Bureau Order indicating effectivity date of retirement</br>
+                Photocopy of Certification/Letter of Approval of Retirement from the GSIS indicating services of not less than 120 months</br>
+                Photocopy of Statement of Services issued by previous employer showing service of not less than 120 months</br></br>
+                GSIS Disability Pensioner / SSS Permanent Total Disability Pensioner before March 4, 1995</br>
+                Photocopy of Death, Disability and Retirement (DDR) indicating the date of retirement and effectivity date of pension</br>
+                Photocopy of Disability Pensioner Certification issued by SSS/GSIS indicating effectivity date of pension or the period of coverage for disabled pensioner.</br></br>
+                SSS Survivorship Pensioner before March 4, 1995</br>
+                Photocopy of Death, Disability and Retirement indicating the type of survivorship in nature and the effectivity date of pension</br>
+                Photocopy of Survivorship Pensioner Certification indicating the effectivity date of pension</br></br>
+                Other individuals who are not under the abovementioned categories</br>
+                Photocopy of official receipts of premium payments to PhilHealth</br>
+                Any other documents indicating the months of premium payments to PhilHealth
+                </p>
+                <ion-item>
+                3.  Await Member Data Record (MDR) and PhilHealth ID Card
+                </ion-item>
+            </ion-list>
+        </div>
+        
+        <div id="philhealth-req" style="display: none;" class="tab-views">
+          	<h1>REQUIREMENTS</h1>
+            <ion-checkbox ng-model="filter.printed2">two (2) copies of the PhilHealth Member Registration Form</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed3">Two (2) 1x1 latest ID picture,</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed4">Two (2) valid IDs</ion-checkbox>
+        </div>
+
+        <h6>Source: <a href="http://philpad.com/dti-business-name-permit-registration-requirements-and-procedures/" target="_blank">http://philpad.com/dti-business-name-permit-registration-requirements-and-procedures/</a></h6>
+
+        <div ng-controller="PopupCtrl">
+            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+        </div>
+      </ion-content>
+</ion-view>

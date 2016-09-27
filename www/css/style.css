@@ -11,14 +11,29 @@ ion-content h1,h2,h3,h4,h5,h6,p{
 p{
 	font-size: 18px;
 }
+.banner{
+	background-color: white;
+	padding: 100px 15px;
+}
 .intro-div{
-	padding: 30px 15px;
+	padding: 25px 15px;
 	width: 100%;
-	height: 60%;
+	height: 500px;
 }
 .footer-copy{
 	margin: 5px auto;
 }
 .tab-views{
 	padding: 60px 0px;
+}
+.notes .item{
+	background-color: #D63434;
+	color: white;
+}
+.notes{
+	margin: 5px;
+}
+.notes .item:hover{
+	background-color: white;
+	color: #D63434;
 }

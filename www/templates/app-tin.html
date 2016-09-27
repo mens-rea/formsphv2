@@ -1,0 +1,47 @@
+
+
+<ion-view view-title="Tax Identification Number (TIN)">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-tin-proc" onclick="document.getElementById('tin-proc').style.display='block';document.getElementById('tin-req').style.display='none';">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item tab-tin-req" onclick="document.getElementById('tin-req').style.display='block';document.getElementById('tin-proc').style.display='none';">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+
+    <ion-content class="has-tabs has-header">
+
+
+        <div id="tin-proc" class="tab-views">
+            <h1>PROCEDURES</h1>
+            <ion-list>
+                <ion-item>
+                1. Go to your BIR branch
+                </ion-item>
+                <ion-item>
+                2. Inquire about your classification
+                </ion-item>
+                <ion-item>
+                3. Pay your fees according to your classication
+                </ion-item>
+            </ion-list>
+        </div>
+        
+        <div id="tin-req" style="display: none;" class="tab-views">
+          	<h1>REQUIREMENTS</h1>
+            <ion-checkbox ng-model="filter.printed2">Requirements vary according to your classification</ion-checkbox>
+        </div>
+
+        <h6>Source: <a href="http://www.bir.gov.ph/index.php/registration-requirements/primary-registration/application-for-tin.html" target="_blank">http://www.bir.gov.ph/index.php/registration-requirements/primary-registration/application-for-tin.html/</a></h6>
+
+        <div ng-controller="PopupCtrl">
+            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+        </div>
+      </ion-content>
+</ion-view>

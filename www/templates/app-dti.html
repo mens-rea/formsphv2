@@ -1,0 +1,63 @@
+
+
+<ion-view view-title="DTI Business Name">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-dti-proc" onclick="document.getElementById('dti-proc').style.display='block';document.getElementById('dti-req').style.display='none';">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item tab-dti-req" onclick="document.getElementById('dti-req').style.display='block';document.getElementById('dti-proc').style.display='none';">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+
+    <ion-content class="has-tabs has-header">
+
+
+        <div id="dti-proc" class="tab-views">
+            <h1>PROCEDURES</h1>
+            <ion-list>
+                <ion-item>
+                1. Bring the necessary requirements and head to a DTI office
+                </ion-item>
+                <p>
+                    Bring the requirements and fill out the application form if you don’t have one yet, DTI will provide the form for you.
+                </p>
+                <ion-item>
+                2.  Pay the fees
+                </ion-item>
+                <p>
+                Pay the necessary fees applicable for your business.</br>
+                Barangay P100</br>
+                City/ Municipality P500</br>
+                Regional P1000</br>
+                National P2000</br>
+                </p>
+                <ion-item>
+                3.  Wait to claim your DTI Business registration
+                </ion-item>
+                <p>
+                Wait for few minutes for your DTI business permit or DTI business certificate. You will also receive an email from the DTI confirming your business registration. 
+                </p>
+            </ion-list>
+        </div>
+        
+        <div id="dti-req" style="display: none;" class="tab-views">
+          	<h1>REQUIREMENTS</h1>
+            <ion-checkbox ng-model="filter.printed2">Applicant must be at least 18 years of age.</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed3">1 valid ID (SSS ID, GSIS, Voter’s ID, PRC license, Driver’s License, Passport or any issued government issued ID)</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed4">Application Form (you can download here)</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed5">Registration Fee per territorial scheme</ion-checkbox>
+        </div>
+
+        <h6>Source: <a href="http://philpad.com/dti-business-name-permit-registration-requirements-and-procedures/" target="_blank">http://philpad.com/dti-business-name-permit-registration-requirements-and-procedures/</a></h6>
+
+        <div ng-controller="PopupCtrl">
+            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+        </div>
+      </ion-content>
+</ion-view>

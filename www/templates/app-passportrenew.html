@@ -1,0 +1,46 @@
+
+
+<ion-view view-title="Philippine Passport (renew)">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-passportrenew-proc" onclick="document.getElementById('passportrenew-proc').style.display='block';document.getElementById('passportrenew-req').style.display='none';">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item tab-passportrenew-req" onclick="document.getElementById('passportrenew-req').style.display='block';document.getElementById('passportrenew-proc').style.display='none';">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+
+    <ion-content class="has-tabs has-header">
+
+
+        <div id="passportrenew-proc" class="tab-views">
+            <h1>PROCEDURES</h1>
+            <ion-list>
+                <ion-item>
+                1. Present yourself on your scheduled appointment with the requirements
+                </ion-item>
+            </ion-list>
+        </div>
+        
+        <div id="passportrenew-req" style="display: none;" class="tab-views">
+          	<h1>REQUIREMENTS</h1>
+            <ion-checkbox ng-model="filter.printed2"> Personal appearance</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed3"> Confirmed appointment</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed4"> Duly accomplished application form </ion-checkbox>
+            <ion-checkbox ng-model="filter.printed5"> Most recent expiring or expired passport </ion-checkbox>
+            <ion-checkbox ng-model="filter.printed6"> Acceptable IDs at least one (1): for Brown, Green and MRP </ion-checkbox>
+            <ion-checkbox ng-model="filter.printed7"> Other supporting documents as necessary </ion-checkbox>
+        </div>
+
+        <h6>Source: <a href="http://www.dfa.gov.ph/renewal-of-passport-requirements" target="_blank">http://www.dfa.gov.ph</a></h6>
+
+        <div ng-controller="PopupCtrl">
+            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+        </div>
+      </ion-content>
+</ion-view>

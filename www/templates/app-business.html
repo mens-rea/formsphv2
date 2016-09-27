@@ -1,0 +1,91 @@
+
+
+<ion-view view-title="Business Permit">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-business-proc" onclick="document.getElementById('business-proc').style.display='block';document.getElementById('business-req').style.display='none';">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item tab-business-req" onclick="document.getElementById('business-req').style.display='block';document.getElementById('business-proc').style.display='none';">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+
+    <ion-content class="has-tabs has-header">
+
+        <div id="business-proc" class="tab-views">
+            <h1>PROCEDURES</h1>
+            <ion-list>
+                <ion-item>
+                1. Register for a DTI Business Name
+                </ion-item>
+                <p>
+                    Requirement: Any valid ID</br>
+                    Fee: Barangay: PHP 200.00</br>
+                    City / Municipality: PHP 500.00</br>
+                    Regional: PHP 1,000.00</br>
+                    National: PHP 2,000.00</br>
+                    Processing time: 1 hour</br>
+                </p>
+                <ion-item>
+                2.  Go to Municipal hall to get business permit
+                </ion-item>
+                <p>
+                Requirements:
+                    DTI certificate</br>
+                    Lease contract (if renting) or tax declaration (if you own the place)</br>
+                    2×2 ID picture</br>
+                    Fee: P4,000 (approx.)</br>
+                    Processing time: 2-3 hours
+                </p>
+                <ion-item>
+                3.  Go to Office of the Treasurer of each city or municipality for BMBE* Application
+                </ion-item>
+                <p>
+                Requirements:
+                    1. Duly filled up and signed Application form in triplicate</br>
+                    2. Three passport size pictures</br>
+                    3. DTI registration for sole proprietorship; SEC registration for corporations, partnerships or association; CDA registration for cooperatives</br>
+                    4. Mayor’s permit</br>
+                    Cost of registration: P1,000</br>
+                </p>
+                <ion-item>
+                4.  Go to Barangay hall to get business clearance.
+                </ion-item>
+                <p>
+                Once you’ve got verified, you’ll be asked to transfer to another window for an ID picture, to scan your fingerprints and to sign on the signature pad.</br>
+                </p>
+                <ion-item>
+                5.  Go to BIR office to get TIN/Certificate.</br>
+                </ion-item>
+                <p>
+                Requirements:</br>
+                DTI certificate</br>
+                Mayor’s Permit</br>
+                Lease Contract (if renting) or tax declaration (if you own the place)</br>
+                Fee: P500</br>
+                Processing time: 1-2 hours
+                </p>
+            </ion-list>
+        </div>
+        
+        <div id="business-req" style="display: none;" class="tab-views">
+          	<h1>REQUIREMENTS</h1>
+            <ion-checkbox ng-model="filter.printed2">DTI Certificate</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed3">Mayor's Permit</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed4">BMBE Application</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed5">Business Clearance from barangay hall</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed6">BIR TIN/Certificate</ion-checkbox>
+        </div>
+
+        <h6>Source: <a href="http://www.iweb.ph/how-to-apply-umid-card" target="_blank">http://www.iweb.ph/how-to-apply-umid-card</a></h6>
+
+        <div ng-controller="PopupCtrl">
+            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+        </div>
+      </ion-content>
+</ion-view>

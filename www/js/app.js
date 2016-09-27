@@ -57,6 +57,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('app.business', {
+    url: '/business',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-business.html',
+      }
+    }
+  })
+
   .state('app.death', {
     url: '/death',
     views: {
@@ -75,11 +84,47 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('app.dti', {
+    url: '/dti',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-dti.html',
+      }
+    }
+  })
+
+  .state('app.gsis', {
+    url: '/gsis',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-gsis.html',
+      }
+    }
+  })
+
+  .state('app.birth', {
+    url: '/birth',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-birth.html',
+      }
+    }
+  })
+
   .state('app.pagibig', {
     url: '/pagibig',
     views: {
       'menuContent': {
         templateUrl: 'templates/app-pagibig.html',
+      }
+    }
+  })
+
+  .state('app.philhealth', {
+    url: '/philhealth',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-philhealth.html',
       }
     }
   })
@@ -102,6 +147,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('app.passportrenew', {
+    url: '/passportrenew',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-passportrenew.html',
+      }
+    }
+  })
+
   .state('app.nbi', {
     url: '/nbi',
     views: {
@@ -116,6 +170,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'menuContent': {
         templateUrl: 'templates/app-police.html',
+      }
+    }
+  })
+
+  .state('app.prc', {
+    url: '/prc',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-prc.html',
       }
     }
   })
@@ -143,6 +206,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'menuContent': {
         templateUrl: 'templates/app-umid.html',
+        controller: 'AppCtrl'
+      }
+    }
+  })
+
+  .state('app.tin', {
+    url: '/tin',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-tin.html',
+        controller: 'AppCtrl'
       }
     }
   })

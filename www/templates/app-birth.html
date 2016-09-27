@@ -1,0 +1,65 @@
+
+
+<ion-view view-title="NSO Birth Certificate">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-birth-proc" onclick="document.getElementById('birth-proc').style.display='block';document.getElementById('birth-req').style.display='none';">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item tab-birth-req" onclick="document.getElementById('birth-req').style.display='block';document.getElementById('birth-proc').style.display='none';">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+
+    <ion-content class="has-tabs has-header">
+
+
+        <div id="birth-proc" class="tab-views">
+            <h1>PROCEDURES</h1>
+            <ion-list>
+                <ion-item>
+                1. Fill out online application form
+                </ion-item>
+                <p>
+                <a href="https://www.ecensus.com.ph/Secure/OnlineApplication.aspx" target="_blank"><button class="button button-positive">Sign Up</button></a>
+                </p>
+                <ion-item>
+                2. Pay through accredited payment channels
+                </ion-item>
+                <p>
+                    Banco De Oro</br>
+                    BDO branches</br>
+                    BDO Online Banking (BDO account holders only)</br>
+                    BDO ATM (BDO account holders only)</br>
+                    UnionBank</br>
+                    UnionBank branches</br>
+                    UnionBank Online Banking (UnionBank account holders only)</br>
+                    UnionBank ATM (UnionBank account holders only)</br>
+                </p>
+                <ion-item>
+                3. Wait for delivery
+                </ion-item>
+            </ion-list>
+        </div>
+        
+        <div id="birth-req" style="display: none;" class="tab-views">
+          	<h1>REQUIREMENTS</h1>
+            <ion-checkbox ng-model="filter.printed2"> Personal appearance</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed3"> Confirmed appointment</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed4"> Duly accomplished application form </ion-checkbox>
+            <ion-checkbox ng-model="filter.printed5"> Most recent expiring or expired passport </ion-checkbox>
+            <ion-checkbox ng-model="filter.printed6"> Acceptable IDs at least one (1): for Brown, Green and MRP </ion-checkbox>
+            <ion-checkbox ng-model="filter.printed7"> Other supporting documents as necessary </ion-checkbox>
+        </div>
+
+        <h6>Source: <a href="https://www.ecensus.com.ph/default.aspx" target="_blank">https://www.ecensus.com.ph</a></h6>
+
+        <div ng-controller="PopupCtrl">
+            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+        </div>
+      </ion-content>
+</ion-view>
