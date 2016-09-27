@@ -1,8 +1,24 @@
 /* Empty. Add your own CSS if you like */
+ion-content h1,h2,h3,h4,h5,h6,p{
+	margin: 5px 15px;
+}
+.button{
+	margin-left: 15px;
+}
 .tab-conts{
 	min-height: 600px;
 }
 p{
-	font-size: 16px;
-	padding: 10px 5px;
+	font-size: 18px;
+}
+.intro-div{
+	padding: 30px 15px;
+	width: 100%;
+	height: 60%;
+}
+.footer-copy{
+	margin: 5px auto;
+}
+.tab-views{
+	padding: 60px 0px;
 }

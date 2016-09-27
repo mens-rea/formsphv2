@@ -2,23 +2,22 @@
 
 <ion-view view-title="Marriage Certificate">
 
-
     <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
             <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-proc active" onclick="document.getElementById('proc').style.display='block';document.getElementById('req').style.display='none';">
+                <a class="tab-item tab-proc" onclick="document.getElementById('proc').style.display='block';document.getElementById('req').style.display='none';">
                     <i class="icon ion-gear-a"></i>
                     Procedures
                 </a>
-                <a class="tab-item tab-req" onclick="document.getElementById('req').style.display='block';document.getElementById('proc').style.display='none';document.getElementById('tab-req').className='active';document.getElementById('tab-proc').removeClass = 'active';">
+                <a class="tab-item tab-req" onclick="document.getElementById('req').style.display='block';document.getElementById('proc').style.display='none';">
                     <i class="icon ion-unlocked"></i>
                     Requirements
                 </a>
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header" style="padding: 60px 15px;">
+    <ion-content class="has-tabs has-header">
 
-        <div id="proc">
+        <div id="proc" class="tab-views">
             <h1>PROCEDURES</h1>
             <ion-list>
                 <ion-item>
@@ -32,30 +31,28 @@
                 <ion-item>
                 2.  PAY FOR YOUR APPLICATION
                 </ion-item>
+                <p>
                 Payments may be made to the cashier or collecting officer for walk-in applications, or using VISA, Mastercard, Bancnet ATM, or Globe GCash, or via Metrobank or Bayad Center for online applications.
+                </p>
             </ion-list>
             <ion-list>
                 <ion-item>
                 3.  WAIT FOR YOUR MARRIAGE CERTIFICATE
                 </ion-item>
+                <p>
                 Walk-in applicants will receive their marriage certificate within 1 hour. Depending on the delivery conditions, online applicants will need to wait a few days to receive their document. 
+                </p>
             </ion-list>
         </div>
         
-        <div id="req" style="display: none;">
+        <div id="req" style="display: none;" class="tab-views">
           	<h1>REQUIREMENTS</h1>
-          	<ion-list>
-            	<ion-item>
-        			•	Any valid ID
-        		</ion-item>
-        	</ion-list>
-        	<ion-list>
-            	<ion-item>
-        			•	Accomplished Application Form
-        		</ion-item>
-        	</ion-list>
+            <ion-checkbox ng-model="filter.validid">Any valid ID</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed">Accomplished Application Form</ion-checkbox>
         </div>
 
         <h6>Source: PSA.gov.ph</h6>
+
+        <button class="button button-positive">Save Progress</button>
       </ion-content>
 </ion-view>
