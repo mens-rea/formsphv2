@@ -1,1 +1,8 @@
 /* Empty. Add your own CSS if you like */
+.tab-conts{
+	min-height: 600px;
+}
+p{
+	font-size: 16px;
+	padding: 10px 5px;
+}
