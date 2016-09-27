@@ -1,0 +1,47 @@
+
+
+<ion-view view-title="Senior Citizen's ID">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-senior-proc" onclick="document.getElementById('senior-proc').style.display='block';document.getElementById('senior-req').style.display='none';">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item tab-senior-req" onclick="document.getElementById('senior-req').style.display='block';document.getElementById('senior-proc').style.display='none';">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+
+    <ion-content class="has-tabs has-header">
+
+        <div id="senior-proc" class="tab-views">
+            <h1>PROCEDURES</h1>
+            <ion-list>
+                <ion-item>
+                1. Fill up application form
+                </ion-item>
+                <p>
+                go to your Municipal’s Office of the Senior Citizens Affair and apply for an ID.
+                </p>
+                <ion-item>
+                2.  Claim the identification card
+                </ion-item>
+                <p>
+                Wait for processing to claim your senior citizen's ID card.
+                </p>
+            </ion-list>
+        </div>
+        
+        <div id="senior-req" style="display: none;" class="tab-views">
+          	<h1>REQUIREMENTS</h1>
+            <ion-checkbox ng-model="filter.validid">Birth Certificate</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed">1X1 colored photo (latest)</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed2">One (1) Valid ID</ion-checkbox>
+        </div>
+
+        <button class="button button-positive">Save Progress</button>
+      </ion-content>
+</ion-view>

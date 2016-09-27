@@ -1,0 +1,50 @@
+
+
+<ion-view view-title="Police Clearance">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-police-proc" onclick="document.getElementById('police-proc').style.display='block';document.getElementById('police-req').style.display='none';">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item tab-police-req" onclick="document.getElementById('police-req').style.display='block';document.getElementById('police-proc').style.display='none';">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+
+    <ion-content class="has-tabs has-header">
+
+        <div id="police-proc" class="tab-views">
+            <h1>PROCEDURES</h1>
+            <ion-list>
+                <ion-item>
+                1.  Fill up the application form:
+                </ion-item>
+                <p>
+                Go to the customer service counter to get your checklist of police-requirements and secure a driver’s license application form. [This form is available for download here. You can accomplish this form prior to transacting your business at the LTO.] Get a queue number.
+                </p>
+                <ion-item>
+                2.  Submit all police-required documents
+                </ion-item>
+                <p>
+                When your number is called, go to the evaluator counter and submit all the police-required documents and have it checked for completeness and authenticity.
+                </p>
+            </ion-list>
+        </div>
+        
+        <div id="police-req" style="display: none;" class="tab-views">
+          	<h1>REQUIREMENTS</h1>
+            <ion-checkbox ng-model="filter.validid">Application Form (they will give you one)</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed">Barangay Clearance</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed2">Recent Cedula (Community or Residence Tax Certificate)</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed3">P100 fee</ion-checkbox>
+        </div>
+
+        <h6>Source: PSA.gov.ph</h6>
+
+        <button class="button button-positive">Save Progress</button>
+      </ion-content>
+</ion-view>

@@ -1,0 +1,68 @@
+
+
+<ion-view view-title="SSS ID/UMID card">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-umid-proc" onclick="document.getElementById('umid-proc').style.display='block';document.getElementById('umid-req').style.display='none';">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item tab-umid-req" onclick="document.getElementById('umid-req').style.display='block';document.getElementById('umid-proc').style.display='none';">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+
+    <ion-content class="has-tabs has-header">
+
+        <div id="umid-proc" class="tab-views">
+            <h1>PROCEDURES</h1>
+            <ion-list>
+                <ion-item>
+                1. Visit any of the folllowing government agencies:
+                </ion-item>
+                <p>
+                Social Security System (SSS) – See all SSS Offices within Metro Manila</br>
+                PhilHealth</br>
+                Government Service Insurance System (GSIS)</br>
+                Pag-Ibig – See all Pag-Ibig Offices within Metro Manila
+                </p>
+                <ion-item>
+                2.  Fill out the form
+                </ion-item>
+                <p>
+                Forms are available at enrollment centers . It can also be downloaded online via GSIS (government employee)  or SSS website (private employee or self-employed or OFW).
+                </p>
+                <ion-item>
+                3.  Verify UMID form
+                </ion-item>
+                <p>
+                Submit your form along with your valid IDs.
+                </p>
+                <ion-item>
+                4.  ID capture, fingerprint and signature
+                </ion-item>
+                <p>
+                Once you’ve got verified, you’ll be asked to transfer to another window for an ID picture, to scan your fingerprints and to sign on the signature pad.
+                </p>
+                <ion-item>
+                5.  Wait for UMID card to arrive by mail
+                </ion-item>
+                <p>
+                After your ID capture, you will have to wait for 30 days to receive your UMID ID by mail. If you fail to receive the ID after 30 days, inquire to your nearest SSS Branch Office.
+                </p>
+            </ion-list>
+        </div>
+        
+        <div id="umid-req" style="display: none;" class="tab-views">
+          	<h1>REQUIREMENTS</h1>
+            <ion-checkbox ng-model="filter.printed2">One (1) Primary Valid ID or Two (2) Secondary Valid IDs</ion-checkbox>
+        </div>
+
+        <h6>Source: <a href="http://www.iweb.ph/how-to-apply-umid-card" target="_blank">http://www.iweb.ph/how-to-apply-umid-card</a></h6>
+
+        <button class="button button-positive">Save Progress</button>
+      </ion-content>
+</ion-view>

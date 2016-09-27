@@ -111,6 +111,42 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('app.police', {
+    url: '/police',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-police.html',
+      }
+    }
+  })
+
+  .state('app.pwd', {
+    url: '/pwd',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-pwd.html',
+      }
+    }
+  })
+
+  .state('app.senior', {
+    url: '/senior',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-senior.html',
+      }
+    }
+  })
+
+  .state('app.umid', {
+    url: '/umid',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-umid.html',
+      }
+    }
+  })
+
   .state('app.chats', {
     url: '/chats',
     views: {
