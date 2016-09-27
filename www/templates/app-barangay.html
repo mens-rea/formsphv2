@@ -1,0 +1,60 @@
+
+
+<ion-view view-title="Barangay Clearance">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-barangay-proc" onclick="document.getElementById('barangay-proc').style.display='block';document.getElementById('barangay-req').style.display='none';">
+                    <i class="icon ion-gear-a"></i>
+                    procedures
+                </a>
+                <a class="tab-item tab-barangay-req" onclick="document.getElementById('barangay-req').style.display='block';document.getElementById('barangay-proc').style.display='none';">
+                    <i class="icon ion-unlocked"></i>
+                    requirements
+                </a>
+            </div>
+    </div>
+
+    <ion-content class="has-tabs has-header">
+
+        <div id="barangay-proc" class="tab-views">
+            <h1>PROCEDURES</h1>
+            <ion-list>
+                <ion-item>
+                1.  Go to your local barangay hall
+                </ion-item>
+                <p>
+                Find the barangay secretary and inform them that you need a barangay clearance. Be prepared to answer a few short questions about your residency and purpose for getting a barangay clearance.
+                </p>
+            </ion-list>
+            <ion-list>
+                <ion-item>
+                2.  Supply your personal data
+                </ion-item>
+                <p>
+                Fill out and complete an application form with accurate details. Some barangays will only ask for your signature while others barangay-require a thumb print and will even take your picture.
+                </p>
+            </ion-list>
+            <ion-list>
+                <ion-item>
+                3.  Pay for your application
+                </ion-item>
+                <p>
+                After completing the application form and supplying your personal details, submit all the barangay-requirements and pay the barangay-processing fees. It is advised that you bring between P50-P100. Once paid, just wait for 20 to 30 minutes and you will be given your barangay clearance. 
+                </p>
+            </ion-list>
+        </div>
+        
+        <div id="barangay-req" style="display: none;" class="tab-views">
+          	<h1>REQUIREMENTS</h1>
+            <ion-checkbox ng-model="filter.validid">Filled up application form</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed">Recent Cedula (community tax certificate)</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed2">Application fees (price may vary in every barangay)</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed3">(Optional) bring at least one (1) valid ID</ion-checkbox>
+        </div>
+
+        <h6>Source: PSA.gov.ph</h6>
+
+        <button class="button button-positive">Save Progress</button>
+      </ion-content>
+</ion-view>

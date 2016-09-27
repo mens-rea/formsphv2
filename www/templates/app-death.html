@@ -1,0 +1,48 @@
+
+
+<ion-view view-title="Death Certificate">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-death-proc" onclick="document.getElementById('death-proc').style.display='block';document.getElementById('death-req').style.display='none';">
+                    <i class="icon ion-gear-a"></i>
+                    procedures
+                </a>
+                <a class="tab-item tab-death-req" onclick="document.getElementById('death-req').style.display='block';document.getElementById('death-proc').style.display='none';">
+                    <i class="icon ion-unlocked"></i>
+                    requirements
+                </a>
+            </div>
+    </div>
+
+    <ion-content class="has-tabs has-header">
+
+        <div id="death-proc" class="tab-views">
+            <h1>PROCEDURES</h1>
+            <ion-list>
+                <ion-item>
+                1.  Fill up application form and provide the following:
+                </ion-item>
+                <p>
+                Number of copies being death-requested
+                Name of the deceased
+                Gender
+                Place of death
+                Date of death
+                Date of registration, if the death certificate was registered  late
+                Purpose of your death-request
+                </p>
+            </ion-list>
+        </div>
+        
+        <div id="death-req" style="display: none;" class="tab-views">
+          	<h1>REQUIREMENTS</h1>
+            <ion-checkbox ng-model="filter.validid">One (1) valid ID</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed">330php per copy</ion-checkbox>
+        </div>
+
+        <h6>Source: PSA.gov.ph</h6>
+
+        <button class="button button-positive">Save Progress</button>
+      </ion-content>
+</ion-view>

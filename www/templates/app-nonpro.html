@@ -1,0 +1,88 @@
+
+
+<ion-view view-title="Driver's License (non-pro)">
+
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-drivers-proc" onclick="document.getElementById('drivers-proc').style.display='block';document.getElementById('drivers-req').style.display='none';">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item tab-drivers-req" onclick="document.getElementById('drivers-req').style.display='block';document.getElementById('drivers-proc').style.display='none';">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+
+    <ion-content class="has-tabs has-header">
+
+        <div id="drivers-proc" class="tab-views">
+            <h1>PROCEDURES</h1>
+            <ion-list>
+                <ion-item>
+                1.  Full up a driver's license application form:
+                </ion-item>
+                <p>
+                Go to the customer service counter to get your checklist of drivers-requirements and secure a driver’s license application form. [This form is available for download here. You can accomplish this form prior to transacting your business at the LTO.] Get a queue number.
+                </p>
+                <ion-item>
+                2.  Submit all drivers-required documents
+                </ion-item>
+                <p>
+                When your number is called, go to the evaluator counter and submit all the drivers-required documents and have it checked for completeness and authenticity.
+                </p>
+                <ion-item>
+                3.  Get your photo and signature taken.
+                </ion-item>
+                <p>
+                When your number is called, go to the evaluator counter and submit all the drivers-required documents and have it checked for completeness and authenticity.
+                </p>
+                <ion-item>
+                3.  Pay the application fee
+                </ion-item>
+                <p>
+                Go to the cashier to pay the application fee.
+                </p>
+                <ion-item>
+                4.  Take the lecture and written exam
+                </ion-item>
+                <p>
+                Go to the Examination Room for the lecture and written exam.
+                </p>
+                <ion-item>
+                5.  Take the practical exam
+                </ion-item>
+                <p>
+                After passing the written exam, wait for your name to be called for the practical exam.
+                </p>
+                <ion-item>
+                6.  Pay other necessary fees
+                </ion-item>
+                <p>
+                After passing the practical exam, go to the cashier when your name is called for payment of necessary fees and obtain an official receipt (OR).
+                </p>
+                <ion-item>
+                7.  Claim your license
+                </ion-item>
+                <p>
+                Go to the releasing counter, wait for your name to be called and present the OR and claim the card type license.
+                </p>
+            </ion-list>
+        </div>
+        
+        <div id="drivers-req" style="display: none;" class="tab-views">
+          	<h1>REQUIREMENTS</h1>
+            <ion-checkbox ng-model="filter.validid">Duly accomplished application form for driver’s license (ADL) <a href="http://www.gov.ph/downloads/2014/06jun/DOTC-LTO-Form-21.pdf">[Download this form here]</a>.</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed">Valid student permit (at least one month old)</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed2">Medical certificate with official receipt from any duly-licensed and practicing physician (Note: The LTO will not accept medical certificates which are over 15 days old.)</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed3">Negative drug test result (from a DOH accredited drug testing center & Government Hospital)</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed4">If employed: Taxpayer’s Identification Number (TIN)</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed5">Must have passed the written and practical examinations*</ion-checkbox>
+        </div>
+
+        <h6>Source: PSA.gov.ph</h6>
+
+        <button class="button button-positive">Save Progress</button>
+      </ion-content>
+</ion-view>
