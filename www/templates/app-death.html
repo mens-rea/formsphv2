@@ -30,6 +30,14 @@
                     When requesting for death certificate, the interested party shall provide the following information to facilitate verification and issuance of certification.
                 </p>
             </ion-list>
+
+            <h3>Address</h3>
+            <ion-list>
+                <p>
+                    <img src="img/maps-screenshot.png" style="width: 100%;"/></br></br>
+                    <h5>Solicarel Bldg. R. Magsaysay Blvd. Sta. Mesa Manila, San Juan, Metro Manila</h5>
+                </p>
+            </ion-list>
         </div>
 
         <div class="tab-views" ng-show="activeButton === 'proc'">
@@ -59,7 +67,7 @@
             <ion-checkbox ng-model="filter.printed">330php per copy</ion-checkbox>
         </div>
 
-        <h6>Source: PSA.gov.ph</h6>
+        <h6>Sources: PSA.gov.ph, http://www.iweb.ph/how-to-apply-for-nso-death-certificate</h6>
 
         <div ng-controller="PopupCtrl">
             <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
