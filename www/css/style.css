@@ -20,11 +20,25 @@ p{
 	width: 100%;
 	height: 500px;
 }
+.tab-titles{
+	margin-top: 60px;
+}
 .footer-copy{
 	margin: 5px auto;
 }
 .tab-views{
 	padding: 60px 0px;
+}
+.tab-views button{
+	background-color: #3A54BB;
+}
+.tab-views h3{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-weight: bold;
+	color: #3A54BB;
+	border-bottom: 4px solid #3A54BB;
+	padding-bottom: 10px;
 }
 .notes .item{
 	background-color: #D63434;
@@ -36,4 +50,8 @@ p{
 .notes .item:hover{
 	background-color: white;
 	color: #D63434;
+}
+
+.tab-item.active{
+	background-color: white;
 }

@@ -1,42 +1,60 @@
 
 
-<ion-view view-title="Death Certificate">
+<ion-view view-title="Death Certificate" ng-controller="TabCtrl">
 
     <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
             <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-death-proc" onclick="document.getElementById('death-proc').style.display='block';document.getElementById('death-req').style.display='none';">
-                    <i class="icon ion-gear-a"></i>
-                    procedures
+                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'home' }" ng-click="showGen()" style="font-size: 14px;">
+                    <i class="icon ion-information-circled"></i>
+                    General
                 </a>
-                <a class="tab-item tab-death-req" onclick="document.getElementById('death-req').style.display='block';document.getElementById('death-proc').style.display='none';">
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
                     <i class="icon ion-unlocked"></i>
-                    requirements
+                    Requirements
                 </a>
             </div>
     </div>
 
     <ion-content class="has-tabs has-header">
 
-        <div id="death-proc" class="tab-views">
-            <h1>PROCEDURES</h1>
+        <div class="tab-views" ng-show="activeButton === 'gen'">
+            <h3>General</h3>
             <ion-list>
-                <ion-item>
-                1.  Fill up application form and provide the following:
-                </ion-item>
                 <p>
-                Number of copies being death-requested
-                Name of the deceased
-                Gender
-                Place of death
-                Date of death
-                Date of registration, if the death certificate was registered  late
-                Purpose of your death-request
+                    Death Certificate is an official document setting forth particulars relating to a dead person, including the name of the individual, the date of birth and the date of death.
+                    </br></br>
+                    When requesting for death certificate, the interested party shall provide the following information to facilitate verification and issuance of certification.
                 </p>
             </ion-list>
         </div>
+
+        <div class="tab-views" ng-show="activeButton === 'proc'">
+            <h3>Procedures</h3>
+            <ion-list>
+                <ion-item style="font-size: 22px;">
+                1.  Fill up application form
+                </ion-item>
+                <p>
+                </br>
+                <b>Provide the following information:</b></br></br>
+                Number of copies being death-requested</br>
+                Name of the deceased</br>
+                Gender</br>
+                Place of death</br>
+                Date of death</br>
+                Date of registration, if the death certificate was registered  late</br>
+                Purpose of your death-request</br></br>
+                </p>
+                <a href="https://www.ecensus.com.ph/Secure/Files/Death%20Application%20Form.pdf"><button class="button button-assertive" target="_blank">Download Form</button></a>
+            </ion-list>
+        </div>
         
-        <div id="death-req" style="display: none;" class="tab-views">
-          	<h1>REQUIREMENTS</h1>
+        <div class="tab-views" ng-show="activeButton === 'req'">
+          	<h3>Requirements</h3>
             <ion-checkbox ng-model="filter.validid">One (1) valid ID</ion-checkbox>
             <ion-checkbox ng-model="filter.printed">330php per copy</ion-checkbox>
         </div>

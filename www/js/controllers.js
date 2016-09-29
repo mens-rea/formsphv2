@@ -12,12 +12,35 @@ angular.module('starter.controllers', [])
 	};
 })
 
+.controller('TabCtrl',function($scope, $ionicPopup, $timeout) {
+	$scope.activeButton = 'gen';
+
+	$scope.showGen = function(){
+		this.activeButton = 'gen';
+	}
+
+	$scope.showProcs = function(){
+		this.activeButton = 'proc';
+	}
+
+	$scope.showReqs = function(){
+		this.activeButton = 'req';
+	};
+})
+
 .controller('AppCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {
 	$scope.chats = Chats.all();
 	$scope.remove = function(chat) {
 		Chats.remove(chat);
+	};
+})
+
+.controller('NotesCtrl', function($scope, Notes) {
+	$scope.notes = Notes.all();
+	$scope.remove = function(note) {
+		Notes.remove(note);
 	};
 })
 
