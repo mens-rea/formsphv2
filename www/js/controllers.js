@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
 	};
 })
 
-.controller('TabCtrl',function($scope, $ionicPopup, $timeout) {
+.controller('TabCtrl',function($scope) {
 	$scope.activeButton = 'gen';
 
 	$scope.showGen = function(){

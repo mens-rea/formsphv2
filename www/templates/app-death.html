@@ -20,57 +20,75 @@
     </div>
 
     <ion-content class="has-tabs has-header">
+        <div class="tab-views">
+            <div class="progress-cont">
+                <progress max="100" value="25"> </progress>
+            </div>
+            <div class="save-cont" ng-controller="PopupCtrl">
+                <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+            </div>
 
-        <div class="tab-views" ng-show="activeButton === 'gen'">
-            <h3>General</h3>
-            <ion-list>
-                <p>
-                    Death Certificate is an official document setting forth particulars relating to a dead person, including the name of the individual, the date of birth and the date of death.
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                        Death Certificate is an official document setting forth particulars relating to a dead person, including the name of the individual, the date of birth and the date of death.
+                        </br></br>
+                        When requesting for death certificate, the interested party shall provide the following information to facilitate verification and issuance of certification.
+                    </p>
+                </ion-list>
+
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
+                        <img src="img/maps-screenshot.png" style="width: 100%;"/></br></br>
+                        <h5>Solicarel Bldg. R. Magsaysay Blvd. Sta. Mesa Manila, San Juan, Metro Manila</h5>
+                    </p>
+                </ion-list>
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item style="font-size: 22px;">
+                    1.  Fill up application form
+                    </ion-item>
+                    <p>
+                    </br>
+                    <b>Provide the following information:</b></br></br>
+                    Number of copies being death-requested</br>
+                    Name of the deceased</br>
+                    Gender</br>
+                    Place of death</br>
+                    Date of death</br>
+                    Date of registration, if the death certificate was registered  late</br>
+                    Purpose of your death-request</br></br>
+                    </p>
+                    <a href="https://www.ecensus.com.ph/Secure/Files/Death%20Application%20Form.pdf"><button class="button button-assertive" target="_blank">Download Form</button></a>
                     </br></br>
-                    When requesting for death certificate, the interested party shall provide the following information to facilitate verification and issuance of certification.
-                </p>
-            </ion-list>
+                    <ion-item style="font-size: 22px;">
+                    2.  Submit your accomplished form
+                    </ion-item>
+                    <p>
+                    </br>
+                    You can go to your nearest NSO branch or
+                    </p>
+                    <a href="https://www.ecensus.com.ph/Secure/Files/Death%20Application%20Form.pdf"><button class="button button-assertive" target="_blank">Submit Online</button></a>
+                    </br></br>
+                    <ion-item style="font-size: 22px;">
+                    3.  Claim the death certificate
+                    </ion-item>
+                </ion-list>
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <ion-checkbox ng-model="filter.id" ng-value="1">One (1) valid ID</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Accomplished application form</ion-checkbox>
+                <ion-checkbox ng-model="filter.fee">Php 330/copy</ion-checkbox>
+            </div>
 
-            <h3>Address</h3>
-            <ion-list>
-                <p>
-                    <img src="img/maps-screenshot.png" style="width: 100%;"/></br></br>
-                    <h5>Solicarel Bldg. R. Magsaysay Blvd. Sta. Mesa Manila, San Juan, Metro Manila</h5>
-                </p>
-            </ion-list>
+            <h6>Sources: PSA.gov.ph, http://www.iweb.ph/how-to-apply-for-nso-death-certificate</h6>
         </div>
-
-        <div class="tab-views" ng-show="activeButton === 'proc'">
-            <h3>Procedures</h3>
-            <ion-list>
-                <ion-item style="font-size: 22px;">
-                1.  Fill up application form
-                </ion-item>
-                <p>
-                </br>
-                <b>Provide the following information:</b></br></br>
-                Number of copies being death-requested</br>
-                Name of the deceased</br>
-                Gender</br>
-                Place of death</br>
-                Date of death</br>
-                Date of registration, if the death certificate was registered  late</br>
-                Purpose of your death-request</br></br>
-                </p>
-                <a href="https://www.ecensus.com.ph/Secure/Files/Death%20Application%20Form.pdf"><button class="button button-assertive" target="_blank">Download Form</button></a>
-            </ion-list>
-        </div>
-        
-        <div class="tab-views" ng-show="activeButton === 'req'">
-          	<h3>Requirements</h3>
-            <ion-checkbox ng-model="filter.validid">One (1) valid ID</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed">330php per copy</ion-checkbox>
-        </div>
-
-        <h6>Sources: PSA.gov.ph, http://www.iweb.ph/how-to-apply-for-nso-death-certificate</h6>
-
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
-        </div>
-      </ion-content>
+    </ion-content>
 </ion-view>
