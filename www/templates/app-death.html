@@ -19,12 +19,15 @@
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header">
+    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
         <div class="tab-views">
+            <p style="display: none;">{{ progress + "%"}}</p>
             <div class="progress-cont">
-                <progress max="100" value="25"> </progress>
+                <progress max="100" value="{{progress}}"></progress>
             </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
             <div class="save-cont" ng-controller="PopupCtrl">
+
                 <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
             </div>
 
@@ -50,8 +53,14 @@
             <div ng-show="activeButton === 'proc'">
                 <h3>Procedures</h3>
                 <ion-list>
-                    <ion-item style="font-size: 22px;">
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     1.  Fill up application form
+                        <label class="toggle toggle-balanced" ng-click="UpdateProgress()">
+                            <input type="checkbox" ng-model="progs.check">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
                     </br>
@@ -66,8 +75,14 @@
                     </p>
                     <a href="https://www.ecensus.com.ph/Secure/Files/Death%20Application%20Form.pdf"><button class="button button-assertive" target="_blank">Download Form</button></a>
                     </br></br>
-                    <ion-item style="font-size: 22px;">
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     2.  Submit your accomplished form
+                        <label class="toggle toggle-balanced" ng-click="UpdateProgress()">
+                            <input type="checkbox" ng-model="progs.check2">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
                     </br>
@@ -75,8 +90,14 @@
                     </p>
                     <a href="https://www.ecensus.com.ph/Secure/Files/Death%20Application%20Form.pdf"><button class="button button-assertive" target="_blank">Submit Online</button></a>
                     </br></br>
-                    <ion-item style="font-size: 22px;">
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     3.  Claim the death certificate
+                        <label class="toggle toggle-balanced" ng-click="UpdateProgress()">
+                            <input type="checkbox" ng-model="progs.check3">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                 </ion-list>
             </div>

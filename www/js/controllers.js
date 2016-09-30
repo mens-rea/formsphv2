@@ -1,6 +1,8 @@
 angular.module('starter.controllers', [])
 
 .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
+	$scope.progress = 0;
+
 	$scope.showAlert = function(){
 		var alertPopup = $ionicPopup.alert({
 			title: 'Great job so far!',
@@ -9,6 +11,29 @@ angular.module('starter.controllers', [])
 		alertPopup.then(function(res){
 			console.log('Thank you for not eating my delicious ice cream cone');
 		});
+	};
+})
+
+.controller('ProgCtrl',function($scope) {
+	$scope.progress = 0;
+	$scope.check = false;
+	$scope.check2 = false;
+	$scope.check3 = false;
+
+
+	$scope.UpdateProgress = function(){
+		if($scope.check){
+			$scope.progress = ($scope.progress + 25);
+		}
+		else if($scope.check&&$scope.check2){
+			$scope.progress = ($scope.progress + 25);
+		}
+		else if($scope.check&&$scope.check2&&$scope.check3){
+			$scope.progress = ($scope.progress + 25);
+		}
+		else{
+			$scope.progress = ($scope.progress + 25);
+		}
 	};
 })
 
