@@ -15,10 +15,10 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ProgCtrl',function($scope, Docs) {
-	/*$scope.progress = 0;
+	$scope.progress = 0;
 	$scope.proc = 1;
 	$scope.checkproc = 0;
-	$scope.prog = 0;*/
+	$scope.prog = 0;
 
 	$scope.chats = Docs.all();
 
@@ -38,6 +38,7 @@ angular.module('starter.controllers', [])
 			else{
 				$scope.check = true;
 				$scope.progress = Math.floor(($scope.progress + $scope.prog));
+				alert($scope.progress);
 			}
 		}
 		else if (val==2){
