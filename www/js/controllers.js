@@ -15,16 +15,10 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ProgCtrl',function($scope, Docs) {
-	$scope.progress = 0;
+	/*$scope.progress = 0;
 	$scope.proc = 1;
 	$scope.checkproc = 0;
-	$scope.prog = 0;
-
-	$scope.val1 = false;
-	$scope.val2 = false;
-	$scope.val3 = false;
-	$scope.val4 = false;
-	$scope.val5 = false;
+	$scope.prog = 0;*/
 
 	$scope.chats = Docs.all();
 
@@ -37,13 +31,11 @@ angular.module('starter.controllers', [])
 	$scope.UpdateToggle = function(val){
 		if (val==1){
 			if($scope.check){
-				alert('false');
 				$scope.check = false;
 				$scope.progress = Math.ceil(($scope.progress - $scope.prog));
 				$scope.Clean();
 			}
 			else{
-				alert('true');
 				$scope.check = true;
 				$scope.progress = Math.floor(($scope.progress + $scope.prog));
 			}
