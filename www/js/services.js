@@ -50,6 +50,39 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    },
+    update: function(updatetUser) {
+      for (var i = 0; i < chats.length; i++) {
+        if  ($chats[i].id === updatetUser.id) {
+            $chats[i] = updatetUser;
+        }
+      }
+    }
+  };
+})
+
+.factory('Docs', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var docs = [{
+    id: 0,
+    name: 'death',
+    proc: 3,
+    tprog: 33.33333
+  }, {
+    id: 1,
+    name: 'birth',
+    proc: 3,
+    tprog: 100
+  }];
+
+  return {
+    all: function() {
+      return docs;
+    },
+    remove: function(doc) {
+      docs.splice(docs.indexOf(doc), 1);
     }
   };
 })

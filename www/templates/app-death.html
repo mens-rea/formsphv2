@@ -19,7 +19,7 @@
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+    <ion-content class="has-tabs has-header" ng-init="loadSpecData('death')" ng-controller="ProgCtrl as progs">
         <div class="tab-views">
             <p style="display: none;">{{ progress + "%"}}</p>
             <div class="progress-cont">
@@ -27,8 +27,9 @@
             </div>
             <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
             <div class="save-cont" ng-controller="PopupCtrl">
-
-                <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+                <button class="button button-positive" ng-click="saveSpecData('death')">Save Progress</button>
+                <!-- <button class="button button-positive" ng-click="updateData()">Update Progress</button> -->
+                <!-- <button class="button button-positive" ng-click="loadSpecData('death')">Load Progress</button> -->
             </div>
 
             <div ng-show="activeButton === 'gen'">
@@ -55,8 +56,8 @@
                 <ion-list>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     1.  Fill up application form
-                        <label class="toggle toggle-balanced" ng-click="UpdateProgress()">
-                            <input type="checkbox" ng-model="progs.check">
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
@@ -77,8 +78,8 @@
                     </br></br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     2.  Submit your accomplished form
-                        <label class="toggle toggle-balanced" ng-click="UpdateProgress()">
-                            <input type="checkbox" ng-model="progs.check2">
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
@@ -92,8 +93,8 @@
                     </br></br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     3.  Claim the death certificate
-                        <label class="toggle toggle-balanced" ng-click="UpdateProgress()">
-                            <input type="checkbox" ng-model="progs.check3">
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
