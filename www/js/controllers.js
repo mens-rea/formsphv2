@@ -14,7 +14,7 @@ angular.module('starter.controllers', ['ngCordova'])
 	};
 })
 
-.controller("ExampleController", function($scope, $cordovaSQLite) {
+.controller("ExampleController", function($scope, $ionicPopup, $timeout, $cordovaSQLite) {
  
     $scope.insert = function(firstname, lastname) {
         var query = "INSERT INTO people (firstname, lastname) VALUES (?,?)";
@@ -39,6 +39,16 @@ angular.module('starter.controllers', ['ngCordova'])
             console.error(err);
         });
     }
+
+    $scope.showAlert = function(){
+		var alertPopup = $ionicPopup.alert({
+			title: 'Great job so far!',
+			template: 'Your progress has been saved...'
+		});
+		alertPopup.then(function(res){
+			console.log('Thank you for not eating my delicious ice cream cone');
+		});
+	};
  
 })
 
