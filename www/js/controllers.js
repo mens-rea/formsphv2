@@ -14,11 +14,17 @@ angular.module('starter.controllers', ['ngCordova'])
 	};
 })
 
-.controller("ExampleController", function($scope, $ionicPopup, $timeout, $cordovaSQLite) {
+/*.controller("ExampleController", function($scope, $ionicPopup, $timeout, $cordovaSQLite) {
  
-    $scope.insert = function(firstname, lastname) {
-        var query = "INSERT INTO people (firstname, lastname) VALUES (?,?)";
-        $cordovaSQLite.execute(db, query, [firstname, lastname]).then(function(res) {
+    $scope.insert = function(firstname, lastname, value) {
+
+    	var alertPopup = $ionicPopup.alert({
+					title: 'Great job so far!',
+					template: 'Your progress has been saved...'
+				});
+
+        var query = "INSERT INTO people (firstname, lastname, value) VALUES (?,?)";
+        $cordovaSQLite.execute(db, query, [firstname, lastname, value]).then(function(res) {
             console.log("INSERT ID -> " + res.insertId);
             alert('success!');
         }, function (err) {
@@ -35,7 +41,7 @@ angular.module('starter.controllers', ['ngCordova'])
             
                 var alertPopup = $ionicPopup.alert({
 					title: 'Great job so far!',
-					template: 'Your progress has been saved...'
+					template: 'Your progress has been saved...' + res.rows.item(0).firstname
 				});
             } else {
                 console.log("No results found");
@@ -55,9 +61,9 @@ angular.module('starter.controllers', ['ngCordova'])
 		});
 	};
  
-})
+})*/
 
-.controller('ProgCtrl',function($scope, Docs) {
+.controller('ProgCtrl',function($scope, Docs, $ionicPopup, $timeout, $cordovaSQLite) {
 	$scope.progress = 0;
 	$scope.proc = 1;
 	$scope.checkproc = 0;
@@ -70,6 +76,89 @@ angular.module('starter.controllers', ['ngCordova'])
 			$scope.progress = 0;
 		}
 	}
+
+	$scope.insert = function(docname, prog) {
+
+    	var alertPopup = $ionicPopup.alert({
+					title: 'Great job so far!',
+					template: 'Your progress has been saved...'
+				});
+    	var query = "UPDATE documents SET prog = ? WHERE docname = ?";
+        /*var query = "INSERT INTO documents (docname, prog, proc) VALUES (?,?,?)";*/
+        $cordovaSQLite.execute(db, query, [$scope.progress, docname]).then(function(res) {
+            console.log('successful!');
+        }, function (err) {
+            console.error(err.message);
+        });
+        console.log("hello");
+    }
+
+    $scope.reset = function() {
+    	var s_query = "SELECT * FROM documents";
+    	$cordovaSQLite.execute(db, s_query).then(function(res) {
+    		if(res.rows.length > 0) {
+    			for(var i = 0; i < res.rows.length; i++){
+    				console.log("success!" + res.rows.item(0).docname + " " + res.rows.item(0).prog);
+    			}
+
+            } else {
+                console.log("No results found");
+            }
+        }, function (err) {
+            console.error(err.message);
+        });
+
+    	var query = "DELETE FROM documents";
+    	$cordovaSQLite.execute(db, query).then(function(res) {
+    		console.log("successfully updated the database");
+        }, function (err) {
+            console.error(err.message);
+        });
+    }
+ 
+    $scope.select = function(docname) {
+        var query = "SELECT docname, prog, proc FROM documents WHERE docname = ?";
+        $cordovaSQLite.execute(db, query, [docname]).then(function(res) {
+            if(res.rows.length > 0) {
+                console.log("SELECTED -> " + res.rows.item(0).prog + " " + res.rows.item(0).proc);
+            	var alertPopup = $ionicPopup.alert({
+					title: 'Great job so far!',
+					template: 'Your progress has been saved...' + res.rows.item(0).prog + " " + res.rows.item(0).proc
+				});
+				$scope.progress = res.rows.item(0).prog;
+				$scope.proc = res.rows.item(0).proc;
+				$scope.prog = (100 / $scope.proc);
+			    $scope.checkproc = Math.ceil($scope.progress / $scope.prog);
+			    console.log("SELECTED -> " + $scope.progress + " " + $scope.proc + " " + $scope.prog + " " + $scope.checkproc);
+            
+			    for (var x = 0; x < $scope.checkproc; x++) {
+			    	if (x==0){
+			    		$scope.check = true;
+			    	}
+			    	if (x==1){
+			    		$scope.check2 = true;
+			    	}
+			    	if (x==2){
+			    		$scope.check3 = true;
+			    	}
+			    }
+            } else {
+                console.log("No results found");
+            }
+        }, function (err) {
+            console.error("this is the error:" +err.message);
+        });
+    }
+
+    $scope.showAlert = function(){
+		var alertPopup = $ionicPopup.alert({
+			title: 'Great job so far!',
+			template: 'Your progress has been saved...'
+		});
+		alertPopup.then(function(res){
+			console.log('Thank you for not eating my delicious ice cream cone');
+		});
+	};
 
 	$scope.UpdateToggle = function(val){
 		if (val==1){

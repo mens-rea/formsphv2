@@ -20,9 +20,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    db = $cordovaSQLite.openDB({ name: "my.db", location: 'default'});
-    db = $cordovaSQLite.openDB({ name: 'app.db',location: 'default' });
+
+    if(window.cordova){
+      db = $cordovaSQLite.openDB({ name: "app.db" });
+      console.log("android");
+    }
+    else{
+      db = window.openDatabase("my.db", '1', 'app', 1024 * 1024 * 100);
+    }
+    /*db = $cordovaSQLite.openDB({ name: 'app.db',location: 'default' });*/
     $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS people (id integer primary key, firstname text, lastname text)");
+    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id integer primary key, docname text, prog integer, proc integer)");
+        var query = "INSERT INTO documents (docname, prog, proc) VALUES (?,?,?)";
+        $cordovaSQLite.execute(db, query, ['death',33,3]).then(function(res) {
+            console.log('successful!');
+        }, function (err) {
+            console.error(err.message);
+        });
   });
 })
 

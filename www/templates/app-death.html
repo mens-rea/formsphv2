@@ -26,10 +26,10 @@
                 <progress max="100" value="{{progress}}"></progress>
             </div>
             <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
-            <div class="save-cont" ng-controller="ExampleController">
-                <button class="button button-positive" ng-click="showAlert()">Saved Progress</button>
-                <button class="button button-positive" ng-click="insert('death','grim')">Save Progress</button>
-                <button class="button button-positive" ng-click="select('grim')">Load Progress</button>
+            <div class="save-cont">
+                <button class="button button-positive" ng-click="reset()">Saved Progress</button>
+                <button class="button button-positive" ng-click="insert('death',66)">Save Progress</button>
+                <button class="button button-positive" ng-click="select('death')">Load Progress</button>
                 <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
             </div>
 
