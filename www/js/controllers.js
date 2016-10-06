@@ -35,7 +35,7 @@ angular.module('starter.controllers', ['ngCordova'])
             
                 var alertPopup = $ionicPopup.alert({
 					title: 'Great job so far!',
-					template: 'Your progress has been saved...' + res.rows.item(0).firstname + " " + res.rows.item(0).lastname
+					template: 'Your progress has been saved...'
 				});
             } else {
                 console.log("No results found");
