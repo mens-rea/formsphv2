@@ -29,7 +29,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           db = $cordovaSQLite.openDB({ name: 'populated.db',location: 'default' });
       });*/
       try {
-        db = $cordovaSQLite.openDB({name:"populated.db",location:'default'});
+        db = window.sqlitePlugin.openDB({name:"populated.db",location:'default'});
       } catch (error) {
         alert(error);
       }

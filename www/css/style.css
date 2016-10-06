@@ -49,8 +49,8 @@ p{
 	margin-top: 30px;
 	margin-bottom: 30px;
 	font-weight: bold;
-	color: #3A54BB;
-	border-bottom: 4px solid #3A54BB;
+	color: #903e98; /* old color: #3A54BB*/
+	border-bottom: 4px solid #903e98;
 	padding-bottom: 10px;
 }
 
@@ -83,6 +83,21 @@ progress[value]::-webkit-progress-value {
 }
 .save-cont .button{
 	float: right;
+}
+
+.background-forms .tabs, .button-forms, .background-forms{
+	background-color: #903e98;
+}
+.button-forms{
+	color: white;
+}
+.button-forms:hover{
+	color: #903e98;
+	background-color: #f5f5f5;
+}
+
+.home-bar-footer{
+	height: 60px !important;
 }
 
 /*.notes .item{
