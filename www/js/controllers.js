@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngCordova'])
 
 .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
 	$scope.progress = 0;
@@ -12,6 +12,33 @@ angular.module('starter.controllers', [])
 			console.log('Thank you for not eating my delicious ice cream cone');
 		});
 	};
+})
+
+.controller("ExampleController", function($scope, $cordovaSQLite) {
+ 
+    $scope.insert = function(firstname, lastname) {
+        var query = "INSERT INTO people (firstname, lastname) VALUES (?,?)";
+        $cordovaSQLite.execute(db, query, [firstname, lastname]).then(function(res) {
+            console.log("INSERT ID -> " + res.insertId);
+        }, function (err) {
+            console.error(err);
+        });
+        console.log("hello");
+    }
+ 
+    $scope.select = function(lastname) {
+        var query = "SELECT firstname, lastname FROM people WHERE lastname = ?";
+        $cordovaSQLite.execute(db, query, [lastname]).then(function(res) {
+            if(res.rows.length > 0) {
+                console.log("SELECTED -> " + res.rows.item(0).firstname + " " + res.rows.item(0).lastname);
+            } else {
+                console.log("No results found");
+            }
+        }, function (err) {
+            console.error(err);
+        });
+    }
+ 
 })
 
 .controller('ProgCtrl',function($scope, Docs) {
