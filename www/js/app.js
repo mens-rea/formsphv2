@@ -21,6 +21,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       StatusBar.styleDefault();
     }
 
+    try {
+      db = $cordovaSQLite.openDB({name:"populated.db",location:'default'});
+    } catch (error) {
+      alert(error);
+    }
+    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY INCREMENT, docname TEXT, prog INTEGER, proc INTEGER)");
+        
+    /*$cordovaSQLite.execute(db, 'CREATE TABLE IF NOT EXISTS Messages (id INTEGER PRIMARY KEY AUTOINCREMENT, message TEXT)');
     if(window.cordova){
       window.plugins.sqlDB.copy("populated.db", 0, function() {
           db = $cordovaSQLite.openDB({ name: 'populated.db',location: 'default' });
@@ -33,9 +41,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     else{
       db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
       $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id integer primary key, docname text, prog integer, proc integer)");
-      /*db = window.openDatabase("my.db", '1', 'app', 1024 * 1024 * 100);*/
-    }
-    /*db = $cordovaSQLite.openDB({ name: 'app.db',location: 'default' });*/
+    }*/
+    /*db = window.openDatabase("my.db", '1', 'app', 1024 * 1024 * 100);
+    db = $cordovaSQLite.openDB({ name: 'app.db',location: 'default' });*/
         
   });
 })
