@@ -22,21 +22,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
 
     if(window.cordova){
-      db = $cordovaSQLite.openDB({ name: "app.db" });
+      window.plugins.sqlDB.copy("populated.db", 0, function() {
+          db = $cordovaSQLite.openDB({ name: 'populated.db',location: 'default' });
+      }, function(error) {
+          console.error("There was an error copying the database: " + error);
+          db = $cordovaSQLite.openDB({ name: 'populated.db',location: 'default' });
+      });
       console.log("android");
     }
     else{
-      db = window.openDatabase("my.db", '1', 'app', 1024 * 1024 * 100);
+      db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
+      $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id integer primary key, docname text, prog integer, proc integer)");
+      /*db = window.openDatabase("my.db", '1', 'app', 1024 * 1024 * 100);*/
     }
     /*db = $cordovaSQLite.openDB({ name: 'app.db',location: 'default' });*/
-    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS people (id integer primary key, firstname text, lastname text)");
-    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id integer primary key, docname text, prog integer, proc integer)");
-        var query = "INSERT INTO documents (docname, prog, proc) VALUES (?,?,?)";
-        $cordovaSQLite.execute(db, query, ['death',33,3]).then(function(res) {
-            console.log('successful!');
-        }, function (err) {
-            console.error(err.message);
-        });
+        
   });
 })
 
