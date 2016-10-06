@@ -84,10 +84,14 @@ angular.module('starter.controllers', ['ngCordova'])
 					template: 'Your progress has been saved...'
 		});
 
-		var query = "INSERT INTO documents (docname, prog, proc) VALUES (?,?,?)";
-		$cordovaSQLite.execute(db, query, [docname, $scope.progress, 3]).then(function(res) {
-		/*var query = "UPDATE documents SET prog = ? WHERE docname = ?";
-        $cordovaSQLite.execute(db, query, [$scope.progress, docname]).then(function(res) {*/
+		if($scope.progress == 0){
+			$scope.progress = 33;
+		}
+
+		/*var query = "INSERT INTO documents (docname, prog, proc) VALUES (?,?,?)";
+		$cordovaSQLite.execute(db, query, [docname, $scope.progress, 3]).then(function(res) {*/
+		var query = "UPDATE documents SET prog = ? WHERE docname = ?";
+        $cordovaSQLite.execute(db, query, [$scope.progress, docname]).then(function(res) {
             console.log('successful!');
         }, function (err) {
             console.error(err.message);
@@ -131,7 +135,7 @@ angular.module('starter.controllers', ['ngCordova'])
 				$scope.proc = res.rows.item(0).proc;
 				$scope.prog = (100 / $scope.proc);
 			    $scope.checkproc = Math.ceil($scope.progress / $scope.prog);
-			    console.log("SELECTED -> " + $scope.progress + " " + $scope.proc + " " + $scope.prog + " " + $scope.checkproc);
+			    console.log("SELECTED -> " + res.rows.item(0).docname + " " + $scope.proc + " " + $scope.progress + " " + $scope.checkproc);
             
 			    for (var x = 0; x < $scope.checkproc; x++) {
 			    	if (x==0){
