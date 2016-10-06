@@ -20,6 +20,7 @@ angular.module('starter.controllers', ['ngCordova'])
         var query = "INSERT INTO people (firstname, lastname) VALUES (?,?)";
         $cordovaSQLite.execute(db, query, [firstname, lastname]).then(function(res) {
             console.log("INSERT ID -> " + res.insertId);
+            alert('success!');
         }, function (err) {
             console.error(err);
         });

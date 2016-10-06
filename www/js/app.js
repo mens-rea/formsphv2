@@ -23,8 +23,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     db = $cordovaSQLite.openDB({ name: "my.db", location: 'default'});
     db = $cordovaSQLite.openDB({ name: 'app.db',location: 'default' });
     $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS people (id integer primary key, firstname text, lastname text)");
-    console.log('hey');
-    document.write('database loading was successful');
   });
 })
 
