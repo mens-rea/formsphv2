@@ -32,6 +32,11 @@ angular.module('starter.controllers', ['ngCordova'])
         $cordovaSQLite.execute(db, query, [lastname]).then(function(res) {
             if(res.rows.length > 0) {
                 console.log("SELECTED -> " + res.rows.item(0).firstname + " " + res.rows.item(0).lastname);
+            
+                var alertPopup = $ionicPopup.alert({
+					title: 'Great job so far!',
+					template: 'Your progress has been saved...' + res.rows.item(0).firstname + " " + res.rows.item(0).lastname
+				});
             } else {
                 console.log("No results found");
             }
