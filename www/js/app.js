@@ -37,6 +37,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       console.log("android");*/
       window.plugins.sqlDB.copy("populated.db", function() {
             db = $cordovaSQLite.openDB("populated.db");
+            alert("success!");
       }, function(error) {
             console.error("There was an error copying the database: " + error.message);
             alert(error.message);
