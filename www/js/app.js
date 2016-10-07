@@ -35,9 +35,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           /*db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);*/
           if (window.sqlitePlugin !== undefined) {
             db = window.sqlitePlugin.openDatabase({ name: "populated.db", location: 2, createFromLocation: 1 });
+            alert('unique database');
           } else {
             // For debugging in the browser
             db = window.openDatabase("populated.db", 0, "Database", 200000);
+            alert('normal database');
           }
 
           /*$cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
