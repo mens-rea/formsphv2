@@ -96,6 +96,20 @@ angular.module('starter.controllers', ['ngCordova'])
             console.error(err.message);
         });
         console.log("hello");*/
+
+        var s_query = "SELECT * FROM documents";
+    	$cordovaSQLite.execute(db, s_query).then(function(res) {
+    		if(res.rows.length > 0) {
+    			for(var i = 0; i < res.rows.length; i++){
+    				alert("success!" + res.rows.item(0).docname + " " + res.rows.item(0).prog);
+    			}
+
+            } else {
+                console.log("No results found");
+            }
+        }, function (err) {
+            console.error(err.message);
+        });
     }
 
     $scope.reset = function() {
