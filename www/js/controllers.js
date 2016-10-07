@@ -65,9 +65,9 @@ angular.module('starter.controllers', ['ngCordova'])
 
 .controller('ProgCtrl',function($scope, Docs, $ionicPopup, $timeout, $cordovaSQLite) {
 	$scope.progress = 0;
-	$scope.proc = 1;
+	$scope.proc = 3;
 	$scope.checkproc = 0;
-	$scope.prog = 0;
+	$scope.prog = 33;
 
 	$scope.chats = Docs.all();
 
