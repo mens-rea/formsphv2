@@ -48,10 +48,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                console.error(err.message);
             });*/
 
-            
-        }, function (err) {
-            alert("error1:"+err.message);
-        });
+        
         /*var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3)";
         $cordovaSQLite.execute(db, query).then(function(res) {
           alert("inserted!"+docname + " " + prog);  
