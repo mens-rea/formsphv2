@@ -134,22 +134,6 @@ angular.module('starter.controllers', ['ngCordova'])
  
     $scope.select = function(docname) {
 
-    	window.plugins.sqlDB.copy("populated.sqlite", 0, function() {
-              db = $cordovaSQLite.openDB({ name: 'populated.sqlite',location: 'default' });
-              alert("its done!");
-          }, function(error) {
-              console.error("There was an error copying the database: " + error);
-              alert(error.message);
-              db = $cordovaSQLite.openDB({ name: 'populated.sqlite',location: 'default' });
-          });
-
-    	$cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
-            var db_path = context.getDatabasePath("populated.db").getPath();
-            alert("inserted!"+db + " " + db_path);  
-        }, function (err) {
-            alert("error1:"+err.message);
-        });
-
         var query = "SELECT docname, prog, proc FROM documents WHERE docname = ?";
         $cordovaSQLite.execute(db, query, [docname]).then(function(res) {
             if(res.rows.length > 0) {
