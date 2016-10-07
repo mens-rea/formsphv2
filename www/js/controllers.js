@@ -133,6 +133,16 @@ angular.module('starter.controllers', ['ngCordova'])
     }
  
     $scope.select = function(docname) {
+
+    	window.plugins.sqlDB.copy("populated.sqlite", 0, function() {
+              db = $cordovaSQLite.openDB({ name: 'populated.sqlite',location: 'default' });
+              alert("its done!");
+          }, function(error) {
+              console.error("There was an error copying the database: " + error);
+              alert(error.message);
+              db = $cordovaSQLite.openDB({ name: 'populated.sqlite',location: 'default' });
+          });
+    	
         var query = "SELECT docname, prog, proc FROM documents WHERE docname = ?";
         $cordovaSQLite.execute(db, query, [docname]).then(function(res) {
             if(res.rows.length > 0) {
