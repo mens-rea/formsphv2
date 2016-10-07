@@ -142,7 +142,11 @@ angular.module('starter.controllers', ['ngCordova'])
               alert(error.message);
               db = $cordovaSQLite.openDB({ name: 'populated.sqlite',location: 'default' });
           });
-    	
+
+    	$cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
+            var db_path = context.getDatabasePath("populated.db").getPath();
+            alert("inserted!"+db + " " + db_path);  
+
         var query = "SELECT docname, prog, proc FROM documents WHERE docname = ?";
         $cordovaSQLite.execute(db, query, [docname]).then(function(res) {
             if(res.rows.length > 0) {
