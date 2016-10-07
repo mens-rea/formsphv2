@@ -37,6 +37,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         alert(error);
       }
       $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY INCREMENT, docname TEXT, prog INTEGER, proc INTEGER)");
+      var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3)";
       console.log("android");
       /*window.plugins.sqlDB.copy("populated.db", function() {
             db = $cordovaSQLite.openDB("populated.db");
