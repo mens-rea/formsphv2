@@ -38,7 +38,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         $cordovaSQLite.execute(db, query).then(function(res) {
           alert("inserted!"+docname + " " + prog);  
         }, function (err) {
-          alert("error1");
+          alert("error1:"+err.message);
         });
         alert("success");
       } catch (error) {
