@@ -1,14 +1,18 @@
 
 
-<ion-view view-title="Business Permit">
+<ion-view view-title="Business Permit" ng-controller="TabCtrl">
 
     <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
             <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-business-proc" onclick="document.getElementById('business-proc').style.display='block';document.getElementById('business-req').style.display='none';">
+                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                    <i class="icon ion-information-circled"></i>
+                    General
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
                     <i class="icon ion-gear-a"></i>
                     Procedures
                 </a>
-                <a class="tab-item tab-business-req" onclick="document.getElementById('business-req').style.display='block';document.getElementById('business-proc').style.display='none';">
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
                     <i class="icon ion-unlocked"></i>
                     Requirements
                 </a>
@@ -16,73 +20,128 @@
     </div>
 
     <ion-content class="has-tabs has-header">
-
-        <div id="business-proc" class="tab-views">
-            <h1>PROCEDURES</h1>
+        <div class="tab-views" ng-show="activeButton === 'gen'">
+            <h3>General</h3>
             <ion-list>
-                <ion-item>
-                1. Register for a DTI Business Name
-                </ion-item>
                 <p>
-                    Requirement: Any valid ID</br>
-                    Fee: Barangay: PHP 200.00</br>
-                    City / Municipality: PHP 500.00</br>
-                    Regional: PHP 1,000.00</br>
-                    National: PHP 2,000.00</br>
-                    Processing time: 1 hour</br>
+                   Ensure full and legal operation of your business through proper registration. Whether you’re starting an online store, a neighborhood shop, or building an office, the first step is to register your business with the Department of Trade and Industry, Bureau of Internal Revenue, and Social Security System (SSS). </br></br>
+                   The first step to registering your business is securing a business name. Having a business name will instill confidence in your customers and protect your business name against those who may wish to use it as well.</br></br>
                 </p>
-                <ion-item>
-                2.  Go to Municipal hall to get business permit
-                </ion-item>
+            </ion-list>
+
+            <h3>Address</h3>
+            <ion-list>
                 <p>
-                Requirements:
-                    DTI certificate</br>
-                    Lease contract (if renting) or tax declaration (if you own the place)</br>
-                    2×2 ID picture</br>
-                    Fee: P4,000 (approx.)</br>
-                    Processing time: 2-3 hours
+                 <strong>DEPARTMENT OF TRADE & INDUSTRY (DTI)</strong></br></br>
+
+                    Trade & Industry Building</br>
+                    361 Senator Gil J. Puyat Avenue, Makati City</br>
+                    Metro Manila, Philippines 1200</br></br>
+                     
+                    Trunkline: (+632)  7510-DTI (384)</br>
+                    Office Hours: 8:00am-5:00pm, Monday to Friday (excluding holidays)</br></br>
+                     
+                    DTI Direct</br>
+                    Hotline: (+632) 751.3330</br>
+                    Mobile: (+63) 917.834.3330</br></br>
+
+                    <strong>SECURITIES AND EXCHANGE COMMISSION (SEC)</strong></br></br>
+                    PUBLIC INFORMATION AND ASSISTANCE HOTLINE: 584-1119</br>
+                    HEAD OFFICE</br>
+                    SEC Building, EDSA, Greenhills, Mandaluyong City</br>
+                    Trunkline No.:(+632) 584-0923</br>
+                    Fax No.:(+632) 584-5293</br>
                 </p>
-                <ion-item>
-                3.  Go to Office of the Treasurer of each city or municipality for BMBE* Application
-                </ion-item>
+
+            <h3>Other information</h3>
+            <ion-list>
                 <p>
-                Requirements:
-                    1. Duly filled up and signed Application form in triplicate</br>
-                    2. Three passport size pictures</br>
-                    3. DTI registration for sole proprietorship; SEC registration for corporations, partnerships or association; CDA registration for cooperatives</br>
-                    4. Mayor’s permit</br>
-                    Cost of registration: P1,000</br>
-                </p>
-                <ion-item>
-                4.  Go to Barangay hall to get business clearance.
-                </ion-item>
-                <p>
-                Once you’ve got verified, you’ll be asked to transfer to another window for an ID picture, to scan your fingerprints and to sign on the signature pad.</br>
-                </p>
-                <ion-item>
-                5.  Go to BIR office to get TIN/Certificate.</br>
-                </ion-item>
-                <p>
-                Requirements:</br>
-                DTI certificate</br>
-                Mayor’s Permit</br>
-                Lease Contract (if renting) or tax declaration (if you own the place)</br>
-                Fee: P500</br>
-                Processing time: 1-2 hours
+                    
                 </p>
             </ion-list>
         </div>
+
+        <div class="tab-views" ng-show="activeButton === 'proc'">
+            <h3>Procedures</h3>
+            <p>
+            Warning: please be warned that business permits are stil subject to change based on city's ordinancce that may differ from place to place.
+            </p>
+            <ion-list>
+                <ion-item>
+                1. Register your business
+                </ion-item>
+                <p>
+               Register your business with the DTI and obtain a Business Name Registration Certificate.
+                </p>
+                </br>
+                <a href="http://www.bnrs.dti.gov.ph/web/guest/registration" target="_blank"><button class="button button-assertive">Registration Link</button></a>
+                </p>
+                </br></br>
+                <ion-item>
+                2. Secure barangay/municipal/regional clearance
+                </ion-item>
+                <p>
+                    Present your Business Name Registration Certificate, two (2) valid IDs and proof of address of business location to the concerned local government where you plan to setup the business.
+
+                </p>
+                <ion-item>
+                3. Get a business permit
+                </ion-item>
+                <p>
+                Visit the mayor's office and present your Business Name Registration Certificate, two (2) valid IDs, a map or sketch of the location of the business and your community tax certificate (in some cases).
+                </p>
+
+                <ion-item>
+                4. Visit the BIR
+                </ion-item>
+                <p>
+                Go to the Bureau of Internal Revenue (BIR) district office where your business will be located and present the following: Business Name Registration Certificate, Mayor's Permit, Barangay Clearance, Proof of your business address (e.g. lease/rental agreement, land title), Book of Accounts, and receipts and invoices from BIR accredited print shops, to be stamped by the BIR.
+                </p>
+                <ion-item>
+                5. Apply for TIN and SSS
+                </ion-item>
+                <p>
+                As a requirement, you are required to secure a Tax Identification Number and apply as a self-employed member of the Social Security System.
+                </p>
+                <ion-item>
+                6. Pay for your application
+                </ion-item>
+                <p>
+                After the application has been turned over to the cashier, you are required to pay for the fees.
+                </p>
+                <ion-item>
+                7. Secure other permits
+                </ion-item>
+                <p>
+                If necessary, you must secure other permits for your business. Present your paid application to the Bureau of Fire Protection (BFP), Health and Sanitary Office, and City Environment and Natural Resources Office (CENRO) to receive your fire permit, sanitary permit, and environment permit respectively.
+                </p>
+                <ion-item>
+                8. Claim your businness permit
+                </ion-item>
+                <p>
+               Once the process is done, you will receive your license to operate. Take note that in some cities, permits may be issued differently.
+                </p>
+        </div>
         
-        <div id="business-req" style="display: none;" class="tab-views">
-          	<h1>REQUIREMENTS</h1>
-            <ion-checkbox ng-model="filter.printed2">DTI Certificate</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed3">Mayor's Permit</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed4">BMBE Application</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed5">Business Clearance from barangay hall</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed6">BIR TIN/Certificate</ion-checkbox>
+        <div class="tab-views" ng-show="activeButton === 'req'">
+            <h3>Requirements</h3>
+            <ion-checkbox ng-model="filter.printed1"> At least one of the following documents:</ion-checkbox>
+            <p>
+            DTI Business Name Registraion Certificate, </br>
+            SEC Articles of Partnershp, or </br>
+            SEC Certificate of Incorporation. </br>
+            </p>
+            <ion-checkbox ng-model="filter.printed2"> At least one of the following clearance: </ion-checkbox>
+            <p>
+            Barangay, </br>
+            Municipal or,</br>
+            Regional Clearance
+            </p>
+            <ion-checkbox ng-model="filter.printed3"> Business permit from Mayor's office </ion-checkbox>
+            <ion-checkbox ng-model="filter.printed4"> Business Tax Identification Numbeer (TIN) </ion-checkbox>
         </div>
 
-        <h6>Source: <a href="http://www.iweb.ph/how-to-apply-umid-card" target="_blank">http://www.iweb.ph/how-to-apply-umid-card</a></h6>
+        <h6>Sources: <a href="http://www.gov.ph/services/business-registration/" target="_blank">www.gov.ph/services/business-registration/</a> </h6>
 
         <div ng-controller="PopupCtrl">
             <button class="button button-positive" ng-click="showAlert()">Save Progress</button>

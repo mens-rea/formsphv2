@@ -1,0 +1,141 @@
+<ion-view view-title="PDOS" ng-controller="TabCtrl">
+   <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                    <i class="icon ion-information-circled"></i>
+                    General
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+    <ion-content class="has-tabs has-header">
+        <div class="tab-views" ng-show="activeButton === 'gen'">
+            <h3>General</h3>
+            <ion-list>
+                <p>
+                  Filipino emigrants or those leaving the country to settle permanently abroad are required to register with the Commission on Filipinos Overseas. Part of its registration requirements is attendance in the Pre-Departure Orientation Seminar(PDOS) to prepare them for settlement overseas.
+                </p>
+            </ion-list>
+
+            <h3>Address</h3>
+            <ion-list>
+                <p>
+              The Commission on Filipinos Overseas (CFO) - MANILA</br></br>
+                Citigold Center, 1345 Pres. Quirino Ave. </br>
+                corner Osmena Highway (South Superhighway)</br>
+                Manila, Philippines 1007 </br>
+                Telephone: (+632) 552-4700</br>
+                Email: info@cfo.gov.ph</br>
+
+                </p>
+
+            <h3>Other information</h3>
+            <ion-list>
+                <p>
+                    
+                </p>
+            </ion-list>
+        </div>
+
+        <div class="tab-views" ng-show="activeButton === 'proc'">
+            <h3>Procedures</h3>
+            <ion-list>
+                <ion-item>
+                1. Register
+                </ion-item>
+                <p>
+              Sign up and log-in with your details to access the learning modules in the websites. Existing members of Jobstreet.com may also use their account to access the PEOS online.
+
+                </p>
+                <ion-item>
+                2. Take the learning modules
+                </ion-item>
+                <p>
+             Complete all of the eight (8) self-learning modules. Each module takes approximately seven (7) minutes to complete. 
+                </p>
+                <ion-item>
+                3. Review your learnings
+                </ion-item>
+                <p>
+             Take the review at the end of each module. Answer all of the questions and get at least 3 correct answers out of the 5 questions to proceed.
+                </p>
+                <ion-item>
+                4. Print your PEOS certificates
+                </ion-item>
+                <p>
+             Save and print a copy of your PEOS certificate and include this in your pre-employment processing with POEA.
+                </p>
+        </div>
+        
+        <div class="tab-views" ng-show="activeButton === 'req'">
+            <h3>Requirements</h3>
+            <ion-checkbox ng-model="filter.printed1"> Original and photocopy of passport </ion-checkbox>
+            <p>
+            (must be valid about six months before date of travel.)
+            </p>
+            <ion-checkbox ng-model="filter.printed2"> Original and photocopy of visa </ion-checkbox>
+            <ion-checkbox ng-model="filter.printed3"> One 2x2 or passport-size ID </ion-checkbox>
+            <ion-checkbox ng-model="filter.printed4"> One valid ID with photograph </ion-checkbox>
+            <p>
+           (e.g. SSS ID, GSIS eCard, PRC ID, driver's license, postal ID, ARC, etc.)
+            </p>
+            <h3>Requirements-USA-bound Immigrant</h3>
+             <ion-checkbox ng-model="filter.printed5"> Photocopy of Immigrant Data Summary </ion-checkbox>
+             <p>
+           (must not be detached from visa packet) except for K visa holder.
+            </p>
+            <h3>Requirements-Canada-bound emigrant</h3>
+            <ion-checkbox ng-model="filter.printed6"> Original and photocopy of </ion-checkbox>
+             <p>
+           Confirmation of Permanent Residence (must not be torn or signed before departure)
+            </p>
+            <h3>Requirements-Japan-bound emigrant</h3>
+             <ion-checkbox ng-model="filter.printed7"> Original and photocopy of Certificate of Eligibility </ion-checkbox>
+             <p>
+           
+            </p>
+            <h3>Requirements-Italy-bound emigrants</h3>
+            <ion-checkbox ng-model="filter.printed8"> Original and photocopy of Certificate </ion-checkbox>
+             <p>
+           Nulla Osta
+            </p>
+            <h3>Requirements-New Zealand-bound emigrants</h3>
+            <ion-checkbox ng-model="filter.printed9"> Original and photocopy of Certificate </ion-checkbox>
+             <p>
+           letter of approval for Work to Residence visa.
+            </p>
+             <h3>Requirements-Australia-bound emigrants</h3>
+            <ion-checkbox ng-model="filter.printed10"> Printed copy of Visa Grant Notification Letter.</ion-checkbox>
+             <p>
+            </p>
+            <h3>Requirements-immigrant workers</h3>
+            <ion-checkbox ng-model="filter.printe11"> Photocopy of  employment contract </ion-checkbox>
+             <p>
+           employment contract
+            </p>
+            <h3>Requirements-immigrant workers</h3>
+            <ion-checkbox ng-model="filter.printed12"> Duly completed registration </ion-checkbox>
+             <p>
+           for Emigrants or for Immigrant workers.
+            </p>
+            <ion-checkbox ng-model="filter.printed13"> Payment of P400.00 registration fee </ion-checkbox>
+            <ion-checkbox ng-model="filter.printed14">Attendance in the PDOS</ion-checkbox>
+             <p>
+           guidance counseling or peer counseling session
+            </p>
+        </div>
+
+        <h6>Sources: <a href="http://www.gov.ph/" target="_blank">http://www.gov.ph/</a>, <a href="http://peos.poea.gov.ph/" target="_blank">http://peos.poea.gov.ph//</a> </h6>
+
+        <div ng-controller="PopupCtrl">
+            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+        </div>
+      </ion-content>
+</ion-view>
