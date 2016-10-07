@@ -35,6 +35,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
         $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY INCREMENT, docname TEXT, prog INTEGER, proc INTEGER)");
         var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3)";
+        $cordovaSQLite.execute(db, query, [$scope.progress, docname]).then(function(res) {
+          alert("inserted!"+docname + " " + prog);  
+        }, function (err) {
+          alert("error1");
+        });
         alert("success");
       } catch (error) {
         alert(error);
