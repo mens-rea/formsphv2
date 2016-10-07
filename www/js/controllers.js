@@ -136,15 +136,15 @@ angular.module('starter.controllers', ['ngCordova'])
 				$scope.prog = (100 / $scope.proc);
 			    $scope.checkproc = Math.ceil($scope.progress / $scope.prog);
 			    console.log("SELECTED -> " + res.rows.item(0).docname + " " + $scope.proc + " " + $scope.progress + " " + $scope.checkproc);
-            
+            	
 			    for (var x = 0; x < $scope.checkproc; x++) {
 			    	if (x==0){
 			    		$scope.check = true;
 			    	}
-			    	if (x==1){
+			    	else if (x==1){
 			    		$scope.check2 = true;
 			    	}
-			    	if (x==2){
+			    	else if (x==2){
 			    		$scope.check3 = true;
 			    	}
 			    }
