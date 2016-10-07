@@ -92,6 +92,8 @@ angular.module('starter.controllers', ['ngCordova'])
 			alert("error");
         });*/
 
+		alert("success");
+
         var s_query = "SELECT * FROM documents";
     	$cordovaSQLite.execute(db, s_query).then(function(res) {
     		if(res.rows.length > 0) {
