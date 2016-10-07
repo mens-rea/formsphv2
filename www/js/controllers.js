@@ -79,28 +79,23 @@ angular.module('starter.controllers', ['ngCordova'])
 
 	$scope.insert = function(docname, prog) {
 
-		if($scope.progress == 0){
+		/*if($scope.progress == 0){
 			$scope.progress = 0;
-		}
+		}*/
 
 		/*var query = "INSERT INTO documents (docname, prog, proc) VALUES (?,?,?)";
 		$cordovaSQLite.execute(db, query, [docname, $scope.progress, 3]).then(function(res) {*/
-		var query = "UPDATE documents SET prog = ? WHERE docname = ?";
-        $cordovaSQLite.execute(db, query, [$scope.progress, docname]).then(function(res) {
-            var alertPopup = $ionicPopup.alert({
-				title: 'Great job so far!',
-				template: 'Your forms has been saved...' + res.rows.item(0).prog + " " + res.rows.item(0).proc
-			});
+		/*var query = "UPDATE documents SET prog = ? WHERE docname = ?";
+        $cordovaSQLite.execute(db, query, [$scope.progress, docname]).then(function(res) {*/
+        	alert("success!"+docname + " " + prog);
+        /*	
             console.log('successful!');
         }, function (err) {
-        	var alertPopup = $ionicPopup.alert({
-				title: 'Uh oh its the start of the zombie apocalypse...',
-				template: 'Just kidding, there was a a problem saving your forms!' + res.rows.item(0).prog + " " + res.rows.item(0).proc
-			});
+
 			alert("error");
             console.error(err.message);
         });
-        console.log("hello");
+        console.log("hello");*/
     }
 
     $scope.reset = function() {
@@ -131,10 +126,7 @@ angular.module('starter.controllers', ['ngCordova'])
         $cordovaSQLite.execute(db, query, [docname]).then(function(res) {
             if(res.rows.length > 0) {
                 console.log("SELECTED -> " + res.rows.item(0).prog + " " + res.rows.item(0).proc);
-            	var alertPopup = $ionicPopup.alert({
-					title: 'Great job so far!',
-					template: 'Your progress has been saved...' + res.rows.item(0).prog + " " + res.rows.item(0).proc
-				});
+
 				$scope.progress = res.rows.item(0).prog;
 				$scope.proc = res.rows.item(0).proc;
 				$scope.prog = (100 / $scope.proc);
