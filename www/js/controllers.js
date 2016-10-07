@@ -85,12 +85,12 @@ angular.module('starter.controllers', ['ngCordova'])
 
 		/*var query = "INSERT INTO documents (docname, prog, proc) VALUES (?,?,?)";
 		$cordovaSQLite.execute(db, query, [docname, $scope.progress, 3]).then(function(res) {*/
-		var query = "UPDATE documents SET prog = ? WHERE docname = ?";
+		/*var query = "UPDATE documents SET prog = ? WHERE docname = ?";
         $cordovaSQLite.execute(db, query, [$scope.progress, docname]).then(function(res) {
         	alert("inserted!"+docname + " " + prog);	
         }, function (err) {
 			alert("error");
-        });
+        });*/
 
         var s_query = "SELECT * FROM documents";
     	$cordovaSQLite.execute(db, s_query).then(function(res) {
