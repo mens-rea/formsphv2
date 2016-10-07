@@ -34,7 +34,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         
           db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
 
-          var s_query = "SELECT * FROM documents";
+          /*var s_query = "SELECT * FROM documents";
           $cordovaSQLite.execute(db, s_query).then(function(res) {
             if(res.rows.length > 0) {
               for(var i = 0; i < res.rows.length; i++){
@@ -46,19 +46,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 }
             }, function (err) {
                console.error(err.message);
-            });
+            });*/
 
-        /*$cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
+        $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
           alert("inserted!"+db);  
         }, function (err) {
           alert("error1:"+err.message);
-        });*/
-        /*var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3)";
+        });
+        var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3)";
         $cordovaSQLite.execute(db, query).then(function(res) {
           alert("inserted!"+docname + " " + prog);  
         }, function (err) {
           alert("error1:"+err.message);
-        });*/
+        });
       } catch (error) {
         alert(error);
       }
