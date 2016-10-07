@@ -1,39 +1,98 @@
-<ion-view view-title="NBI Clearance">
-  <ion-content>
-  	<h3>REQUIREMENTS</h3>
-  	<ion-list>
+<ion-view view-title="NBI Clearance" ng-controller="TabCtrl">
+ <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                    <i class="icon ion-information-circled"></i>
+                    General
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
 
-	  <ion-checkbox ng-model="filter.validid">Two (2) valid IDs</ion-checkbox>
-	  <ion-checkbox ng-model="filter.printed">Printed Application Form</ion-checkbox>
+    <ion-content class="has-tabs has-header">
+        <div class="tab-views" ng-show="activeButton === 'gen'">
+            <h3>General</h3>
+            <ion-list>
+                <p>
+                   An NBI Clearance is one of the required documents for job application in the Philippines. In some cases, an NBI Clearance is also necessary to apply for a visa to travel to another country or to apply for employment overseas. The application process can sometimes be a hassle especially for first timers who do not have an idea how long they have to wait before their clearance can be processed and eventually issued. Normally, hundreds of people wait in line every day from as early as 6:30 am until 3 pm before they can complete all the necessary procedures to secure their clearance. Although the National Bureau of Investigation (NBI) has already set up satellite offices that process Clearance applications, the volume of people that usually turns up can make the procedure long and arduous.
+                </p>
+            </ion-list>
 
-	</ion-list>
+            <h3>Address</h3>
+            <ion-list>
+                <p>
+                    
+                </p>
 
-<h3>PROCEDURES</h3>
-    <ion-list>
-    	<ion-item>
-    	1.	COMPLETE THE ONLINE APPLICATION FORM
-    	</ion-item>
-    	Visit the NBI website and fill out the online application form. Ensure that all information is valid and accurate. After completing the form, a confirmation email will be sent to the email address that you provided.
-    </ion-list>
-    <ion-list>
-    	<ion-item>
-    	2.	SET AN APPOINTMENT WITH THE NBI
-		</ion-item>
-		The second part of the online application is scheduling an appointment. Look for the NBI branch where you wish to have your clearance processed, and input your preferred date and time. Make sure to indicate the purpose of your NBI clearance. The fee will depend on the purpose of your application.
-    </ion-list>
-    <ion-list>
-    	<ion-item>
-    	3.	PREPARE THE REQUIREMENTS
-		</ion-item>
-		Print out your application form and take note of the Reference Code that will be generated from the website after you set your schedule. Prepare two (2) valid IDs as well.
-    </ion-list>
-    <ion-list>
-    	<ion-item>
-    	4.	SHOW UP FOR PROCESSING
-		</ion-item>
-		Go to your intended NBI branch and present your valid IDs and reference code, then pay for your clearance. Have your photo and biometrics taken, and wait in the printing area to get your NBI clearance.
-    </ion-list>
+            <h3>Other information</h3>
+            <ion-list>
+                <p>
+                    
+                </p>
+            </ion-list>
+        </div>
 
-    <h6>Source: FAQ.ph</h6>
-  </ion-content>
+        <div class="tab-views" ng-show="activeButton === 'proc'">
+            <h3>Procedures</h3>
+            <ion-list>
+                <ion-item>
+                1. Complete the online application
+                </ion-item>
+                <p>
+             Visit the NBI website (www.nbi.gov.ph) and fill out the online application form. Ensure that all information is valid and accurate. After completing the form, a confirmation email will be sent to the email address that you provided.
+                </p>
+                <p>
+                </br>
+                <a href="https://www.nbi-clearance.com/" target="_blank"><button class="button button-assertive">Online Application</button></a>
+                </p>
+                </br></br>
+                <ion-item>
+                2. Set an appointment with the NBI
+                </ion-item>
+                <p>
+                   The second part of the online application is scheduling an appointment. Look for the NBI branch where you wish to have your clearance processed, and input your preferred date and time. Make sure to indicate the purpose of your NBI clearance. The fee will depend on the purpose of your application.
+                </p>
+                <ion-item>
+                3. Prepare the requirements
+                </ion-item>
+                <p>
+                Print out your application form and take note of the REFERENCE CODE that will be generated from the website after you set your schedule. Prepare two (2) valid IDs as well.
+                </p>
+                <ion-item>
+                4. Show up for processing
+                </ion-item>
+                <p>
+               Go to your intended NBI branch and present your valid IDs and reference code, then pay for your clearance (you can also do this at participating banks or via globe Gcash). Have your photo and biometrics taken, and wait in the printing area to get your NBI clearance.
+                </p>
+                <ion-item>
+                5. Show up for processing
+                </ion-item>
+                <p>
+               Go to your intended NBI branch and present your valid IDs and reference code, then pay for your clearance (you can also do this at participating banks or via globe Gcash). Have your photo and biometrics taken, and wait in the printing area to get your NBI clearance.</br></br>
+               ‘No Hit’ applicants, means you have no criminal records, you can now proceed to the printing area and get your NBI Clearance. For ‘With Hit’ applicants, you will need to come back as advised by the clerk for your receipt.
+                </p>
+        </div>
+        
+        <div class="tab-views" ng-show="activeButton === 'req'">
+            <h3>Requirements</h3>
+            <ion-checkbox ng-model="filter.printed1">Two (2) valid IDs:</ion-checkbox>
+            <p>
+                 Passport, voter's ID, driver's license, PRC license, SSS ID, GSIS, UMID, School ID, Tax Identification Number (TIN) ID, Philhealth ID, NSO Authenticated Birth Certificate, Alien Certificate Registration, Senior Citizen's ID, or previous copy of NBI Clearance  
+            </p>
+            <ion-checkbox ng-model="filter.printed2"> Accomplished Form </ion-checkbox>
+        </div>
+
+        <h6>Sources: <a href="http://www.gsis.gov.ph/default.php?id=73" target="_blank">http://www.gsis.gov.ph/default.php?id=73</a> </h6>
+
+        <div ng-controller="PopupCtrl">
+            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+        </div>
+      </ion-content>
 </ion-view>

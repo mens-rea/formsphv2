@@ -143,6 +143,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
+ .state('app.peos', {
+    url: '/peos',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-peos.html',
+      }
+    }
+  })
+
+.state('app.pdos', {
+    url: '/pdos',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-pdos.html',
+      }
+    }
+  })
+
   .state('app.philhealth', {
     url: '/philhealth',
     views: {

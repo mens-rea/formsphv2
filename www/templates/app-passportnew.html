@@ -1,65 +1,106 @@
-<ion-view view-title="Passport (new)">
-  <ion-content>
-  	<h1>REQUIREMENTS</h1>
-  	<ion-list>
-    	<ion-item>
-			•	NSO Birth Certificate (original copy)
-		</ion-item>
-	</ion-list>
-	<ion-list>
-    	<ion-item>
-			•	At least one (1) valid ID, or at least three (3) documents that proves your identity
-		</ion-item>
-	</ion-list>
-	<ion-list>
-    	<ion-item>
-			•	Additional two (2) photocopies of each document
-		</ion-item>
-	</ion-list>
-	<ion-list>
-    	<ion-item>
-			•	Accomplished Application Form
-		</ion-item>
-	</ion-list>
+<ion-view view-title="Passport (new)" ng-controller="TabCtrl">
+   <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                    <i class="icon ion-information-circled"></i>
+                    General
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+    <ion-content class="has-tabs has-header">
+        <div class="tab-views" ng-show="activeButton === 'gen'">
+            <h3>General</h3>
+            <ion-list>
+                <p>
+                   Barangay clearance is a document that certify an individual that he/she is a resident of that barangay. More importantly, it also proves the applicant that he/she doesn’t have any bad records and in good moral character.</br></br>
 
-<h1>PROCEDURES</h1>
-    <ion-list>
-    	<ion-item>
-    	1.	MAKE AN APPOINTMENT WITH THE DFA
-    	</ion-item>
-    	To set an appointment with the DFA, you can either go to the nearest DFA office or visit the DFA Appointment Website. Answer the application form, and a reference number will be given to you after submission. Whether done online or in person, have your accomplished application form printed. 
-    </ion-list>
-    <ion-list>
-    	<ion-item>
-    	2.	PREPARE ALL REQUIRED DOCUMENTS
-		</ion-item>
-		Ensure that all the general requirements are ready before your appointment with the DFA. In case of no birth record, other documents may be required as a substitute for the birth certificate.
-    </ion-list>
-    <ion-list>
-    	<ion-item>
-    	3.	VISIT THE DFA OFFICE
-		</ion-item>
-		Go to the DFA Consular Office on your scheduled date and time. If applicable, visit the most convenient DFA satellites and Philippine Embassy/Consulate as per your appointment. Do not forget to present your application form and wait for your turn.
-    </ion-list>
-    <ion-list>
-    	<ion-item>
-    	4.	PAY FOR YOUR APPLICATION
-		</ion-item>
-		Proceed to the cashier or the payment section to settle your application and processing fees.
-    </ion-list>
-    <ion-list>
-    	<ion-item>
-    	5.	HAVE YOUR PHOTO AND OTHER INFORMATION TAKEN
-		</ion-item>
-		Proceed to the encoding section and have your photo and other information taken by the staff.
-    </ion-list>
-    <ion-list>
-    	<ion-item>
-    	6.	WAIT FOR YOUR PASSPORT 
-		</ion-item>
-		The processing of your passport can take up to thirty (30) days. If available, you can proceed to the delivery counter and provide your delivery information, so you can have the passport delivered to you. You may also opt to claim your passport in person.
-    </ion-list>
+                    Barangay clearance is one of the requirements needed when you are processing a legal documents or financial documents. Sometimes, it is being requested when you are applying for a job, ID application, supporting documents or any other legal purpose it that requires. This certificate is stamped and sealed with the Barangay Official Seal and signed by the Barangay. captain.
 
-    <h6>Source: Official Gazette, filipiknow.net</h6>
-  </ion-content>
+                </p>
+            </ion-list>
+
+            <h3>Address</h3>
+            <ion-list>
+                <p>
+                    
+                </p>
+
+            <h3>Other information</h3>
+            <ion-list>
+                <p>
+                    
+                </p>
+            </ion-list>
+        </div>
+
+        <div class="tab-views" ng-show="activeButton === 'proc'">
+            <h3>Procedures</h3>
+            <ion-list>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                1. Go to your local barangay hall
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                </ion-item>
+                <p>
+               Find the barangay secretary and inform them that you need a barangay clearance. Be prepared to answer a few short questions about your residency and purpose for getting a barangay clearance.
+                </p>
+                 <ion-item class="item-toggle" style="font-size: 22px;">
+                2. Submit your accomplished form
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                </ion-item>
+                <p>
+                Fill out and complete an application form with accurate details. Some barangays will only ask for your signature while others require a thumb print and will even take your picture.
+                </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                3. Pay the necessary fees
+                 <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                </ion-item>
+                <p>
+               After completing the application form and supplying your details, submit all the requirements and pay the processing fees. It is advised that you bring between P50-P100. Once paid, just wait for 20 to 30 minutes and you will be given your barangay clearance.
+                </p>
+        </div>
+        
+        <div class="tab-views" ng-show="activeButton === 'req'">
+            <h3>Requirements</h3>
+            <ion-checkbox ng-model="filter.printed1"> Accomplished Form</ion-checkbox>
+            <ion-checkbox ng-model="filter.printed2"> Recent Cedula (Community Tax Certificate) </ion-checkbox>
+             <ion-checkbox ng-model="filter.printed3"> Photocopy of valid ID </ion-checkbox>
+
+            <p>
+            <strong>Additional Requirement</strong></br></br>
+
+            Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
+               <em>* might require for new residents or new applicants with no barangay records.</em>
+
+            </p>
+        </div>
+
+        <h6>Sources: <a href="http://www.gsis.gov.ph/default.php?id=73" target="_blank">http://www.gsis.gov.ph/default.php?id=73</a>, <a href="http://www.quezoncity.gov.ph" target="_blank">http://www.quezoncity.gov.ph</a>, <a href="http://www.powerpinoys.com" target="_blank">http://www.powerpinoys.com</a>, <a href="http://www.faq.ph" target="_blank">http://www.faq.ph</a>, <a href="http://thinkpesos.com" target="_blank">http://www.thinkpesos.com</a> </h6>
+
+        <div ng-controller="PopupCtrl">
+            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+        </div>
+      </ion-content>
 </ion-view>

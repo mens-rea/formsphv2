@@ -1,32 +1,77 @@
-<ion-view view-title="Pagibig">
-  <ion-content>
-  	<h1>REQUIREMENTS</h1>
-  	<ion-list>
-    	<ion-item>
-			•	Accomplished Registration Form
-		</ion-item>
-	</ion-list>
+<ion-view view-title="Pagibig" ng-controller="TabCtrl">
+   <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+            <div class="tabs tabs-icon-left">
+                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                    <i class="icon ion-information-circled"></i>
+                    General
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                    <i class="icon ion-gear-a"></i>
+                    Procedures
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                    <i class="icon ion-unlocked"></i>
+                    Requirements
+                </a>
+            </div>
+    </div>
+    <ion-content class="has-tabs has-header">
+        <div class="tab-views" ng-show="activeButton === 'gen'">
+            <h3>General</h3>
+            <ion-list>
+                <p>
+                  As a Regular Employee, each one is required to acquire Government Identification Numbers. This will be used by our employers for our benefit remittances. I, myself had completed securing all the required Membership including SSS, Philhealth and Pag-Ibig.
+                </p>
+            </ion-list>
 
-<h1>PROCEDURES</h1>
-    <ion-list>
-    	<ion-item>
-    	1.	ACCOMPLISH YOUR APPLICATION FORM
-    	</ion-item>
-    	The first step is to visit the Pag-IBIG Fund Service website, and answer the registration form as a new member. If you wish to do this manually, visit the nearest Pag-IBIG office and have a staff guide you in your quick registration. Fill out the form with valid and accurate information.
-    </ion-list>
-    <ion-list>
-    	<ion-item>
-    	2.	TAKE NOTE OF YOUR TRACKING NUMBER
-		</ion-item>
-		Regardless of whether you applied online or in person, a registration tracking number (RTN) will be sent to your mobile number or email address after your registration. Your RTN can now be used to avail or register for Pag-IBIG services.
-    </ion-list>
-    <ion-list>
-    	<ion-item>
-    	3.	GET YOUR MID NUMBER
-		</ion-item>
-		If necessary, visit the PAG-IBIG Fund Service website again and choose the "View Registration Option." Enter your RTN and name, and input the code. View or print your Member's Data Form, and look for the MID No. on the top right of the document.
-    </ion-list>
+            <h3>Address</h3>
+            <ion-list>
+                <p>
+                For your immediate concerns you may also reach us at : </br></br>
+                724-4244 (Pag-IBIG) - 24/7 Call Center operation.</br>
+                    You may also Email us at contactus@pagibigfund.gov.ph
+                </p>
 
-    <h6>Source: pagibigfund.gov.ph, howtoquick.net, pinoythinking.com</h6>
-  </ion-content>
+            <h3>Other information</h3>
+            <ion-list>
+                <p>
+                    
+                </p>
+            </ion-list>
+        </div>
+
+        <div class="tab-views" ng-show="activeButton === 'proc'">
+            <h3>Procedures</h3>
+            <ion-list>
+                <ion-item>
+                1. Accomplish your application form
+                </ion-item>
+                <p>
+               The first step is to visit the Pag-IBIG Fund Service website (pagibigfund.gov.ph), and answer the registration form as a new member. If you wish to do this manually, visit the nearest Pag-IBIG office and have a staff guide you in your quick registration. Fill out the form with valid and accurate information.
+                </p>
+                <ion-item>
+                2. Take note of your tracking number
+                </ion-item>
+                <p>
+              Regardless of whether you applied online or in person, a registration tracking number (RTN) will be sent to your mobile number or email address after your registration. Your RTN can now be used to avail or register for Pag-IBIG services.  
+                </p>
+                <ion-item>
+                3.Get your MID Number
+                </ion-item>
+                <p>
+               If necessary, visit the Pag-IBIG Fund Service website again and choose the "View Registration Option." Enter your RTN and name, and input the code. View or print your Member's Data Form, and look for the MID No. on the top right of the document.
+                </p>
+        </div>
+        
+        <div class="tab-views" ng-show="activeButton === 'req'">
+            <h3>Requirements</h3>
+            <ion-checkbox ng-model="filter.printed1"> Accomplished Form </ion-checkbox>
+        </div>
+
+        <h6>Sources: <a href="http://http://www.pagibigfund.gov.ph/" target="_blank">http://http://www.pagibigfund.gov.ph/</a>, <a href="http://www.howtoquick.net" target="_blank">http://www.howtoquick.net</a>, <a href="http://www.pinoythinking.com" target="_blank">http://http://www.pinoythinking.com</a> </h6>
+
+        <div ng-controller="PopupCtrl">
+            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+        </div>
+      </ion-content>
 </ion-view>
