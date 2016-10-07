@@ -49,7 +49,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             });*/
 
         $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
-          alert("inserted!"+db);  
+          var db_path = context.getDatabasePath("populated.db").getPath();
+          alert("inserted!"+db + " " + db_path);  
         }, function (err) {
           alert("error1:"+err.message);
         });
