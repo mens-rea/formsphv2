@@ -33,7 +33,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         /*db = window.openDB({ name: 'populated.db',location: 'default' });*/
         
 
-        window.plugins.sqlDB.copy("populated.db", 0, function() {
+        window.copy("populated.db", 0, function() {
           db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
           alert("success");
       }, function(error) {
