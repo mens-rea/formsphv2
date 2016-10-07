@@ -33,12 +33,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         /*db = window.openDB({ name: 'populated.db',location: 'default' });*/
 
           window.plugins.sqlDB.copy("populated.db", 0, function() {
-              db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
+              db = $cordovaSQLite.openDB({ name: 'populated.db',location: 'default' });
               alert("its done!");
           }, function(error) {
               console.error("There was an error copying the database: " + error);
               alert(error.message);
-              db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
+              db = $cordovaSQLite.openDB({ name: 'populated.db',location: 'default' });
           });
 
           /*db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);*/
