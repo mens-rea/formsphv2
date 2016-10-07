@@ -30,7 +30,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       });*/
       try {
         /*db = window.sqlitePlugin.openDB({name:"populated.db",location:'default'});*/
-        db = window.openDB({ name: 'populated.db',location: 'default' });
+        /*db = window.openDB({ name: 'populated.db',location: 'default' });*/
+        db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
         alert("success");
       } catch (error) {
         alert(error);
