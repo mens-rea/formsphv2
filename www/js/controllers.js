@@ -97,6 +97,7 @@ angular.module('starter.controllers', ['ngCordova'])
 				title: 'Uh oh its the start of the zombie apocalypse...',
 				template: 'Just kidding, there was a a problem saving your forms!' + res.rows.item(0).prog + " " + res.rows.item(0).proc
 			});
+			alert("error");
             console.error(err.message);
         });
         console.log("hello");
