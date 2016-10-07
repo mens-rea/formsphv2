@@ -31,8 +31,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       try {
         /*db = window.sqlitePlugin.openDB({name:"populated.db",location:'default'});*/
         /*db = window.openDB({ name: 'populated.db',location: 'default' });*/
-        
-          db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
+
+          window.plugins.sqlDB.copy("populated.db", 0, function() {
+              db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
+          }, function(error) {
+              console.error("There was an error copying the database: " + error);
+              db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
+          });
 
           /*var s_query = "SELECT * FROM documents";
           $cordovaSQLite.execute(db, s_query).then(function(res) {
@@ -48,11 +53,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                console.error(err.message);
             });*/
 
-        $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
-          var db_path = context.getDatabasePath("populated.db").getPath();
-          alert("inserted!"+db + " " + db_path);  
+            $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
+            var db_path = context.getDatabasePath("populated.dbg").getPath();
+            alert("inserted!"+db + " " + db_path);  
         }, function (err) {
-          alert("error1:"+err.message);
+            alert("error1:"+err.message);
         });
         var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3)";
         $cordovaSQLite.execute(db, query).then(function(res) {
@@ -74,6 +79,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       });*/
     }
     else{
+
       db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
       $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id integer primary key, docname text, prog integer, proc integer)");
     }
