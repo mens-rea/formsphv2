@@ -32,14 +32,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         /*db = window.sqlitePlugin.openDB({name:"populated.db",location:'default'});*/
         /*db = window.openDB({ name: 'populated.db',location: 'default' });*/
         
+          db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
 
-        window.copy("populated.db", 0, function() {
-          db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
-          alert("success");
-      }, function(error) {
-          console.error("There was an error copying the database: " + error.message);
-          db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
-      });
+          var s_query = "SELECT * FROM documents";
+          $cordovaSQLite.execute(db, s_query).then(function(res) {
+            if(res.rows.length > 0) {
+              for(var i = 0; i < res.rows.length; i++){
+                alert("success!" + res.rows.item(0).docname + " " + res.rows.item(0).prog);
+              }
+
+                } else {
+                    console.log("No results found");
+                }
+            }, function (err) {
+               console.error(err.message);
+            });
 
         /*$cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
           alert("inserted!"+db);  
