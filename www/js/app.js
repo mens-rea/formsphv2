@@ -64,12 +64,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                   db = $cordovaSQLite.openDB({ name: 'populated.sqlite',location: 'default' });
             });*/
         
-        /*var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3)";
+        var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3) WHERE NOT EXISTS(SELECT 1 FROM documents WHERE docname = 'death')";
         $cordovaSQLite.execute(db, query).then(function(res) {
           alert("inserted!"+docname + " " + prog);  
         }, function (err) {
           alert("error1:"+err.message);
-        });*/
+        });
       } catch (error) {
         alert(error);
       }
