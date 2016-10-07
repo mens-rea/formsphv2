@@ -42,12 +42,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             alert('normal database');
           }
 
-          /*$cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
+          $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
               var db_path = context.getDatabasePath("populated.db").getPath();
               alert("inserted!"+db + " " + db_path);  
           }, function (err) {
               alert("error1:"+err.message);
-          });*/
+          });
 
           /*var s_query = "SELECT * FROM documents";
           $cordovaSQLite.execute(db, s_query).then(function(res) {
