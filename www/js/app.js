@@ -37,7 +37,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             db = window.sqlitePlugin.openDatabase({ name: "populated.db", location: 2, createFromLocation: 1 });
           } else {
             // For debugging in the browser
-            db = window.openDatabase("populated.db", 1, "Database", 200000);
+            db = window.openDatabase("populated.db", 0, "Database", 200000);
           }
 
           /*$cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
