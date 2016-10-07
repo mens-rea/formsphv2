@@ -32,14 +32,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         /*db = window.sqlitePlugin.openDB({name:"populated.db",location:'default'});*/
         /*db = window.openDB({ name: 'populated.db',location: 'default' });*/
 
-          /*window.plugins.sqlDB.copy("populated.db", 0, function() {
+          window.plugins.sqlDB.copy("populated.db", 0, function() {
               db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
+              alert("its done!");
           }, function(error) {
               console.error("There was an error copying the database: " + error);
+              alert(error.message);
               db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
-          });*/
+          });
 
-          db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
+          /*db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);*/
 
           /*var s_query = "SELECT * FROM documents";
           $cordovaSQLite.execute(db, s_query).then(function(res) {
