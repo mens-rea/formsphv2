@@ -40,7 +40,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             // For debugging in the browser
             db = window.openDatabase("populated.db", 0, "Database", 200000);
 
-            var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3) WHERE NOT EXISTS(SELECT * FROM documents WHERE docname = 'death')";
+            var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3)";
             $cordovaSQLite.execute(db, query).then(function(res) {
               alert("inserted!"+docname + " " + prog);  
             }, function (err) {
