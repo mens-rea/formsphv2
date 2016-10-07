@@ -28,13 +28,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           console.error("There was an error copying the database: " + error);
           db = $cordovaSQLite.openDB({ name: 'populated.db',location: 'default' });
       });*/
-      try {
+      db = $cordovaSQLite.openDB({ name: 'populated.db',location: 'default' });
+      /*try {
         db = window.sqlitePlugin.openDB({name:"populated.db",location:'default'});
         db = $cordovaSQLite.openDB({ name: 'populated.db',location: 'default' });
         alert("success");
       } catch (error) {
         alert(error);
-      }
+      }*/
       $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY INCREMENT, docname TEXT, prog INTEGER, proc INTEGER)");
       console.log("android");
       /*window.plugins.sqlDB.copy("populated.db", function() {
