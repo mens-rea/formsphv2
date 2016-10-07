@@ -79,21 +79,24 @@ angular.module('starter.controllers', ['ngCordova'])
 
 	$scope.insert = function(docname, prog) {
 
-    	var alertPopup = $ionicPopup.alert({
-					title: 'Great job so far!',
-					template: 'Your progress has been saved...'
-		});
-
 		if($scope.progress == 0){
-			$scope.progress = 33;
+			$scope.progress = 0;
 		}
 
 		/*var query = "INSERT INTO documents (docname, prog, proc) VALUES (?,?,?)";
 		$cordovaSQLite.execute(db, query, [docname, $scope.progress, 3]).then(function(res) {*/
 		var query = "UPDATE documents SET prog = ? WHERE docname = ?";
         $cordovaSQLite.execute(db, query, [$scope.progress, docname]).then(function(res) {
+            var alertPopup = $ionicPopup.alert({
+				title: 'Great job so far!',
+				template: 'Your forms has been saved...' + res.rows.item(0).prog + " " + res.rows.item(0).proc
+			});
             console.log('successful!');
         }, function (err) {
+        	var alertPopup = $ionicPopup.alert({
+				title: 'Uh oh its the start of the zombie apocalypse...',
+				template: 'Just kidding, there was a a problem saving your forms!' + res.rows.item(0).prog + " " + res.rows.item(0).proc
+			});
             console.error(err.message);
         });
         console.log("hello");
