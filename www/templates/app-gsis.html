@@ -1,8 +1,6 @@
-
-
 <ion-view view-title="GSIS Ecard Plus" ng-controller="TabCtrl">
 
-    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+    <div class="tabs-striped tabs-top background-forms tabs-color-light">    
             <div class="tabs tabs-icon-left">
                 <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
                     <i class="icon ion-information-circled"></i>
@@ -19,95 +17,106 @@
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header">
-        <div class="tab-views" ng-show="activeButton === 'gen'">
-            <h3>General</h3>
-            <ion-list>
+    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
+
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+                <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
+                <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
+                <button class="button button-forms" ng-click="select('death')">Load Progress</button>
+                <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+            </div>
+
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                       The GSIS eCard is, by far, the most innovative government-issued identification card today. This is because the eCard Plus is not just a GSIS membership ID Card, it is also a GSIS transactional card, disbursement card, ATM Card, VISA debit card, hospitalization discount card, medicine discount card, and tuition discount card, among others.
+                    </p>
+                </ion-list>
+
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
+                        <img src="img/maps-screenshot.png" style="width: 100%;"/></br></br>
+                        <h5>Government Service Insurance System</br>Financial Center</br>Pasay City</br>Metro Manila</br></br>
+                        New Email Address:</br>
+                        gsiscares@gsis.gov.ph</br></br> 
+
+                        GSIS CALL CENTER NUMBERS:</br></br> 
+
+                        Landline (Metro Manila) : (02) 847-47-47</br></br>
+
+                        For Globe/TM Users : 1-800-8-847-4747</br>
+                        (free for both Globe landline and mobile phone as long as with P8.00 load)</br></br>
+
+                        For Smart/Sun/Talk 'N Text Users : 1-800-10-847-4747</br>
+                        (flat rate of P8.00 / call from mobile phone)
+                    </p>
+
+                <h3>Other information</h3>
+                <ion-list>
+                    <p>
+                        
+                    </p>
+                </ion-list>
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item>
+                    1. GO TO THE NEAREST GSIS OFFICE
+                    </ion-item>
+                    <p>
+                   A. Bring two valid IDs (examples: company ID, LTO license, PRC license, passport, voter's registration ID) to the nearest GSIS office nearest you. </br></br>
+                    B. Accomplish an eCard enrollment form and submit it to the GSIS personnel assigned in the eCard enrollment area.</br></br>
+                    C. In a few weeks, you can either get your eCard from the GSIS office where you applied or through snail mail
+                    </p>
+                    <p>
+                    </br>
+                    <a href="http://www.gsis.gov.ph/umid/download/Application_Form_EXISTING.pdf" target="_blank"><button class="button button-assertive">Download Form</button></a>
+                    </p>
+                    </br></br>
+                    <ion-item>
+                    2. CLAIM YOUR ECARD
+                    </ion-item>
+                    <p>
+                        <strong>Upon receiving your eCard</strong></br></br>
+
+                    A. Go to any GSIS Wireless Activated Processing System (G-W@PS) kiosk located at the nearest GSIS or major government office.</br></br>
+                    B. Place your eCard in the G-W@PS Kiosk card reader.</br></br>
+                    C. Touch the screen to select any of your pre-registered fingers.</br></br>
+                    D. Very lightly, put the finger you selected on the fingerprint scanner to activate your eCard
+                    </p>
+                    <ion-item>
+                    3. OTHER INFORMATION
+                    </ion-item>
+                    <p>
+                    <strong>A friendly reminders</strong></br></br>
+
+                    A. If the finger you selected fails to get scanned, simply select another pre-registered finger.</br></br>
+                    B. You only need to activate your card once after you receive it.</br></br>
+                    You can use your eCard after five (5) working days after activating it. You can check your membership account or apply for loans using your eCard Plus in any G-W@PS kiosk nearest you.
+                    </p>
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <ion-checkbox ng-model="filter.printed1"> Accomplished Form</ion-checkbox>
+                <ion-checkbox ng-model="filter.printed2"> 2 valid IDs </ion-checkbox>
                 <p>
-                   The GSIS eCard is, by far, the most innovative government-issued identification card today. This is because the eCard Plus is not just a GSIS membership ID Card, it is also a GSIS transactional card, disbursement card, ATM Card, VISA debit card, hospitalization discount card, medicine discount card, and tuition discount card, among others.
+                (Examples: company ID, LTO license, PRC license, passport, voter's registration ID)
                 </p>
-            </ion-list>
+            </div>
 
-            <h3>Address</h3>
-            <ion-list>
-                <p>
-                    <img src="img/maps-screenshot.png" style="width: 100%;"/></br></br>
-                    <h5>Government Service Insurance System</br>Financial Center</br>Pasay City</br>Metro Manila</br></br>
-                    New Email Address:</br>
-                    gsiscares@gsis.gov.ph</br></br> 
+            <h6>Sources: <a href="http://www.gsis.gov.ph/default.php?id=73" target="_blank">http://www.gsis.gov.ph/default.php?id=73</a> </h6>
 
-                    GSIS CALL CENTER NUMBERS:</br></br> 
-
-                    Landline (Metro Manila) : (02) 847-47-47</br></br>
-
-                    For Globe/TM Users : 1-800-8-847-4747</br>
-                    (free for both Globe landline and mobile phone as long as with P8.00 load)</br></br>
-
-                    For Smart/Sun/Talk 'N Text Users : 1-800-10-847-4747</br>
-                    (flat rate of P8.00 / call from mobile phone)
-</h5>
-                </p>
-
-            <h3>Other information</h3>
-            <ion-list>
-                <p>
-                    
-                </p>
-            </ion-list>
         </div>
-
-        <div class="tab-views" ng-show="activeButton === 'proc'">
-            <h3>Procedures</h3>
-            <ion-list>
-                <ion-item>
-                1. GO TO THE NEAREST GSIS OFFICE
-                </ion-item>
-                <p>
-               A. Bring two valid IDs (examples: company ID, LTO license, PRC license, passport, voter's registration ID) to the nearest GSIS office nearest you. </br></br>
-                B. Accomplish an eCard enrollment form and submit it to the GSIS personnel assigned in the eCard enrollment area.</br></br>
-                C. In a few weeks, you can either get your eCard from the GSIS office where you applied or through snail mail
-                </p>
-                <p>
-                </br>
-                <a href="http://www.gsis.gov.ph/umid/download/Application_Form_EXISTING.pdf" target="_blank"><button class="button button-assertive">Download Form</button></a>
-                </p>
-                </br></br>
-                <ion-item>
-                2. CLAIM YOUR ECARD
-                </ion-item>
-                <p>
-                    <strong>Upon receiving your eCard</strong></br></br>
-
-                A. Go to any GSIS Wireless Activated Processing System (G-W@PS) kiosk located at the nearest GSIS or major government office.</br></br>
-                B. Place your eCard in the G-W@PS Kiosk card reader.</br></br>
-                C. Touch the screen to select any of your pre-registered fingers.</br></br>
-                D. Very lightly, put the finger you selected on the fingerprint scanner to activate your eCard
-                </p>
-                <ion-item>
-                3. OTHER INFORMATION
-                </ion-item>
-                <p>
-                <strong>A friendly reminders</strong></br></br>
-
-                A. If the finger you selected fails to get scanned, simply select another pre-registered finger.</br></br>
-                B. You only need to activate your card once after you receive it.</br></br>
-                You can use your eCard after five (5) working days after activating it. You can check your membership account or apply for loans using your eCard Plus in any G-W@PS kiosk nearest you.
-                </p>
-        </div>
-        
-        <div class="tab-views" ng-show="activeButton === 'req'">
-            <h3>Requirements</h3>
-            <ion-checkbox ng-model="filter.printed1"> Accomplished Form</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed2"> 2 valid IDs </ion-checkbox>
-            <p>
-            (Examples: company ID, LTO license, PRC license, passport, voter's registration ID)
-            </p>
-        </div>
-
-        <h6>Sources: <a href="http://www.gsis.gov.ph/default.php?id=73" target="_blank">http://www.gsis.gov.ph/default.php?id=73</a> </h6>
-
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
-        </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

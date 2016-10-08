@@ -1,8 +1,6 @@
-
-
 <ion-view view-title="DTI Business Name" ng-controller="TabCtrl">
 
-   <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+   <div class="tabs-striped tabs-top background-forms tabs-color-light">    
             <div class="tabs tabs-icon-left">
                 <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
                     <i class="icon ion-information-circled"></i>
@@ -19,134 +17,147 @@
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header">
-        <div class="tab-views" ng-show="activeButton === 'gen'">
-            <h3>General</h3>
-            <ion-list>
-                <p>
-                   Business Name (BN) Registration is one of the principal front-line service of the Department of Trade and Industry (DTI). It aims to maintain a nationwide registry of business names mainly on Sole Proprietorship.
-                </p>
-            </ion-list>
+    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
 
-            <h3>Address</h3>
-            <ion-list>
-                <p>
-                    <strong>DEPARTMENT OF TRADE & INDUSTRY (DTI)</strong></br></br>
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+                <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
+                <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
+                <button class="button button-forms" ng-click="select('death')">Load Progress</button>
+                <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+            </div>
 
-                    Trade & Industry Building</br>
-                    361 Senator Gil J. Puyat Avenue, Makati City</br>
-                    Metro Manila, Philippines 1200</br></br>
-                     
-                    Trunkline: (+632)  7510-DTI (384)</br>
-                    Office Hours: 8:00am-5:00pm, Monday to Friday (excluding holidays)</br></br>
-                     
-                    DTI Direct</br>
-                    Hotline: (+632) 751.3330</br>
-                    Mobile: (+63) 917.834.3330</br></br>
+            <div ng-show="activeButton === 'gen'">
 
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                       Business Name (BN) Registration is one of the principal front-line service of the Department of Trade and Industry (DTI). It aims to maintain a nationwide registry of business names mainly on Sole Proprietorship.
+                    </p>
+                </ion-list>
+
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
+                        <strong>DEPARTMENT OF TRADE & INDUSTRY (DTI)</strong></br></br>
+
+                        Trade & Industry Building</br>
+                        361 Senator Gil J. Puyat Avenue, Makati City</br>
+                        Metro Manila, Philippines 1200</br></br>
+                         
+                        Trunkline: (+632)  7510-DTI (384)</br>
+                        Office Hours: 8:00am-5:00pm, Monday to Friday (excluding holidays)</br></br>
+                         
+                        DTI Direct</br>
+                        Hotline: (+632) 751.3330</br>
+                        Mobile: (+63) 917.834.3330</br></br>
+
+                    </p>
+
+                <h3>Other information</h3>
+                <ion-list>
+                    <p>
+                        
+                    </p>
+                </ion-list>
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item>
+                    1. Choose a business name
+                    </ion-item>
+                    <p>
+                  Have at least three business names in case your first preference cannot be registered. Make sure not to choose one that is similar or confusingly similar to a registered business name, your next preferred business name will be considered. 
+                    </p>
+                    <ion-item>
+                    2. What is an acceptable business name?
+                    </ion-item>
+                    <p>
+                 In determining whether a proposed business name for registration is acceptable, the following factors shall be considered:A. The root word or words of the name shall be considered (e.g. "Island" instead of "Islander")B. The business name should describe the nature of the business.C. It should be comprised solely of any or all of the following: Letters, numerals, and punctuation marks that are part of the English and Filipino language.
+                    </p>
+                     <ion-item>
+                    3.Search for a business name
+                    </ion-item>
+                    <p>
+                An online search facility is provided in the WEBNRS for you to find registered business names in the Philippines (www.bnrs.dti.gov.ph). The search facility should not be used to determine the availability of a business name for registration. This can only be determined at the time of lodgment of an application to register a business name. There are two (2) search criteria available for the public, namely Begins With and Contains. You can conduct a search by typing the exact business name or a few words contained in a business name.
+                    </p>
+                     <ion-item>
+                    4.Register your business name
+                    </ion-item>
+                    <p>
+               Complete BTRCP Form No. 16. Information marked with an asterisk (*) is required field to be filled out. Otherwise, you will receive an error message prompting you to fill them before the succeeding page is displayed.
+                    </p>
+                    </br>
+                    <a href="http://www.bnrs.dti.gov.ph/c/document_library/get_file?p_l_id=30949&folderId=31773&name=DLFE-2201.pdf" target="_blank"><button class="button button-assertive">Download Form</button></a>
+                    </p>
+                    </br></br>
+                    <ion-item>
+                    5. Submit documentary requirements
+                    </ion-item>
+                    <p>
+                        The list of documentary requirements to be submitted to the proper DTI Office where your business is located is indicated in the Transaction Reference Number (TRN) Acknowledgement found in the last page of the online application form. The TRN Acknowledgement form should be signed and submitted to DTI also.
+                    </p>
+                    <ion-item>
+                    6. Pay your application
+                    </ion-item>
+                    <p>
+                    Payment of application fee can be made at the DTI office indicated in your Transaction Reference Number (TRN) ackowledgement form. You have the option to pay through GCash. Business hours are Monday to Friday, 8:00 am to 5:00 pm.
+                    </p>
+                    <ion-item>
+                    7. Secure other permits
+                    </ion-item>
+                    <p>
+                    If necessary, you must secure other permits for your business. Present your paid application to the Bureau of Fire Protection (BFP), Health and Sanitary Office, and City Environment and Natural Resources Office (CENRO) to receive your fire permit, sanitary permit, and environment permit respectively.  
+                    </p>
+                    <ion-item>
+                    8. Claim your business permit
+                    </ion-item>
+                    <p>
+                    Once the process is done, you will receive your license to operate. Take note that in some cities, permits may be issued differently.
+                    </p>
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <p>
+                     <strong>Single Proprietorship</strong>
                 </p>
 
-            <h3>Other information</h3>
-            <ion-list>
+                <ion-checkbox ng-model="filter.printed1"> Must be a Filipino citizen, at least 18 years old </ion-checkbox>
+                <ion-checkbox ng-model="filter.printed2"> For Filipinos whose names are suggestive of alien nationality </ion-checkbox>
                 <p>
-                    
-                </p>
-            </ion-list>
-        </div>
+                 must submit proof of citizenship such as birth certificate, PRC ID, voter's ID, passport(a) if the applicant has a foreign sounding name, acquired Filipino citizenship by naturalization, election or by other means provided by law, he must submit proof of his Filipino citizenship such as: Naturalization certificate and Oath of Allegiance, Affidavit of election or ID card issued by the Bureau of Immigration and Deportation, or Valid ID card issued by the Integrated Bar of the Philippines (IBP) or Professional Regulatory Commission (PRC)
 
-        <div class="tab-views" ng-show="activeButton === 'proc'">
-            <h3>Procedures</h3>
-            <ion-list>
-                <ion-item>
-                1. Choose a business name
-                </ion-item>
-                <p>
-              Have at least three business names in case your first preference cannot be registered. Make sure not to choose one that is similar or confusingly similar to a registered business name, your next preferred business name will be considered. 
-                </p>
-                <ion-item>
-                2. What is an acceptable business name?
-                </ion-item>
-                <p>
-             In determining whether a proposed business name for registration is acceptable, the following factors shall be considered:A. The root word or words of the name shall be considered (e.g. "Island" instead of "Islander")B. The business name should describe the nature of the business.C. It should be comprised solely of any or all of the following: Letters, numerals, and punctuation marks that are part of the English and Filipino language.
-                </p>
-                 <ion-item>
-                3.Search for a business name
-                </ion-item>
-                <p>
-            An online search facility is provided in the WEBNRS for you to find registered business names in the Philippines (www.bnrs.dti.gov.ph). The search facility should not be used to determine the availability of a business name for registration. This can only be determined at the time of lodgment of an application to register a business name. There are two (2) search criteria available for the public, namely Begins With and Contains. You can conduct a search by typing the exact business name or a few words contained in a business name.
-                </p>
-                 <ion-item>
-                4.Register your business name
-                </ion-item>
-                <p>
-           Complete BTRCP Form No. 16. Information marked with an asterisk (*) is required field to be filled out. Otherwise, you will receive an error message prompting you to fill them before the succeeding page is displayed.
-                </p>
-                </br>
-                <a href="http://www.bnrs.dti.gov.ph/c/document_library/get_file?p_l_id=30949&folderId=31773&name=DLFE-2201.pdf" target="_blank"><button class="button button-assertive">Download Form</button></a>
                 </p>
                 </br></br>
-                <ion-item>
-                5. Submit documentary requirements
-                </ion-item>
+
                 <p>
-                    The list of documentary requirements to be submitted to the proper DTI Office where your business is located is indicated in the Transaction Reference Number (TRN) Acknowledgement found in the last page of the online application form. The TRN Acknowledgement form should be signed and submitted to DTI also.
+                     <strong>Single Proprietorship (foreign) </strong>
                 </p>
-                <ion-item>
-                6. Pay your application
-                </ion-item>
-                <p>
-                Payment of application fee can be made at the DTI office indicated in your Transaction Reference Number (TRN) ackowledgement form. You have the option to pay through GCash. Business hours are Monday to Friday, 8:00 am to 5:00 pm.
-                </p>
-                <ion-item>
-                7. Secure other permits
-                </ion-item>
-                <p>
-                If necessary, you must secure other permits for your business. Present your paid application to the Bureau of Fire Protection (BFP), Health and Sanitary Office, and City Environment and Natural Resources Office (CENRO) to receive your fire permit, sanitary permit, and environment permit respectively.  
-                </p>
-                <ion-item>
-                8. Claim your business permit
-                </ion-item>
-                <p>
-                Once the process is done, you will receive your license to operate. Take note that in some cities, permits may be issued differently.
-                </p>
+
+                  <ion-checkbox ng-model="filter.printed1"> Photocopy of Alien Certificate of Registration (ACR) </ion-checkbox>
+                   <p>
+                   updated the current year. Present original for comparison. 
+                   </p>
+                   <ion-checkbox ng-model="filter.printed2"> Accomplished DTI Form No. 17 under R.A. 7042 </ion-checkbox>
+                   <ion-checkbox ng-model="filter.printed3"> Current written appointment of Filipino Residential Agent. </ion-checkbox>
+                   <ion-checkbox ng-model="filter.printed4"> Clearance from other involved agencies </ion-checkbox>
+                   <p>
+                   such as Department of Science and Technology (DOST), PNP, etc. 
+                   </p>
+                    <ion-checkbox ng-model="filter.printed5"> In case of alien retailer, current year's permit to engage in retail business per R.A. 1180
+                </ion-checkbox>
+            </div>
+
+            <h6>Sources: <a href="http://www.bnrs.dti.gov.ph/web/guest/home" target="_blank">http://www.bnrs.dti.gov.ph</a> </h6>
+
         </div>
-        
-        <div class="tab-views" ng-show="activeButton === 'req'">
-            <h3>Requirements</h3>
-            <p>
-                 <strong>Single Proprietorship</strong>
-            </p>
-
-            <ion-checkbox ng-model="filter.printed1"> Must be a Filipino citizen, at least 18 years old </ion-checkbox>
-            <ion-checkbox ng-model="filter.printed2"> For Filipinos whose names are suggestive of alien nationality </ion-checkbox>
-            <p>
-             must submit proof of citizenship such as birth certificate, PRC ID, voter's ID, passport(a) if the applicant has a foreign sounding name, acquired Filipino citizenship by naturalization, election or by other means provided by law, he must submit proof of his Filipino citizenship such as: Naturalization certificate and Oath of Allegiance, Affidavit of election or ID card issued by the Bureau of Immigration and Deportation, or Valid ID card issued by the Integrated Bar of the Philippines (IBP) or Professional Regulatory Commission (PRC)
-
-            </p>
-            </br></br>
-
-            <p>
-                 <strong>Single Proprietorship (foreign) </strong>
-            </p>
-
-              <ion-checkbox ng-model="filter.printed1"> Photocopy of Alien Certificate of Registration (ACR) </ion-checkbox>
-               <p>
-               updated the current year. Present original for comparison. 
-               </p>
-               <ion-checkbox ng-model="filter.printed2"> Accomplished DTI Form No. 17 under R.A. 7042 </ion-checkbox>
-               <ion-checkbox ng-model="filter.printed3"> Current written appointment of Filipino Residential Agent. </ion-checkbox>
-               <ion-checkbox ng-model="filter.printed4"> Clearance from other involved agencies </ion-checkbox>
-               <p>
-               such as Department of Science and Technology (DOST), PNP, etc. 
-               </p>
-                <ion-checkbox ng-model="filter.printed5"> In case of alien retailer, current year's permit to engage in retail business per R.A. 1180
- </ion-checkbox>
-        </div>
-
-        <h6>Sources: <a href="http://www.bnrs.dti.gov.ph/web/guest/home" target="_blank">http://www.bnrs.dti.gov.ph</a> </h6>
-
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
-        </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

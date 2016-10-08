@@ -1,8 +1,6 @@
-
-
 <ion-view view-title="Barangay Clearance" ng-controller="TabCtrl">
 
-    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+    <div class="tabs-striped tabs-top background-forms tabs-color-light">    
             <div class="tabs tabs-icon-left">
                 <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
                     <i class="icon ion-information-circled"></i>
@@ -18,116 +16,92 @@
                 </a>
             </div>
     </div>
-    <ion-content class="has-tabs has-header">
-        <div class="tab-views" ng-show="activeButton === 'gen'">
-            <h3>General</h3>
-            <ion-list>
-                <p>
-                   Barangay clearance is a document that certify an individual that he/she is a resident of that barangay. More importantly, it also proves the applicant that he/she doesn’t have any bad records and in good moral character.</br></br>
+    <ion-content class="has-tabs has-header"  ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
+            
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+                <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
+                <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
+                <button class="button button-forms" ng-click="select('death')">Load Progress</button>
+                <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+            </div>
 
-                    Barangay clearance is one of the requirements needed when you are processing a legal documents or financial documents. Sometimes, it is being requested when you are applying for a job, ID application, supporting documents or any other legal purpose it that requires. This certificate is stamped and sealed with the Barangay Official Seal and signed by the Barangay. captain.
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                       Barangay clearance is a document that certify an individual that he/she is a resident of that barangay. More importantly, it also proves the applicant that he/she doesn’t have any bad records and in good moral character.</br></br>
+
+                        Barangay clearance is one of the requirements needed when you are processing a legal documents or financial documents. Sometimes, it is being requested when you are applying for a job, ID application, supporting documents or any other legal purpose it that requires. This certificate is stamped and sealed with the Barangay Official Seal and signed by the Barangay. captain.
+
+                    </p>
+                </ion-list>
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        1. Go to nearest branch
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                    <p>
+                        Make sure to bring all the requirements when you visit the police station to get your clearance. Fill out the requested form with valid and accurate information.
+                    </p>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        2. Pay the necessary fees
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                    <p>
+                        After submitting your request form, pay the police clearance fee at the designated payment area or the treasurer's office. The fee varies on the local government.
+                    </p>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        3. Accomplish biometrics
+                     <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                    <p>
+                        After paying, your fingerprint and photo will be taken by the staff. Also affix your signature when asked to.   
+                    </p>
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <ion-checkbox ng-model="filter.printed2"> Recent Cedula (Community Tax Certificate) </ion-checkbox>
+                 <ion-checkbox ng-model="filter.printed3"> Accomplished Application Form </ion-checkbox>
+
+                <p>
+                    </br>
+                    </br>
+                    <strong>Additional Requirement</strong></br></br>
+
+                    Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
+                       <em>* might require for new residents or new applicants with no barangay records.</em>
 
                 </p>
-            </ion-list>
+            </div>
 
-            <h3>Address</h3>
-            <ion-list>
-                <p>
-                    
-                </p>
+            <h6>Sources: <a href="http://www.gsis.gov.ph/default.php?id=73" target="_blank">http://www.gsis.gov.ph/default.php?id=73</a>, <a href="http://www.quezoncity.gov.ph" target="_blank">http://www.quezoncity.gov.ph</a>, <a href="http://www.powerpinoys.com" target="_blank">http://www.powerpinoys.com</a>, <a href="http://www.faq.ph" target="_blank">http://www.faq.ph</a>, <a href="http://thinkpesos.com" target="_blank">http://www.thinkpesos.com</a> </h6>
 
-            <h3>Other information</h3>
-            <ion-list>
-                <p>
-                    
-                </p>
-            </ion-list>
         </div>
-
-        <div class="tab-views" ng-show="activeButton === 'proc'">
-            <h3>Procedures</h3>
-            <ion-list>
-                <ion-item class="item-toggle" style="font-size: 22px;">
-                1. Visit the nearest police station/municipal
-                        <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
-                </ion-item>
-                <p>
-               Make sure to bring all the requirements when you visit the police station to get your clearance. Fill out the requested form with valid and accurate information.
-                </p>
-                 <ion-item class="item-toggle" style="font-size: 22px;">
-                2. Pay the necessary fees
-                        <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
-                </ion-item>
-                <p>
-                After submitting your request form, pay the police clearance fee at the designated payment area or the treasurer's office. The fee varies on the local government.
-                </p>
-                <ion-item class="item-toggle" style="font-size: 22px;">
-                3. Have your photo and biometrics taken
-                 <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
-                </ion-item>
-                <p>
-              After paying, your fingerprint and photo will be taken by the staff. Also affix your signature when asked to.   
-                </p>
-                <ion-item class="item-toggle" style="font-size: 22px;">
-                3. Have your photo and biometrics taken
-                 <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
-                </ion-item>
-                <p>
-              After paying, your fingerprint and photo will be taken by the staff. Also affix your signature when asked to.   
-                </p><ion-item class="item-toggle" style="font-size: 22px;">
-                3. Wait for your clearance/id
-                 <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
-                </ion-item>
-                <p>
-             After a short processing time, your name will be called. Claim your police clearance
-   
-                </p>
-        </div>
-        
-        <div class="tab-views" ng-show="activeButton === 'req'">
-            <h3>Requirements</h3>
-            <ion-checkbox ng-model="filter.printed1"> Barangay Clearance</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed2"> Recent Cedula (Community Tax Certificate) </ion-checkbox>
-             <ion-checkbox ng-model="filter.printed3"> Accomplished Application Form </ion-checkbox>
-
-            <p>
-            <strong>Additional Requirement</strong></br></br>
-
-            Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
-               <em>* might require for new residents or new applicants with no barangay records.</em>
-
-            </p>
-        </div>
-
-        <h6>Sources: <a href="http://www.gsis.gov.ph/default.php?id=73" target="_blank">http://www.gsis.gov.ph/default.php?id=73</a>, <a href="http://www.quezoncity.gov.ph" target="_blank">http://www.quezoncity.gov.ph</a>, <a href="http://www.powerpinoys.com" target="_blank">http://www.powerpinoys.com</a>, <a href="http://www.faq.ph" target="_blank">http://www.faq.ph</a>, <a href="http://thinkpesos.com" target="_blank">http://www.thinkpesos.com</a> </h6>
-
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
-        </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

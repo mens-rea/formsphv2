@@ -1,8 +1,6 @@
-
-
 <ion-view view-title="NSO Birth Certificate" ng-controller="TabCtrl">
 
-    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+    <div class="tabs-striped tabs-top background-forms tabs-color-light">    
             <div class="tabs tabs-icon-left">
                 <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
                     <i class="icon ion-information-circled"></i>
@@ -19,86 +17,99 @@
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header">
-        <div class="tab-views" ng-show="activeButton === 'gen'">
-            <h3>General</h3>
-            <ion-list>
-                <p>
-                    A Birth Certificate is vital document required in practically all kinds of official transactions with the government or the private sector in the Philippines. It is also one of the basic requirements to enroll in both public and private schools in the country. Thus, it is necessary for everyone to have a copy of this important document in order to avoid unnecessary delays or problems when engaging in any official transaction. 
+    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
+
+            <p style="display: none;">{{ progress + "%"}}</p>
+                <div class="progress-cont">
+                    <progress max="100" value="{{progress}}"></progress>
+                </div>
+                <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+                <div class="save-cont">
+                    <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
+                    <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
+                    <button class="button button-forms" ng-click="select('death')">Load Progress</button>
+                    <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+                </div>
+
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                        A Birth Certificate is vital document required in practically all kinds of official transactions with the government or the private sector in the Philippines. It is also one of the basic requirements to enroll in both public and private schools in the country. Thus, it is necessary for everyone to have a copy of this important document in order to avoid unnecessary delays or problems when engaging in any official transaction. 
+                        </br></br>
+                        Applying for a Birth Certificate can be a simple and easy task if one knows the basic requirements to be submitted and the steps that need to be taken for the application to be processed. In the Philippines, the National Statistics Office (NSO) is the main agency tasked to process applications for Birth Certificates.
+                    </p>
+                </ion-list>
+
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
+                        <img src="img/maps-screenshot.png" style="width: 100%;"/></br></br>
+                        <h5>Solicarel Bldg. R. Magsaysay Blvd. Sta. Mesa Manila, San Juan, Metro Manila</h5>
+                    </p>
+                </ion-list>
+
+                <h3>Other information</h3>
+                <ion-list>
+                    <p>
+                        NOTE: ISSUANCE OF CERTIFICATION OF BIRTH IS SUBJECT TO THE CONFIDENTIALITY CLAUSE OF ARTICLE 7 OF THE CHILD AND YOUTH WELFARE CODE WHICH PROVIDES:
+                        </br></br>
+                        Art. 7. Nondisclosure of birth records. The records of a person's birth shall be kept strictly confidential and no information relating thereto shall be issued except on the request of any of the following:
+                        </br></br>
+                        <ul>
+                            <li> The person himself, or any person authorized by him;</li>
+                            <li> His spouse, his parent or parents, his direct descendants, or the guardian or institution legally incharge of him, if he is a minor;</li>
+                            <li>The court or proper public official whenever absolutely necessary in administrative, judicial or other official proceedings to determine the identity of the child's parents or other circumstances surrounding his birth; and</li>
+                            <li>In case of the person's death, the nearest of kin.</li>
+                        </ul>
+                        </br></br>
+                        Any person violating the prohibition shall suffer the penalty of imprisonment of at least two months or a fine in an amount not exceeding five hundred pesos, or both, in the discretion of the court.
+                    </p>
+                </ion-list>
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item>
+                    1. Fill out online application form
+                    </ion-item>
+                    <p>
+                    </br>
+                    <a href="https://www.ecensus.com.ph/Secure/OnlineApplication.aspx" target="_blank"><button class="button button-assertive">Sign Up</button></a>
+                    </p>
                     </br></br>
-                    Applying for a Birth Certificate can be a simple and easy task if one knows the basic requirements to be submitted and the steps that need to be taken for the application to be processed. In the Philippines, the National Statistics Office (NSO) is the main agency tasked to process applications for Birth Certificates.
-                </p>
-            </ion-list>
+                    <ion-item>
+                    2. Pay through accredited payment channels
+                    </ion-item>
+                    <section>
+                        <ul class="list-unordered">
+                        <li>Banco De Oro</li>
+                        <li>BDO branches</li>
+                        <li>BDO Online Banking (BDO account holders only)</li>
+                        <li>BDO ATM (BDO account holders only)</li>
+                        <li>UnionBank</li>
+                        <li>UnionBank branches</li>
+                        <li>UnionBank Online Banking (UnionBank account holders only)</li>
+                        <li>UnionBank ATM (UnionBank account holders only)</li>
+                        </ul>
+                    </section>
+                    <ion-item>
+                    3. Wait for delivery
+                    </ion-item>
+                </ion-list>
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <ion-checkbox ng-model="filter.printed2"> Accomplished Form</ion-checkbox>
+                <ion-checkbox ng-model="filter.printed7"> Registration Fee </ion-checkbox>
+            </div>
 
-            <h3>Address</h3>
-            <ion-list>
-                <p>
-                    <img src="img/maps-screenshot.png" style="width: 100%;"/></br></br>
-                    <h5>Solicarel Bldg. R. Magsaysay Blvd. Sta. Mesa Manila, San Juan, Metro Manila</h5>
-                </p>
-            </ion-list>
+            <h6>Sources: <a href="https://www.ecensus.com.ph/default.aspx" target="_blank">https://www.ecensus.com.ph</a>, <a href="https://www.ecensus.com.ph/default.aspx" target="_blank">http://www.iweb.ph/how-to-apply-for-birth-certificate</a>, psa.gov.ph</h6>
 
-            <h3>Other information</h3>
-            <ion-list>
-                <p>
-                    NOTE: ISSUANCE OF CERTIFICATION OF BIRTH IS SUBJECT TO THE CONFIDENTIALITY CLAUSE OF ARTICLE 7 OF THE CHILD AND YOUTH WELFARE CODE WHICH PROVIDES:
-                    </br></br>
-                    Art. 7. Nondisclosure of birth records. The records of a person's birth shall be kept strictly confidential and no information relating thereto shall be issued except on the request of any of the following:
-                    </br></br>
-                    <ul>
-                        <li> The person himself, or any person authorized by him;</li>
-                        <li> His spouse, his parent or parents, his direct descendants, or the guardian or institution legally incharge of him, if he is a minor;</li>
-                        <li>The court or proper public official whenever absolutely necessary in administrative, judicial or other official proceedings to determine the identity of the child's parents or other circumstances surrounding his birth; and</li>
-                        <li>In case of the person's death, the nearest of kin.</li>
-                    </ul>
-                    </br></br>
-                    Any person violating the prohibition shall suffer the penalty of imprisonment of at least two months or a fine in an amount not exceeding five hundred pesos, or both, in the discretion of the court.
-                </p>
-            </ion-list>
+            
         </div>
-
-        <div class="tab-views" ng-show="activeButton === 'proc'">
-            <h3>Procedures</h3>
-            <ion-list>
-                <ion-item>
-                1. Fill out online application form
-                </ion-item>
-                <p>
-                </br>
-                <a href="https://www.ecensus.com.ph/Secure/OnlineApplication.aspx" target="_blank"><button class="button button-assertive">Sign Up</button></a>
-                </p>
-                </br></br>
-                <ion-item>
-                2. Pay through accredited payment channels
-                </ion-item>
-                <section>
-                    <ul class="list-unordered">
-                    <li>Banco De Oro</li>
-                    <li>BDO branches</li>
-                    <li>BDO Online Banking (BDO account holders only)</li>
-                    <li>BDO ATM (BDO account holders only)</li>
-                    <li>UnionBank</li>
-                    <li>UnionBank branches</li>
-                    <li>UnionBank Online Banking (UnionBank account holders only)</li>
-                    <li>UnionBank ATM (UnionBank account holders only)</li>
-                    </ul>
-                </section>
-                <ion-item>
-                3. Wait for delivery
-                </ion-item>
-            </ion-list>
-        </div>
-        
-        <div class="tab-views" ng-show="activeButton === 'req'">
-            <h3>Requirements</h3>
-            <ion-checkbox ng-model="filter.printed2"> Accomplished Form</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed7"> Registration Fee </ion-checkbox>
-        </div>
-
-        <h6>Sources: <a href="https://www.ecensus.com.ph/default.aspx" target="_blank">https://www.ecensus.com.ph</a>, <a href="https://www.ecensus.com.ph/default.aspx" target="_blank">http://www.iweb.ph/how-to-apply-for-birth-certificate</a>, psa.gov.ph</h6>
-
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
-        </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

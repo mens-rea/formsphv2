@@ -1,8 +1,6 @@
-
-
 <ion-view view-title="Driver's License (non-pro)" ng-controller="TabCtrl">
 
-    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
+    <div class="tabs-striped tabs-top background-forms tabs-color-light">    
             <div class="tabs tabs-icon-left">
                 <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
                     <i class="icon ion-information-circled"></i>
@@ -18,130 +16,141 @@
                 </a>
             </div>
     </div>
+    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
 
-    <ion-content class="has-tabs has-header">
-        <div class="tab-views" ng-show="activeButton === 'gen'">
-            <h3>General</h3>
-            <ion-list>
-                <p>
-                   A driver’s license is an official document authorizing an individual to drive a motorized vehicle in the Philippines. The Land Transportation Office issues three types of driver’s licenses: student permit, non-professional driver’s license, and professional driver’s license.
-                </p>
-            </ion-list>
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+                <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
+                <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
+                <button class="button button-forms" ng-click="select('death')">Load Progress</button>
+                <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+            </div>
 
-            <h3>Address</h3>
-            <ion-list>
-                <p>
-                    <strong>Land Transportation Office (LTO)</strong></br></br>
-                    East Avenue, Quezon City 1100</br>
-                    Trunk line:</br>
-                    922-9061 to 66</br></br>
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                       A driver’s license is an official document authorizing an individual to drive a motorized vehicle in the Philippines. The Land Transportation Office issues three types of driver’s licenses: student permit, non-professional driver’s license, and professional driver’s license.
+                    </p>
+                </ion-list>
 
-                    LTO Customer Service:</br>
-                    928-9440</br></br>
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
+                        <strong>Land Transportation Office (LTO)</strong></br></br>
+                        East Avenue, Quezon City 1100</br>
+                        Trunk line:</br>
+                        922-9061 to 66</br></br>
 
-                    Email:</br>
-                    ltombox@lto.gov.ph</br>
-                </p>
+                        LTO Customer Service:</br>
+                        928-9440</br></br>
 
-            <h3>Other information</h3>
-            <ion-list>
-                <p>
-                    
-                </p>
-            </ion-list>
-        </div>
+                        Email:</br>
+                        ltombox@lto.gov.ph</br>
+                    </p>
 
-        <div class="tab-views" ng-show="activeButton === 'proc'">
-            <h3>Procedures</h3>
-            <ion-list>
-                <ion-item>
-                1. Accomplish application form
-                </ion-item>
-                <p>
-                Go to the customer service counter to get your checklist of requirements and secure a driver's license application form. (The form is also available online. You can accomplish this form prior to transacting your business at the LTO.) Get a queue number.</br></br>
+                <h3>Other information</h3>
+                <ion-list>
+                    <p>
+                        
+                    </p>
+                </ion-list>
+            </div>
 
-                <a href="http://www.gov.ph/downloads/2014/06jun/DOTC-LTO-Form-21.pdf" target="_blank"><button class="button button-assertive">Download Form</button></a>
-                </p>
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item>
+                    1. Accomplish application form
+                    </ion-item>
+                    <p>
+                    Go to the customer service counter to get your checklist of requirements and secure a driver's license application form. (The form is also available online. You can accomplish this form prior to transacting your business at the LTO.) Get a queue number.</br></br>
+
+                    <a href="http://www.gov.ph/downloads/2014/06jun/DOTC-LTO-Form-21.pdf" target="_blank"><button class="button button-assertive">Download Form</button></a>
+                    </p>
+                
+                    <ion-item>
+                    2. Submit your requirements
+                    </ion-item>
+                    <p>
+                        When your number is called, proceed to the evaluator counter and submit all the required documents and have it checked for completeness and authenticity.
+                    </p>
+                    <ion-item>
+                    3. Have your photo and signature taken
+                    </ion-item>
+                    <p>
+                    When your name is called, go to where your photo and signature will be taken.
+                    </p>
+                     <ion-item>
+                    3. Pay for your applicaton
+                    </ion-item>
+                    <p>
+                    Go to the cashier to pay the application fee .</br></br>
+                    <table>
+                      <tr>
+                        <th><strong>FEES AND CHARGES</strong></th>
+                        <th> </th>
+                      </tr>
+                      <tr>
+                        <td>Application Fee</td>
+                        <td>P100.00</td>
+                      </tr>
+                      <tr>
+                        <td>Computer Fee</td>
+                        <td>P67.63</td>
+                      </tr>
+                      <tr>
+                        <td><strong>TOTAL</strong></td>
+                        <td>P167.63</td>
+                      </tr>
+                      <tr>
+                        <td>License Fee</td>
+                        <td>P350.00</td>
+                      </tr>
+                      <tr>
+                        <td>Computer Fee</td>
+                        <td>P67.63</td>
+                      </tr>
+                      <tr>
+                        <td><strong>TOTAL</strong></td>
+                        <td>P417.63</td>
+                      </tr>
+                    </table>
+                    </p>
+                    <ion-item>
+                    3. Take the exams
+                    </ion-item>
+                    <p>
+                       Go to the Examination Room for the lecture and written exam. After passing the written exam, wait for your name to be called for the practical exam.
+                    </p>
+            </div>
             
-                <ion-item>
-                2. Submit your requirements
-                </ion-item>
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <ion-checkbox ng-model="filter.printed1">Accomplished application form for driver’s license</ion-checkbox>
+                <ion-checkbox ng-model="filter.printed2"> Valid student permit </ion-checkbox>
                 <p>
-                    When your number is called, proceed to the evaluator counter and submit all the required documents and have it checked for completeness and authenticity.
+                    (at least one month old)
                 </p>
-                <ion-item>
-                3. Have your photo and signature taken
-                </ion-item>
-                <p>
-                When your name is called, go to where your photo and signature will be taken.
+                 <ion-checkbox ng-model="filter.printed3"> Medical certificate </ion-checkbox>
+                  <p>
+                    with official receipt from any duly-licensed and practicing physician (Note: The LTO will not accept medical certificates which are over 15 days old.)
                 </p>
-                 <ion-item>
-                3. Pay for your applicaton
-                </ion-item>
-                <p>
-                Go to the cashier to pay the application fee .</br></br>
-                <table>
-                  <tr>
-                    <th><strong>FEES AND CHARGES</strong></th>
-                    <th> </th>
-                  </tr>
-                  <tr>
-                    <td>Application Fee</td>
-                    <td>P100.00</td>
-                  </tr>
-                  <tr>
-                    <td>Computer Fee</td>
-                    <td>P67.63</td>
-                  </tr>
-                  <tr>
-                    <td><strong>TOTAL</strong></td>
-                    <td>P167.63</td>
-                  </tr>
-                  <tr>
-                    <td>License Fee</td>
-                    <td>P350.00</td>
-                  </tr>
-                  <tr>
-                    <td>Computer Fee</td>
-                    <td>P67.63</td>
-                  </tr>
-                  <tr>
-                    <td><strong>TOTAL</strong></td>
-                    <td>P417.63</td>
-                  </tr>
-                </table>
+                <ion-checkbox ng-model="filter.printed4"> Negative drugtest result </ion-checkbox>
+                  <p>
+                   (from a DOH accredited drug testing center & Government Hospital)
                 </p>
-                <ion-item>
-                3. Take the exams
-                </ion-item>
-                <p>
-                   Go to the Examination Room for the lecture and written exam. After passing the written exam, wait for your name to be called for the practical exam.
-                </p>
-        </div>
-        
-        <div class="tab-views" ng-show="activeButton === 'req'">
-            <h3>Requirements</h3>
-            <ion-checkbox ng-model="filter.printed1">Accomplished application form for driver’s license</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed2"> Valid student permit </ion-checkbox>
-            <p>
-                (at least one month old)
-            </p>
-             <ion-checkbox ng-model="filter.printed3"> Medical certificate </ion-checkbox>
-              <p>
-                with official receipt from any duly-licensed and practicing physician (Note: The LTO will not accept medical certificates which are over 15 days old.)
-            </p>
-            <ion-checkbox ng-model="filter.printed4"> Negative drugtest result </ion-checkbox>
-              <p>
-               (from a DOH accredited drug testing center & Government Hospital)
-            </p>
-            <ion-checkbox ng-model="filter.printed5"> If employed: Taxpayer’s Identification Number (TIN) </ion-checkbox>
-            <ion-checkbox ng-model="filter.printed6"> Must have passed the written and practical examinations. </ion-checkbox>
-        </div>
+                <ion-checkbox ng-model="filter.printed5"> If employed: Taxpayer’s Identification Number (TIN) </ion-checkbox>
+                <ion-checkbox ng-model="filter.printed6"> Must have passed the written and practical examinations. </ion-checkbox>
+            </div>
 
-        <h6>Sources: <a href="http://www.gov.ph/services/driverslicense/new-license-how-to-apply-for-a-non-professional-license/" target="_blank">http://www.gov.ph/services</a> </h6>
+            <h6>Sources: <a href="http://www.gov.ph/services/driverslicense/new-license-how-to-apply-for-a-non-professional-license/" target="_blank">http://www.gov.ph/services</a> </h6>
 
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
         </div>
       </ion-content>
 </ion-view>

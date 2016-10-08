@@ -1,5 +1,3 @@
-
-
 <ion-view view-title="Death Certificate" ng-controller="TabCtrl">
 
     <div class="tabs-striped tabs-top background-forms tabs-color-light">    
@@ -18,9 +16,9 @@
                 </a>
             </div>
     </div>
-
     <ion-content class="has-tabs has-header" ng-init="select('death')" ng-controller="ProgCtrl as progs">
         <div class="tab-views">
+            
             <p style="display: none;">{{ progress + "%"}}</p>
             <div class="progress-cont">
                 <progress max="100" value="{{progress}}"></progress>
@@ -32,6 +30,7 @@
                 <button class="button button-forms" ng-click="select('death')">Load Progress</button>
                 <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
             </div>
+
 
             <div ng-show="activeButton === 'gen'">
                 <h3>General</h3>
@@ -112,6 +111,8 @@
             </div>
 
             <h6>Sources: PSA.gov.ph, http://www.iweb.ph/how-to-apply-for-nso-death-certificate</h6>
+
+               
         </div>
     </ion-content>
 </ion-view>
