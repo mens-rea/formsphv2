@@ -1,20 +1,19 @@
 <ion-view view-title="Police Clearance" ng-controller="TabCtrl">
-
     <div class="tabs-striped tabs-top background-forms tabs-color-light">    
-            <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
-                    <i class="icon ion-information-circled"></i>
-                    General
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
-                    <i class="icon ion-gear-a"></i>
-                    Procedures
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
-                    <i class="icon ion-unlocked"></i>
-                    Requirements
-                </a>
-            </div>
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                <i class="icon ion-information-circled"></i>
+                General
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                <i class="icon ion-gear-a"></i>
+                Procedures
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                <i class="icon ion-unlocked"></i>
+                Requirements
+            </a>
+        </div>
     </div>
     <ion-content class="has-tabs has-header">
         <div class="tab-views">
@@ -69,31 +68,31 @@
                             </label>
                     </ion-item>
                     <p>
-                   Find the barangay secretary and inform them that you need a barangay clearance. Be prepared to answer a few short questions about your residency and purpose for getting a barangay clearance.
+                        Find the barangay secretary and inform them that you need a barangay clearance. Be prepared to answer a few short questions about your residency and purpose for getting a barangay clearance.
                     </p>
                      <ion-item class="item-toggle" style="font-size: 22px;">
                     2. Submit your accomplished form
-                            <label class="toggle toggle-balanced">
-                                <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
-                                <div class="track">
-                                    <div class="handle"></div>
-                                </div>
-                            </label>
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
-                    Fill out and complete an application form with accurate details. Some barangays will only ask for your signature while others require a thumb print and will even take your picture.
+                        Fill out and complete an application form with accurate details. Some barangays will only ask for your signature while others require a thumb print and will even take your picture.
                     </p>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     3. Pay the necessary fees
-                     <label class="toggle toggle-balanced">
-                                <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
-                                <div class="track">
-                                    <div class="handle"></div>
-                                </div>
-                            </label>
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
-                   After completing the application form and supplying your details, submit all the requirements and pay the processing fees. It is advised that you bring between P50-P100. Once paid, just wait for 20 to 30 minutes and you will be given your barangay clearance.
+                        After completing the application form and supplying your details, submit all the requirements and pay the processing fees. It is advised that you bring between P50-P100. Once paid, just wait for 20 to 30 minutes and you will be given your barangay clearance.
                     </p>
             </div>
             
@@ -104,10 +103,9 @@
                  <ion-checkbox ng-model="filter.printed3"> Photocopy of valid ID </ion-checkbox>
 
                 <p>
-                <strong>Additional Requirement</strong></br></br>
-
-                Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
-                   <em>* might require for new residents or new applicants with no barangay records.</em>
+                    <strong>Additional Requirement</strong></br></br>
+                    Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
+                    <em>* might require for new residents or new applicants with no barangay records.</em>
 
                 </p>
             </div>

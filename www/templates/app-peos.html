@@ -1,20 +1,20 @@
 <ion-view view-title="PEOS" ng-controller="TabCtrl">
-   <div class="tabs-striped tabs-top background-forms tabs-color-light">    
-      <div class="tabs tabs-icon-left">
-          <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
-              <i class="icon ion-information-circled"></i>
-              General
-          </a>
-          <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
-              <i class="icon ion-gear-a"></i>
-              Procedures
-          </a>
-          <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
-              <i class="icon ion-unlocked"></i>
-              Requirements
-          </a>
-      </div>
+  <div class="tabs-striped tabs-top background-forms tabs-color-light">    
+    <div class="tabs tabs-icon-left">
+      <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+            <i class="icon ion-information-circled"></i>
+            General
+      </a>
+      <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+          <i class="icon ion-gear-a"></i>
+          Procedures
+      </a>
+      <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+          <i class="icon ion-unlocked"></i>
+          Requirements
+      </a>
     </div>
+  </div>
     <ion-content class="has-tabs has-header">
       <div class="tab-views">
 
@@ -24,10 +24,10 @@
         </div>
         <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
         <div class="save-cont">
-            <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
-            <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
-            <button class="button button-forms" ng-click="select('death')">Load Progress</button>
-            <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+          <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
+          <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
+          <button class="button button-forms" ng-click="select('death')">Load Progress</button>
+          <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
         </div>
 
         <div ng-show="activeButton === 'gen'">
@@ -36,20 +36,19 @@
                 <p>
                   Undergo a Pre-Employment Orientation Seminar (PEOS) online as a pre-qualification requirement by the Philippine Overseas Employment Administration (POEA).</br></br>
 
-                    New applicants should take the PEOS Online prior to submission of his application to a licensed recruitment agency. Likewise, the recruitment agency should submit for POEA processing only documents of workers who have completed the online PEOS.</br></br>  
-                    You can take the POEA Pre-employment Orientation Seminar Online for free. If you have completed the modules provided in the online seminar, POEA will issue you a PEOS Certificate which you can use as an additional certificate when applying a job and you can include it in your pre-employment processing with POEA.
-                    PEOS Online have eight modules. Each module including the assessment test takes an average of seven minutes to complete.
-
+                  New applicants should take the PEOS Online prior to submission of his application to a licensed recruitment agency. Likewise, the recruitment agency should submit for POEA processing only documents of workers who have completed the online PEOS.</br></br>  
+                  You can take the POEA Pre-employment Orientation Seminar Online for free. If you have completed the modules provided in the online seminar, POEA will issue you a PEOS Certificate which you can use as an additional certificate when applying a job and you can include it in your pre-employment processing with POEA.
+                  PEOS Online have eight modules. Each module including the assessment test takes an average of seven minutes to complete.
                 </p>
             </ion-list>
 
             <h3>Address</h3>
             <ion-list>
                 <p>
-               Blas F. Ople Building Ortigas Avenue corner EDSA Mandaluyong City</br></br> 
-               Hotlines: 722.11.44 / 722.11.55</br>
-                Email: wed@poea.gov.ph</br>
-                Official Site: www.poea.gov.ph</br>
+                  Blas F. Ople Building Ortigas Avenue corner EDSA Mandaluyong City</br></br> 
+                  Hotlines: 722.11.44 / 722.11.55</br>
+                  Email: wed@poea.gov.ph</br>
+                  Official Site: www.poea.gov.ph</br>
                 </p>
 
             <h3>Other information</h3>
@@ -65,49 +64,48 @@
           <ion-list>
               <ion-item class="item-toggle" style="font-size: 22px;">
               1. Register
-                <label class="toggle toggle-balanced">
-                    <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
-                    <div class="track">
-                        <div class="handle"></div>
-                    </div>
-                </label>
+                  <label class="toggle toggle-balanced">
+                      <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                      <div class="track">
+                          <div class="handle"></div>
+                      </div>
+                  </label>
               </ion-item>
               <p>
-                  Sign up and log-in with your details to access the learning modules in the websites. Existing members of Jobstreet.com may also use their account to access the PEOS online.
-
+                Sign up and log-in with your details to access the learning modules in the websites. Existing members of Jobstreet.com may also use their account to access the PEOS online.
               </p>
               <ion-item class="item-toggle" style="font-size: 22px;">
               2. Take the learning modules
-                <label class="toggle toggle-balanced">
-                    <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
-                    <div class="track">
-                        <div class="handle"></div>
-                    </div>
-                </label>
+                  <label class="toggle toggle-balanced">
+                      <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                      <div class="track">
+                          <div class="handle"></div>
+                      </div>
+                  </label>
               </ion-item>
               <p>
                 Complete all of the eight (8) self-learning modules. Each module takes approximately seven (7) minutes to complete. 
               </p>
               <ion-item class="item-toggle" style="font-size: 22px;">
               3. Review your learnings
-                <label class="toggle toggle-balanced">
-                    <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
-                    <div class="track">
-                        <div class="handle"></div>
-                    </div>
-                </label>
+                  <label class="toggle toggle-balanced">
+                      <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                      <div class="track">
+                          <div class="handle"></div>
+                      </div>
+                  </label>
               </ion-item>
               <p>
                 Take the review at the end of each module. Answer all of the questions and get at least 3 correct answers out of the 5 questions to proceed.
               </p>
               <ion-item class="item-toggle" style="font-size: 22px;">
               4. Print your PEOS certificates
-                <label class="toggle toggle-balanced">
-                    <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4)">
-                    <div class="track">
-                        <div class="handle"></div>
-                    </div>
-                </label>
+                  <label class="toggle toggle-balanced">
+                      <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4)">
+                      <div class="track">
+                          <div class="handle"></div>
+                      </div>
+                  </label>
               </ion-item>
               <p>
                 Save and print a copy of your PEOS certificate and include this in your pre-employment processing with POEA.

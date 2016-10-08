@@ -1,20 +1,19 @@
 <ion-view view-title="Death Certificate" ng-controller="TabCtrl">
-
     <div class="tabs-striped tabs-top background-forms tabs-color-light">    
-            <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
-                    <i class="icon ion-information-circled"></i>
-                    General
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
-                    <i class="icon ion-gear-a"></i>
-                    Procedures
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
-                    <i class="icon ion-unlocked"></i>
-                    Requirements
-                </a>
-            </div>
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                <i class="icon ion-information-circled"></i>
+                General
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                <i class="icon ion-gear-a"></i>
+                Procedures
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                <i class="icon ion-unlocked"></i>
+                Requirements
+            </a>
+        </div>
     </div>
     <ion-content class="has-tabs has-header" ng-init="select('death')" ng-controller="ProgCtrl as progs">
         <div class="tab-views">
@@ -63,15 +62,15 @@
                         </label>
                     </ion-item>
                     <p>
-                    </br>
-                    <b>Provide the following information:</b></br></br>
-                    Number of copies being death-requested</br>
-                    Name of the deceased</br>
-                    Gender</br>
-                    Place of death</br>
-                    Date of death</br>
-                    Date of registration, if the death certificate was registered  late</br>
-                    Purpose of your death-request</br></br>
+                        </br>
+                        <b>Provide the following information:</b></br></br>
+                        Number of copies being death-requested</br>
+                        Name of the deceased</br>
+                        Gender</br>
+                        Place of death</br>
+                        Date of death</br>
+                        Date of registration, if the death certificate was registered  late</br>
+                        Purpose of your death-request</br></br>
                     </p>
                     <a href="https://www.ecensus.com.ph/Secure/Files/Death%20Application%20Form.pdf"><button class="button button-assertive" target="_blank">Download Form</button></a>
                     </br></br>
@@ -85,8 +84,8 @@
                         </label>
                     </ion-item>
                     <p>
-                    </br>
-                    You can go to your nearest NSO branch or
+                        </br>
+                        You can go to your nearest NSO branch or
                     </p>
                     <a href="https://www.ecensus.com.ph/Secure/Files/Death%20Application%20Form.pdf"><button class="button button-assertive" target="_blank">Submit Online</button></a>
                     </br></br>

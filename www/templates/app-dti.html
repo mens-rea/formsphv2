@@ -1,20 +1,19 @@
 <ion-view view-title="DTI Business Name" ng-controller="TabCtrl">
-
-   <div class="tabs-striped tabs-top background-forms tabs-color-light">    
-            <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
-                    <i class="icon ion-information-circled"></i>
-                    General
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
-                    <i class="icon ion-gear-a"></i>
-                    Procedures
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
-                    <i class="icon ion-unlocked"></i>
-                    Requirements
-                </a>
-            </div>
+    <div class="tabs-striped tabs-top background-forms tabs-color-light">    
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                <i class="icon ion-information-circled"></i>
+                General
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                <i class="icon ion-gear-a"></i>
+                Procedures
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                <i class="icon ion-unlocked"></i>
+                Requirements
+            </a>
+        </div>
     </div>
 
     <ion-content class="has-tabs has-header">
@@ -33,7 +32,6 @@
             </div>
 
             <div ng-show="activeButton === 'gen'">
-
                 <h3>General</h3>
                 <ion-list>
                     <p>
@@ -182,7 +180,7 @@
                 <ion-checkbox ng-model="filter.printed1"> Must be a Filipino citizen, at least 18 years old </ion-checkbox>
                 <ion-checkbox ng-model="filter.printed2"> For Filipinos whose names are suggestive of alien nationality </ion-checkbox>
                 <p>
-                 must submit proof of citizenship such as birth certificate, PRC ID, voter's ID, passport(a) if the applicant has a foreign sounding name, acquired Filipino citizenship by naturalization, election or by other means provided by law, he must submit proof of his Filipino citizenship such as: Naturalization certificate and Oath of Allegiance, Affidavit of election or ID card issued by the Bureau of Immigration and Deportation, or Valid ID card issued by the Integrated Bar of the Philippines (IBP) or Professional Regulatory Commission (PRC)
+                    must submit proof of citizenship such as birth certificate, PRC ID, voter's ID, passport(a)if the applicant has a foreign sounding name, acquired Filipino citizenship by naturalization, election or by other means provided by law, he must submit proof of his Filipino citizenship such as: Naturalization certificate and Oath of Allegiance, Affidavit of election or ID card issued by the Bureau of Immigration and Deportation, or Valid ID card issued by the Integrated Bar of the Philippines (IBP) or Professional Regulatory Commission (PRC)
 
                 </p>
                 </br></br>
@@ -191,17 +189,17 @@
                      <strong>Single Proprietorship (foreign) </strong>
                 </p>
 
-                  <ion-checkbox ng-model="filter.printed1"> Photocopy of Alien Certificate of Registration (ACR) </ion-checkbox>
-                   <p>
-                   updated the current year. Present original for comparison. 
-                   </p>
-                   <ion-checkbox ng-model="filter.printed2"> Accomplished DTI Form No. 17 under R.A. 7042 </ion-checkbox>
-                   <ion-checkbox ng-model="filter.printed3"> Current written appointment of Filipino Residential Agent. </ion-checkbox>
-                   <ion-checkbox ng-model="filter.printed4"> Clearance from other involved agencies </ion-checkbox>
-                   <p>
-                   such as Department of Science and Technology (DOST), PNP, etc. 
-                   </p>
-                    <ion-checkbox ng-model="filter.printed5"> In case of alien retailer, current year's permit to engage in retail business per R.A. 1180
+                <ion-checkbox ng-model="filter.printed1"> Photocopy of Alien Certificate of Registration (ACR) </ion-checkbox>
+                <p>
+                    updated the current year. Present original for comparison. 
+                </p>
+                <ion-checkbox ng-model="filter.printed2"> Accomplished DTI Form No. 17 under R.A. 7042 </ion-checkbox>
+                <ion-checkbox ng-model="filter.printed3"> Current written appointment of Filipino Residential Agent. </ion-checkbox>
+                <ion-checkbox ng-model="filter.printed4"> Clearance from other involved agencies </ion-checkbox>
+                <p>
+                    such as Department of Science and Technology (DOST), PNP, etc. 
+                </p>
+                <ion-checkbox ng-model="filter.printed5"> In case of alien retailer, current year's permit to engage in retail business per R.A. 1180
                 </ion-checkbox>
             </div>
 

@@ -1,20 +1,19 @@
 <ion-view view-title="Barangay Clearance" ng-controller="TabCtrl">
-
     <div class="tabs-striped tabs-top background-forms tabs-color-light">    
-            <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
-                    <i class="icon ion-information-circled"></i>
-                    General
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
-                    <i class="icon ion-gear-a"></i>
-                    Procedures
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
-                    <i class="icon ion-unlocked"></i>
-                    Requirements
-                </a>
-            </div>
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                <i class="icon ion-information-circled"></i>
+                General
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                <i class="icon ion-gear-a"></i>
+                Procedures
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                <i class="icon ion-unlocked"></i>
+                Requirements
+            </a>
+        </div>
     </div>
     <ion-content class="has-tabs has-header">
         <div class="tab-views">
@@ -72,7 +71,7 @@
                     </p>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                         3. Accomplish biometrics
-                     <label class="toggle toggle-balanced">
+                            <label class="toggle toggle-balanced">
                                 <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
                                 <div class="track">
                                     <div class="handle"></div>
@@ -96,7 +95,7 @@
                     <strong>Additional Requirement</strong></br></br>
 
                     Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
-                       <em>* might require for new residents or new applicants with no barangay records.</em>
+                    <em>* might require for new residents or new applicants with no barangay records.</em>
 
                 </p>
             </div>

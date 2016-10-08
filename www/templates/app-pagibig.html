@@ -1,50 +1,50 @@
 <ion-view view-title="Pagibig" ng-controller="TabCtrl">
-   
-   <div class="tabs-striped tabs-top background-forms tabs-color-light">    
-            <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
-                    <i class="icon ion-information-circled"></i>
-                    General
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
-                    <i class="icon ion-gear-a"></i>
-                    Procedures
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
-                    <i class="icon ion-unlocked"></i>
-                    Requirements
-                </a>
-            </div>
+    <div class="tabs-striped tabs-top background-forms tabs-color-light">    
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                <i class="icon ion-information-circled"></i>
+                General
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                <i class="icon ion-gear-a"></i>
+                Procedures
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                <i class="icon ion-unlocked"></i>
+                Requirements
+            </a>
+        </div>
     </div>
+
     <ion-content class="has-tabs has-header">
         <div class="tab-views">
 
-             <p style="display: none;">{{ progress + "%"}}</p>
-                <div class="progress-cont">
-                    <progress max="100" value="{{progress}}"></progress>
-                </div>
-                <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
-                <div class="save-cont">
-                    <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
-                    <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
-                    <button class="button button-forms" ng-click="select('death')">Load Progress</button>
-                    <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
-                </div>
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+                <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
+                <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
+                <button class="button button-forms" ng-click="select('death')">Load Progress</button>
+                <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+            </div>
 
             <div ng-show="activeButton === 'gen'">
                 <h3>General</h3>
                 <ion-list>
                     <p>
-                      As a Regular Employee, each one is required to acquire Government Identification Numbers. This will be used by our employers for our benefit remittances. I, myself had completed securing all the required Membership including SSS, Philhealth and Pag-Ibig.
+                      As a Regular Employee, each one is required to acquire Government Identification Numbers.This will be used by our employers for our benefit remittances. I, myself had completed securing all the required Membership including SSS, Philhealth and Pag-Ibig.
                     </p>
                 </ion-list>
 
                 <h3>Address</h3>
                 <ion-list>
                     <p>
-                    For your immediate concerns you may also reach us at : </br></br>
-                    724-4244 (Pag-IBIG) - 24/7 Call Center operation.</br>
-                        You may also Email us at contactus@pagibigfund.gov.ph
+                        For your immediate concerns you may also reach us at : </br></br>
+                        724-4244 (Pag-IBIG) - 24/7 Call Center operation.</br>
+                            You may also Email us at contactus@pagibigfund.gov.ph
                     </p>
 
                 <h3>Other information</h3>
@@ -104,5 +104,5 @@
             <h6>Sources: <a href="http://http://www.pagibigfund.gov.ph/" target="_blank">http://http://www.pagibigfund.gov.ph/</a>, <a href="http://www.howtoquick.net" target="_blank">http://www.howtoquick.net</a>, <a href="http://www.pinoythinking.com" target="_blank">http://http://www.pinoythinking.com</a> </h6>
 
         </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

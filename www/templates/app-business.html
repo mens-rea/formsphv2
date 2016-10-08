@@ -1,20 +1,19 @@
 <ion-view view-title="Business Permit" ng-controller="TabCtrl">
-
     <div class="tabs-striped tabs-top background-forms tabs-color-light">    
-            <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
-                    <i class="icon ion-information-circled"></i>
-                    General
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
-                    <i class="icon ion-gear-a"></i>
-                    Procedures
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
-                    <i class="icon ion-unlocked"></i>
-                    Requirements
-                </a>
-            </div>
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                <i class="icon ion-information-circled"></i>
+                General
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                <i class="icon ion-gear-a"></i>
+                Procedures
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                <i class="icon ion-unlocked"></i>
+                Requirements
+            </a>
+        </div>
     </div>
     <ion-content class="has-tabs has-header">
         <div class="tab-views">
@@ -75,19 +74,18 @@
 
             <div class="tab-views" ng-show="activeButton === 'proc'">
                 <h3>Procedures</h3>
-
                 <ion-list>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                         1.  Fill up application form
-                        <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
                     </ion-item>
                     <p>
-                    Warning: please be warned that business permits are stil subject to change based on city's ordinancce that may differ from place to place.
+                        Warning: please be warned that business permits are stil subject to change based on city's ordinancce that may differ from place to place.
                     </p>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                         2. Register your business
@@ -130,7 +128,7 @@
                             </label>
                     </ion-item>
                         <p>
-                        Visit the mayor's office and present your Business Name Registration Certificate, two (2) valid IDs, a map or sketch of the location of the business and your community tax certificate (in some cases).
+                            Visit the mayor's office and present your Business Name Registration Certificate, two (2) valid IDs, a map or sketch of the location of the business and your community tax certificate (in some cases).
                         </p>
 
                     <ion-item class="item-toggle" style="font-size: 22px;">
@@ -143,7 +141,7 @@
                             </label>
                     </ion-item>
                         <p>
-                        Go to the Bureau of Internal Revenue (BIR) district office where your business will be located and present the following: Business Name Registration Certificate, Mayor's Permit, Barangay Clearance, Proof of your business address (e.g. lease/rental agreement, land title), Book of Accounts, and receipts and invoices from BIR accredited print shops, to be stamped by the BIR.
+                            Go to the Bureau of Internal Revenue (BIR) district office where your business will be located and present the following: Business Name Registration Certificate, Mayor's Permit, Barangay Clearance, Proof of your business address (e.g. lease/rental agreement, land title), Book of Accounts, and receipts and invoices from BIR accredited print shops, to be stamped by the BIR.
                         </p>
 
                     <ion-item class="item-toggle" style="font-size: 22px;">
@@ -156,7 +154,7 @@
                             </label>
                     </ion-item>
                         <p>
-                        As a requirement, you are required to secure a Tax Identification Number and apply as a self-employed member of the Social Security System.
+                            As a requirement, you are required to secure a Tax Identification Number and apply as a self-employed member of the Social Security System.
                         </p>
 
                     <ion-item class="item-toggle" style="font-size: 22px;">
@@ -169,7 +167,7 @@
                             </label>
                     </ion-item>
                         <p>
-                        After the application has been turned over to the cashier, you are required to pay for the fees.
+                            After the application has been turned over to the cashier, you are required to pay for the fees.
                         </p>
 
                     <ion-item class="item-toggle" style="font-size: 22px;">
@@ -182,7 +180,7 @@
                             </label>
                     </ion-item>
                         <p>
-                        If necessary, you must secure other permits for your business. Present your paid application to the Bureau of Fire Protection (BFP), Health and Sanitary Office, and City Environment and Natural Resources Office (CENRO) to receive your fire permit, sanitary permit, and environment permit respectively.
+                            If necessary, you must secure other permits for your business. Present your paid application to the Bureau of Fire Protection (BFP), Health and Sanitary Office, and City Environment and Natural Resources Office (CENRO) to receive your fire permit, sanitary permit, and environment permit respectively.
                         </p>
 
                     <ion-item class="item-toggle" style="font-size: 22px;">
@@ -221,5 +219,5 @@
             <h6>Sources: <a href="http://www.gov.ph/services/business-registration/" target="_blank">www.gov.ph/services/business-registration/</a> </h6>
 
         </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

@@ -1,20 +1,19 @@
 <ion-view view-title="Driver's License (non-pro)" ng-controller="TabCtrl">
-
     <div class="tabs-striped tabs-top background-forms tabs-color-light">    
-            <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
-                    <i class="icon ion-information-circled"></i>
-                    General
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
-                    <i class="icon ion-gear-a"></i>
-                    Procedures
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
-                    <i class="icon ion-unlocked"></i>
-                    Requirements
-                </a>
-            </div>
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                <i class="icon ion-information-circled"></i>
+                General
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                <i class="icon ion-gear-a"></i>
+                Procedures
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                <i class="icon ion-unlocked"></i>
+                Requirements
+            </a>
+        </div>
     </div>
     <ion-content class="has-tabs has-header">
         <div class="tab-views">
@@ -75,9 +74,9 @@
                         </label>
                     </ion-item>
                     <p>
-                    Go to the customer service counter to get your checklist of requirements and secure a driver's license application form. (The form is also available online. You can accomplish this form prior to transacting your business at the LTO.) Get a queue number.</br></br>
+                        Go to the customer service counter to get your checklist of requirements and secure a driver's license application form. (The form is also available online. You can accomplish this form prior to transacting your business at the LTO.) Get a queue number.</br></br>
 
-                    <a href="http://www.gov.ph/downloads/2014/06jun/DOTC-LTO-Form-21.pdf" target="_blank"><button class="button button-assertive">Download Form</button></a>
+                        <a href="http://www.gov.ph/downloads/2014/06jun/DOTC-LTO-Form-21.pdf" target="_blank"><button class="button button-assertive">Download Form</button></a>
                     </p>
                 
                     <ion-item class="item-toggle" style="font-size: 22px;">
@@ -102,7 +101,7 @@
                         </label>
                     </ion-item>
                     <p>
-                    When your name is called, go to where your photo and signature will be taken.
+                        When your name is called, go to where your photo and signature will be taken.
                     </p>
                      <ion-item class="item-toggle" style="font-size: 22px;">
                     4. Pay for your applicaton
@@ -114,37 +113,37 @@
                         </label>
                     </ion-item>
                     <p>
-                    Go to the cashier to pay the application fee .</br></br>
-                    <table>
-                      <tr>
-                        <th><strong>FEES AND CHARGES</strong></th>
-                        <th> </th>
-                      </tr>
-                      <tr>
-                        <td>Application Fee</td>
-                        <td>P100.00</td>
-                      </tr>
-                      <tr>
-                        <td>Computer Fee</td>
-                        <td>P67.63</td>
-                      </tr>
-                      <tr>
-                        <td><strong>TOTAL</strong></td>
-                        <td>P167.63</td>
-                      </tr>
-                      <tr>
-                        <td>License Fee</td>
-                        <td>P350.00</td>
-                      </tr>
-                      <tr>
-                        <td>Computer Fee</td>
-                        <td>P67.63</td>
-                      </tr>
-                      <tr>
-                        <td><strong>TOTAL</strong></td>
-                        <td>P417.63</td>
-                      </tr>
-                    </table>
+                        Go to the cashier to pay the application fee .</br></br>
+                        <table>
+                          <tr>
+                            <th><strong>FEES AND CHARGES</strong></th>
+                            <th> </th>
+                          </tr>
+                          <tr>
+                            <td>Application Fee</td>
+                            <td>P100.00</td>
+                          </tr>
+                          <tr>
+                            <td>Computer Fee</td>
+                            <td>P67.63</td>
+                          </tr>
+                          <tr>
+                            <td><strong>TOTAL</strong></td>
+                            <td>P167.63</td>
+                          </tr>
+                          <tr>
+                            <td>License Fee</td>
+                            <td>P350.00</td>
+                          </tr>
+                          <tr>
+                            <td>Computer Fee</td>
+                            <td>P67.63</td>
+                          </tr>
+                          <tr>
+                            <td><strong>TOTAL</strong></td>
+                            <td>P417.63</td>
+                          </tr>
+                        </table>
                     </p>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     5. Take the exams
@@ -173,7 +172,7 @@
                     with official receipt from any duly-licensed and practicing physician (Note: The LTO will not accept medical certificates which are over 15 days old.)
                 </p>
                 <ion-checkbox ng-model="filter.printed4"> Negative drugtest result </ion-checkbox>
-                  <p>
+                <p>
                    (from a DOH accredited drug testing center & Government Hospital)
                 </p>
                 <ion-checkbox ng-model="filter.printed5"> If employed: Taxpayer’s Identification Number (TIN) </ion-checkbox>
@@ -183,5 +182,5 @@
             <h6>Sources: <a href="http://www.gov.ph/services/driverslicense/new-license-how-to-apply-for-a-non-professional-license/" target="_blank">http://www.gov.ph/services</a> </h6>
 
         </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

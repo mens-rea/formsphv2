@@ -1,19 +1,19 @@
 <ion-view view-title="PDOS" ng-controller="TabCtrl">
    <div class="tabs-striped tabs-top background-forms tabs-color-light">    
-            <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
-                    <i class="icon ion-information-circled"></i>
-                    General
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
-                    <i class="icon ion-gear-a"></i>
-                    Procedures
-                </a>
-                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
-                    <i class="icon ion-unlocked"></i>
-                    Requirements
-                </a>
-            </div>
+      <div class="tabs tabs-icon-left">
+        <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+          <i class="icon ion-information-circled"></i>
+          General
+        </a>
+        <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+          <i class="icon ion-gear-a"></i>
+          Procedures
+        </a>
+        <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+          <i class="icon ion-unlocked"></i>
+          Requirements
+        </a>
+      </div>
     </div>
     <ion-content class="has-tabs has-header">
       <div class="tab-views">
@@ -24,10 +24,10 @@
         </div>
         <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
         <div class="save-cont">
-            <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
-            <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
-            <button class="button button-forms" ng-click="select('death')">Load Progress</button>
-            <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+          <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
+          <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
+          <button class="button button-forms" ng-click="select('death')">Load Progress</button>
+          <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
         </div>
 
         <div ng-show="activeButton === 'gen'">
@@ -63,52 +63,51 @@
             <ion-list>
                 <ion-item class="item-toggle" style="font-size: 22px;">
                 1. Register
-                  <label class="toggle toggle-balanced">
-                    <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
-                    <div class="track">
-                        <div class="handle"></div>
-                    </div>
-                  </label>
+                    <label class="toggle toggle-balanced">
+                      <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                      <div class="track">
+                          <div class="handle"></div>
+                      </div>
+                    </label>
                 </ion-item>
                 <p>
-              Sign up and log-in with your details to access the learning modules in the websites. Existing members of Jobstreet.com may also use their account to access the PEOS online.
-
+                  Sign up and log-in with your details to access the learning modules in the websites. Existing members of Jobstreet.com may also use their account to access the PEOS online.
                 </p>
                 <ion-item class="item-toggle" style="font-size: 22px;">
                 2. Take the learning modules
-                  <label class="toggle toggle-balanced">
-                    <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
-                    <div class="track">
-                        <div class="handle"></div>
-                    </div>
-                  </label>
+                    <label class="toggle toggle-balanced">
+                      <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                      <div class="track">
+                          <div class="handle"></div>
+                      </div>
+                    </label>
                 </ion-item>
                 <p>
-             Complete all of the eight (8) self-learning modules. Each module takes approximately seven (7) minutes to complete. 
+                  Complete all of the eight (8) self-learning modules. Each module takes approximately seven (7) minutes to complete. 
                 </p>
                 <ion-item class="item-toggle" style="font-size: 22px;">
                 3. Review your learnings
-                  <label class="toggle toggle-balanced">
-                    <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
-                    <div class="track">
-                        <div class="handle"></div>
-                    </div>
-                  </label>
+                    <label class="toggle toggle-balanced">
+                      <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                      <div class="track">
+                          <div class="handle"></div>
+                      </div>
+                    </label>
                 </ion-item>
                 <p>
-             Take the review at the end of each module. Answer all of the questions and get at least 3 correct answers out of the 5 questions to proceed.
+                  Take the review at the end of each module. Answer all of the questions and get at least 3 correct answers out of the 5 questions to proceed.
                 </p>
                 <ion-item class="item-toggle" style="font-size: 22px;">
                 4. Print your PEOS certificates
-                  <label class="toggle toggle-balanced">
-                    <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4)">
-                    <div class="track">
-                        <div class="handle"></div>
-                    </div>
-                  </label>
+                    <label class="toggle toggle-balanced">
+                      <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4)">
+                      <div class="track">
+                          <div class="handle"></div>
+                      </div>
+                    </label>
                 </ion-item>
                 <p>
-             Save and print a copy of your PEOS certificate and include this in your pre-employment processing with POEA.
+                  Save and print a copy of your PEOS certificate and include this in your pre-employment processing with POEA.
                 </p>
         </div>
         
@@ -116,23 +115,23 @@
             <h3>Requirements</h3>
             <ion-checkbox ng-model="filter.printed1"> Original and photocopy of passport </ion-checkbox>
             <p>
-            (must be valid about six months before date of travel.)
+              (must be valid about six months before date of travel.)
             </p>
             <ion-checkbox ng-model="filter.printed2"> Original and photocopy of visa </ion-checkbox>
             <ion-checkbox ng-model="filter.printed3"> One 2x2 or passport-size ID </ion-checkbox>
             <ion-checkbox ng-model="filter.printed4"> One valid ID with photograph </ion-checkbox>
             <p>
-           (e.g. SSS ID, GSIS eCard, PRC ID, driver's license, postal ID, ARC, etc.)
+              (e.g. SSS ID, GSIS eCard, PRC ID, driver's license, postal ID, ARC, etc.)
             </p>
             <h3>Requirements-USA-bound Immigrant</h3>
              <ion-checkbox ng-model="filter.printed5"> Photocopy of Immigrant Data Summary </ion-checkbox>
              <p>
-           (must not be detached from visa packet) except for K visa holder.
+              (must not be detached from visa packet) except for K visa holder.
             </p>
             <h3>Requirements-Canada-bound emigrant</h3>
             <ion-checkbox ng-model="filter.printed6"> Original and photocopy of </ion-checkbox>
              <p>
-           Confirmation of Permanent Residence (must not be torn or signed before departure)
+              Confirmation of Permanent Residence (must not be torn or signed before departure)
             </p>
             <h3>Requirements-Japan-bound emigrant</h3>
              <ion-checkbox ng-model="filter.printed7"> Original and photocopy of Certificate of Eligibility </ion-checkbox>
@@ -142,12 +141,12 @@
             <h3>Requirements-Italy-bound emigrants</h3>
             <ion-checkbox ng-model="filter.printed8"> Original and photocopy of Certificate </ion-checkbox>
              <p>
-           Nulla Osta
+              Nulla Osta
             </p>
             <h3>Requirements-New Zealand-bound emigrants</h3>
             <ion-checkbox ng-model="filter.printed9"> Original and photocopy of Certificate </ion-checkbox>
              <p>
-           letter of approval for Work to Residence visa.
+              letter of approval for Work to Residence visa.
             </p>
              <h3>Requirements-Australia-bound emigrants</h3>
             <ion-checkbox ng-model="filter.printed10"> Printed copy of Visa Grant Notification Letter.</ion-checkbox>
@@ -156,17 +155,17 @@
             <h3>Requirements-immigrant workers</h3>
             <ion-checkbox ng-model="filter.printe11"> Photocopy of  employment contract </ion-checkbox>
              <p>
-           employment contract
+              employment contract
             </p>
             <h3>Requirements-immigrant workers</h3>
             <ion-checkbox ng-model="filter.printed12"> Duly completed registration </ion-checkbox>
              <p>
-           for Emigrants or for Immigrant workers.
+              for Emigrants or for Immigrant workers.
             </p>
             <ion-checkbox ng-model="filter.printed13"> Payment of P400.00 registration fee </ion-checkbox>
             <ion-checkbox ng-model="filter.printed14">Attendance in the PDOS</ion-checkbox>
              <p>
-           guidance counseling or peer counseling session
+              guidance counseling or peer counseling session
             </p>
         </div>
 
