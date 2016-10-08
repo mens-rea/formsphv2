@@ -37,17 +37,40 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             db = window.sqlitePlugin.openDatabase({ name: "populated.db", location: 2, createFromLocation: 1 });
             alert('unique database');
           } else {
+
             // For debugging in the browser
             db = window.openDatabase("populated.db", 0, "Database", 200000);
 
-            var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3)";
-            $cordovaSQLite.execute(db, query).then(function(res) {
-              alert("inserted!"+docname + " " + prog);  
+            cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
+              var db_path = context.getDatabasePath("populated.db").getPath();
+                alert("inserted!"+db + " " + db_path);  
             }, function (err) {
               alert("error1:"+err.message);
             });
+
+            var s_query = "SELECT * FROM documents WHERE docname = 'death'";
+            $cordovaSQLite.execute(db, s_query).then(function(res) {
+              if(res.rows.length > 0) {
+                // if not empty
+                for(var i = 0; i < res.rows.length; i++){
+                  alert("success!" + res.rows.item(0).docname + " " + res.rows.item(0).prog);
+                }
+              } else {
+                // if empty insert values
+                var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3)";
+                $cordovaSQLite.execute(db, query).then(function(res) {
+                  alert("inserted!"+docname + " " + prog);  
+                }, function (err) {
+                  alert("error1:"+err.message);
+                });
+              }
+            }, function (err) {
+              console.error(err.message);
+            });
+
             alert('normal database');
-          }
+            
+        }
 
           /*cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id INTEGER PRIMARY KEY, docname TEXT, prog INTEGER, proc INTEGER)").then(function(res) {
               var db_path = context.getDatabasePath("populated.db").getPath();

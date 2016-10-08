@@ -17,91 +17,103 @@
             </div>
     </div>
     <ion-content class="has-tabs has-header">
-        <div class="tab-views" ng-show="activeButton === 'gen'">
-            <h3>General</h3>
-            <ion-list>
+        <div class="tab-views">
+
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+                <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
+                <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
+                <button class="button button-forms" ng-click="select('death')">Load Progress</button>
+                <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+            </div>
+
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                       Police clearance is a government document that is released to an individual upon request and one of the documents some employers require in the process of hiring new employees. This certificate ensures that you cleared and has not been involved in any criminal act. This is accepted as a valid ID and can also be use for legitimate identification purposes.As a part of safety precautions, some company employers require a Police Clearance in the process of hiring qualified employees. Getting Passports and other government IDs may also require a police clearance.</br>
+                        Police clearance, of course, has a validity time which may expire after a year after the certificate has been issued. The validity will not last a lifetime for the reason that you might involved yourself in any criminal cases anytime soon (which hopefully will not happen).
+                        
+
+                    </p>
+                </ion-list>
+
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
+                        
+                    </p>
+
+                <h3>Other information</h3>
+                <ion-list>
+                    <p>
+                        
+                    </p>
+                </ion-list>
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    1. Go to your local barangay hall
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                    <p>
+                   Find the barangay secretary and inform them that you need a barangay clearance. Be prepared to answer a few short questions about your residency and purpose for getting a barangay clearance.
+                    </p>
+                     <ion-item class="item-toggle" style="font-size: 22px;">
+                    2. Submit your accomplished form
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                    <p>
+                    Fill out and complete an application form with accurate details. Some barangays will only ask for your signature while others require a thumb print and will even take your picture.
+                    </p>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    3. Pay the necessary fees
+                     <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                    <p>
+                   After completing the application form and supplying your details, submit all the requirements and pay the processing fees. It is advised that you bring between P50-P100. Once paid, just wait for 20 to 30 minutes and you will be given your barangay clearance.
+                    </p>
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <ion-checkbox ng-model="filter.printed1"> Accomplished Form</ion-checkbox>
+                <ion-checkbox ng-model="filter.printed2"> Recent Cedula (Community Tax Certificate) </ion-checkbox>
+                 <ion-checkbox ng-model="filter.printed3"> Photocopy of valid ID </ion-checkbox>
+
                 <p>
-                   Police clearance is a government document that is released to an individual upon request and one of the documents some employers require in the process of hiring new employees. This certificate ensures that you cleared and has not been involved in any criminal act. This is accepted as a valid ID and can also be use for legitimate identification purposes.As a part of safety precautions, some company employers require a Police Clearance in the process of hiring qualified employees. Getting Passports and other government IDs may also require a police clearance.</br>
-                    Police clearance, of course, has a validity time which may expire after a year after the certificate has been issued. The validity will not last a lifetime for the reason that you might involved yourself in any criminal cases anytime soon (which hopefully will not happen).
-                    
+                <strong>Additional Requirement</strong></br></br>
+
+                Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
+                   <em>* might require for new residents or new applicants with no barangay records.</em>
 
                 </p>
-            </ion-list>
+            </div>
 
-            <h3>Address</h3>
-            <ion-list>
-                <p>
-                    
-                </p>
+            <h6>Sources: <a href="http://www.gsis.gov.ph/default.php?id=73" target="_blank">http://www.gsis.gov.ph/default.php?id=73</a>, <a href="http://www.quezoncity.gov.ph" target="_blank">http://www.quezoncity.gov.ph</a>, <a href="http://www.powerpinoys.com" target="_blank">http://www.powerpinoys.com</a>, <a href="http://www.faq.ph" target="_blank">http://www.faq.ph</a>, <a href="http://thinkpesos.com" target="_blank">http://www.thinkpesos.com</a> </h6>
 
-            <h3>Other information</h3>
-            <ion-list>
-                <p>
-                    
-                </p>
-            </ion-list>
         </div>
-
-        <div class="tab-views" ng-show="activeButton === 'proc'">
-            <h3>Procedures</h3>
-            <ion-list>
-                <ion-item class="item-toggle" style="font-size: 22px;">
-                1. Go to your local barangay hall
-                        <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
-                </ion-item>
-                <p>
-               Find the barangay secretary and inform them that you need a barangay clearance. Be prepared to answer a few short questions about your residency and purpose for getting a barangay clearance.
-                </p>
-                 <ion-item class="item-toggle" style="font-size: 22px;">
-                2. Submit your accomplished form
-                        <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
-                </ion-item>
-                <p>
-                Fill out and complete an application form with accurate details. Some barangays will only ask for your signature while others require a thumb print and will even take your picture.
-                </p>
-                <ion-item class="item-toggle" style="font-size: 22px;">
-                3. Pay the necessary fees
-                 <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
-                            <div class="track">
-                                <div class="handle"></div>
-                            </div>
-                        </label>
-                </ion-item>
-                <p>
-               After completing the application form and supplying your details, submit all the requirements and pay the processing fees. It is advised that you bring between P50-P100. Once paid, just wait for 20 to 30 minutes and you will be given your barangay clearance.
-                </p>
-        </div>
-        
-        <div class="tab-views" ng-show="activeButton === 'req'">
-            <h3>Requirements</h3>
-            <ion-checkbox ng-model="filter.printed1"> Accomplished Form</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed2"> Recent Cedula (Community Tax Certificate) </ion-checkbox>
-             <ion-checkbox ng-model="filter.printed3"> Photocopy of valid ID </ion-checkbox>
-
-            <p>
-            <strong>Additional Requirement</strong></br></br>
-
-            Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
-               <em>* might require for new residents or new applicants with no barangay records.</em>
-
-            </p>
-        </div>
-
-        <h6>Sources: <a href="http://www.gsis.gov.ph/default.php?id=73" target="_blank">http://www.gsis.gov.ph/default.php?id=73</a>, <a href="http://www.quezoncity.gov.ph" target="_blank">http://www.quezoncity.gov.ph</a>, <a href="http://www.powerpinoys.com" target="_blank">http://www.powerpinoys.com</a>, <a href="http://www.faq.ph" target="_blank">http://www.faq.ph</a>, <a href="http://thinkpesos.com" target="_blank">http://www.thinkpesos.com</a> </h6>
-
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
-        </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

@@ -17,7 +17,7 @@
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+    <ion-content class="has-tabs has-header">
         <div class="tab-views">
 
             <p style="display: none;">{{ progress + "%"}}</p>
@@ -57,8 +57,14 @@
                 <div ng-show="activeButton === 'proc'">
                     <h3>Procedures</h3>
                     <ion-list>
-                        <ion-item>
+                        <ion-item class="item-toggle" style="font-size: 22px;">
                         1. Accomplish your application form
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
                         </ion-item>
                         <p>
                        Visit an NSO Office or access the PSA website to obtain a copy of the application form. The accomplished form may be submitted to the screener's desk or online. For online applications, provide your TIN and accurate delivery details. 
@@ -68,14 +74,26 @@
                         <a href="https://www.ecensus.com.ph/Secure/OnlineApplication.aspx#Top" target="_blank"><button class="button button-assertive">Online Application</button></a>
                         </p>
                         </br></br>
-                        <ion-item>
+                        <ion-item class="item-toggle" style="font-size: 22px;">
                         2. Pay for your application
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
                         </ion-item>
                         <p>
                         Payments may be made to the cashier or collecting officer for walk-in applications, or using VISA, Mastercard, Bancnet ATM, or Globe GCash, or via Metrobank or Bayad Center for online applications.  
                         </p>
-                        <ion-item>
+                        <ion-item class="item-toggle" style="font-size: 22px;">
                         3. Wait for your marriage certificate
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
                         </ion-item>
                         <p>
                         Walk-in applicants will receive their marriage certificate within 1 hour. Depending on the delivery conditions, online applicants will need to wait a few days to receive their document.

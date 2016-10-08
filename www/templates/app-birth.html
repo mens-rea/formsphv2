@@ -17,7 +17,7 @@
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+    <ion-content class="has-tabs has-header">
         <div class="tab-views">
 
             <p style="display: none;">{{ progress + "%"}}</p>
@@ -72,16 +72,28 @@
             <div ng-show="activeButton === 'proc'">
                 <h3>Procedures</h3>
                 <ion-list>
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     1. Fill out online application form
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
                     </br>
                     <a href="https://www.ecensus.com.ph/Secure/OnlineApplication.aspx" target="_blank"><button class="button button-assertive">Sign Up</button></a>
                     </p>
                     </br></br>
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     2. Pay through accredited payment channels
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <section>
                         <ul class="list-unordered">
@@ -95,8 +107,15 @@
                         <li>UnionBank ATM (UnionBank account holders only)</li>
                         </ul>
                     </section>
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     3. Wait for delivery
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+
                     </ion-item>
                 </ion-list>
             </div>

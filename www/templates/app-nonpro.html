@@ -16,7 +16,7 @@
                 </a>
             </div>
     </div>
-    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+    <ion-content class="has-tabs has-header">
         <div class="tab-views">
 
             <p style="display: none;">{{ progress + "%"}}</p>
@@ -65,8 +65,14 @@
             <div ng-show="activeButton === 'proc'">
                 <h3>Procedures</h3>
                 <ion-list>
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     1. Accomplish application form
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
                     Go to the customer service counter to get your checklist of requirements and secure a driver's license application form. (The form is also available online. You can accomplish this form prior to transacting your business at the LTO.) Get a queue number.</br></br>
@@ -74,20 +80,38 @@
                     <a href="http://www.gov.ph/downloads/2014/06jun/DOTC-LTO-Form-21.pdf" target="_blank"><button class="button button-assertive">Download Form</button></a>
                     </p>
                 
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     2. Submit your requirements
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
                         When your number is called, proceed to the evaluator counter and submit all the required documents and have it checked for completeness and authenticity.
                     </p>
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     3. Have your photo and signature taken
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
                     When your name is called, go to where your photo and signature will be taken.
                     </p>
-                     <ion-item>
-                    3. Pay for your applicaton
+                     <ion-item class="item-toggle" style="font-size: 22px;">
+                    4. Pay for your applicaton
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
                     Go to the cashier to pay the application fee .</br></br>
@@ -122,12 +146,19 @@
                       </tr>
                     </table>
                     </p>
-                    <ion-item>
-                    3. Take the exams
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    5. Take the exams
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check5" ng-change="UpdateToggle(5)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
                        Go to the Examination Room for the lecture and written exam. After passing the written exam, wait for your name to be called for the practical exam.
                     </p>
+                </ion-list>
             </div>
             
             <div ng-show="activeButton === 'req'">

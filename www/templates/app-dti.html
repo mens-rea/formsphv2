@@ -17,7 +17,7 @@
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+    <ion-content class="has-tabs has-header">
         <div class="tab-views">
 
             <p style="display: none;">{{ progress + "%"}}</p>
@@ -70,58 +70,107 @@
             <div ng-show="activeButton === 'proc'">
                 <h3>Procedures</h3>
                 <ion-list>
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     1. Choose a business name
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
-                  Have at least three business names in case your first preference cannot be registered. Make sure not to choose one that is similar or confusingly similar to a registered business name, your next preferred business name will be considered. 
+                        Have at least three business names in case your first preference cannot be registered. Make sure not to choose one that is similar or confusingly similar to a registered business name, your next preferred business name will be considered. 
                     </p>
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     2. What is an acceptable business name?
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
-                 In determining whether a proposed business name for registration is acceptable, the following factors shall be considered:A. The root word or words of the name shall be considered (e.g. "Island" instead of "Islander")B. The business name should describe the nature of the business.C. It should be comprised solely of any or all of the following: Letters, numerals, and punctuation marks that are part of the English and Filipino language.
+                        In determining whether a proposed business name for registration is acceptable, the following factors shall be considered:A. The root word or words of the name shall be considered (e.g. "Island" instead of "Islander")B. The business name should describe the nature of the business.C. It should be comprised solely of any or all of the following: Letters, numerals, and punctuation marks that are part of the English and Filipino language.
                     </p>
-                     <ion-item>
+                     <ion-item class="item-toggle" style="font-size: 22px;">
                     3.Search for a business name
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
-                An online search facility is provided in the WEBNRS for you to find registered business names in the Philippines (www.bnrs.dti.gov.ph). The search facility should not be used to determine the availability of a business name for registration. This can only be determined at the time of lodgment of an application to register a business name. There are two (2) search criteria available for the public, namely Begins With and Contains. You can conduct a search by typing the exact business name or a few words contained in a business name.
+                        An online search facility is provided in the WEBNRS for you to find registered business names in the Philippines (www.bnrs.dti.gov.ph). The search facility should not be used to determine the availability of a business name for registration. This can only be determined at the time of lodgment of an application to register a business name. There are two (2) search criteria available for the public, namely Begins With and Contains. You can conduct a search by typing the exact business name or a few words contained in a business name.
                     </p>
-                     <ion-item>
+                     <ion-item class="item-toggle" style="font-size: 22px;">
                     4.Register your business name
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
-               Complete BTRCP Form No. 16. Information marked with an asterisk (*) is required field to be filled out. Otherwise, you will receive an error message prompting you to fill them before the succeeding page is displayed.
+                        Complete BTRCP Form No. 16. Information marked with an asterisk (*) is required field to be filled out. Otherwise, you will receive an error message prompting you to fill them before the succeeding page is displayed.
                     </p>
                     </br>
-                    <a href="http://www.bnrs.dti.gov.ph/c/document_library/get_file?p_l_id=30949&folderId=31773&name=DLFE-2201.pdf" target="_blank"><button class="button button-assertive">Download Form</button></a>
+                    <a href="#" target="_blank"><button class="button button-assertive">Download Form</button></a>
                     </p>
                     </br></br>
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     5. Submit documentary requirements
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check5" ng-change="UpdateToggle(5)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
                         The list of documentary requirements to be submitted to the proper DTI Office where your business is located is indicated in the Transaction Reference Number (TRN) Acknowledgement found in the last page of the online application form. The TRN Acknowledgement form should be signed and submitted to DTI also.
                     </p>
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     6. Pay your application
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check6" ng-change="UpdateToggle(6)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
-                    Payment of application fee can be made at the DTI office indicated in your Transaction Reference Number (TRN) ackowledgement form. You have the option to pay through GCash. Business hours are Monday to Friday, 8:00 am to 5:00 pm.
+                        Payment of application fee can be made at the DTI office indicated in your Transaction Reference Number (TRN) ackowledgement form. You have the option to pay through GCash. Business hours are Monday to Friday, 8:00 am to 5:00 pm.
                     </p>
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     7. Secure other permits
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check7" ng-change="UpdateToggle(7)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
-                    If necessary, you must secure other permits for your business. Present your paid application to the Bureau of Fire Protection (BFP), Health and Sanitary Office, and City Environment and Natural Resources Office (CENRO) to receive your fire permit, sanitary permit, and environment permit respectively.  
+                        If necessary, you must secure other permits for your business. Present your paid application to the Bureau of Fire Protection (BFP), Health and Sanitary Office, and City Environment and Natural Resources Office (CENRO) to receive your fire permit, sanitary permit, and environment permit respectively.  
                     </p>
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     8. Claim your business permit
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check8" ng-change="UpdateToggle(8)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
-                    Once the process is done, you will receive your license to operate. Take note that in some cities, permits may be issued differently.
+                        Once the process is done, you will receive your license to operate. Take note that in some cities, permits may be issued differently.
                     </p>
+                </ion-list>
             </div>
             
             <div ng-show="activeButton === 'req'">

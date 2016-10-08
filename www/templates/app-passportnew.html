@@ -16,7 +16,21 @@
             </div>
     </div>
     <ion-content class="has-tabs has-header">
-        <div class="tab-views" ng-show="activeButton === 'gen'">
+        <div class="tab-views">
+
+        <p style="display: none;">{{ progress + "%"}}</p>
+        <div class="progress-cont">
+            <progress max="100" value="{{progress}}"></progress>
+        </div>
+        <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+        <div class="save-cont">
+            <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
+            <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
+            <button class="button button-forms" ng-click="select('death')">Load Progress</button>
+            <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+        </div>
+
+        <div ng-show="activeButton === 'gen'">
             <h3>General</h3>
             <ion-list>
                 <p>
@@ -41,7 +55,7 @@
             </ion-list>
         </div>
 
-        <div class="tab-views" ng-show="activeButton === 'proc'">
+        <div ng-show="activeButton === 'proc'">
             <h3>Procedures</h3>
             <ion-list>
                 <ion-item class="item-toggle" style="font-size: 22px;">
@@ -82,7 +96,7 @@
                 </p>
         </div>
         
-        <div class="tab-views" ng-show="activeButton === 'req'">
+        <div ng-show="activeButton === 'req'">
             <h3>Requirements</h3>
             <ion-checkbox ng-model="filter.printed1"> Accomplished Form</ion-checkbox>
             <ion-checkbox ng-model="filter.printed2"> Recent Cedula (Community Tax Certificate) </ion-checkbox>
@@ -99,8 +113,6 @@
 
         <h6>Sources: <a href="http://www.gsis.gov.ph/default.php?id=73" target="_blank">http://www.gsis.gov.ph/default.php?id=73</a>, <a href="http://www.quezoncity.gov.ph" target="_blank">http://www.quezoncity.gov.ph</a>, <a href="http://www.powerpinoys.com" target="_blank">http://www.powerpinoys.com</a>, <a href="http://www.faq.ph" target="_blank">http://www.faq.ph</a>, <a href="http://thinkpesos.com" target="_blank">http://www.thinkpesos.com</a> </h6>
 
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
         </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

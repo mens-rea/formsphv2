@@ -16,7 +16,21 @@
             </div>
     </div>
     <ion-content class="has-tabs has-header">
-        <div class="tab-views" ng-show="activeButton === 'gen'">
+      <div class="tab-views">
+
+        <p style="display: none;">{{ progress + "%"}}</p>
+        <div class="progress-cont">
+            <progress max="100" value="{{progress}}"></progress>
+        </div>
+        <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+        <div class="save-cont">
+            <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
+            <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
+            <button class="button button-forms" ng-click="select('death')">Load Progress</button>
+            <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+        </div>
+
+        <div ng-show="activeButton === 'gen'">
             <h3>General</h3>
             <ion-list>
                 <p>
@@ -44,37 +58,61 @@
             </ion-list>
         </div>
 
-        <div class="tab-views" ng-show="activeButton === 'proc'">
+        <div ng-show="activeButton === 'proc'">
             <h3>Procedures</h3>
             <ion-list>
-                <ion-item>
+                <ion-item class="item-toggle" style="font-size: 22px;">
                 1. Register
+                  <label class="toggle toggle-balanced">
+                    <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                  </label>
                 </ion-item>
                 <p>
               Sign up and log-in with your details to access the learning modules in the websites. Existing members of Jobstreet.com may also use their account to access the PEOS online.
 
                 </p>
-                <ion-item>
+                <ion-item class="item-toggle" style="font-size: 22px;">
                 2. Take the learning modules
+                  <label class="toggle toggle-balanced">
+                    <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                  </label>
                 </ion-item>
                 <p>
              Complete all of the eight (8) self-learning modules. Each module takes approximately seven (7) minutes to complete. 
                 </p>
-                <ion-item>
+                <ion-item class="item-toggle" style="font-size: 22px;">
                 3. Review your learnings
+                  <label class="toggle toggle-balanced">
+                    <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                  </label>
                 </ion-item>
                 <p>
              Take the review at the end of each module. Answer all of the questions and get at least 3 correct answers out of the 5 questions to proceed.
                 </p>
-                <ion-item>
+                <ion-item class="item-toggle" style="font-size: 22px;">
                 4. Print your PEOS certificates
+                  <label class="toggle toggle-balanced">
+                    <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4)">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                  </label>
                 </ion-item>
                 <p>
              Save and print a copy of your PEOS certificate and include this in your pre-employment processing with POEA.
                 </p>
         </div>
         
-        <div class="tab-views" ng-show="activeButton === 'req'">
+        <div ng-show="activeButton === 'req'">
             <h3>Requirements</h3>
             <ion-checkbox ng-model="filter.printed1"> Original and photocopy of passport </ion-checkbox>
             <p>
@@ -134,8 +172,7 @@
 
         <h6>Sources: <a href="http://www.gov.ph/" target="_blank">http://www.gov.ph/</a>, <a href="http://peos.poea.gov.ph/" target="_blank">http://peos.poea.gov.ph//</a> </h6>
 
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
-        </div>
-      </ion-content>
+       
+      </div>
+    </ion-content>
 </ion-view>

@@ -16,7 +16,7 @@
                 </a>
             </div>
     </div>
-    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+    <ion-content class="has-tabs has-header">
         <div class="tab-views">
 
              <p style="display: none;">{{ progress + "%"}}</p>
@@ -58,23 +58,41 @@
             <div ng-show="activeButton === 'proc'">
                 <h3>Procedures</h3>
                 <ion-list>
-                    <ion-item>
+                    <ion-item  class="item-toggle" style="font-size: 22px;">
                     1. Accomplish your application form
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
-                   The first step is to visit the Pag-IBIG Fund Service website (pagibigfund.gov.ph), and answer the registration form as a new member. If you wish to do this manually, visit the nearest Pag-IBIG office and have a staff guide you in your quick registration. Fill out the form with valid and accurate information.
+                        The first step is to visit the Pag-IBIG Fund Service website (pagibigfund.gov.ph), and answer the registration form as a new member. If you wish to do this manually, visit the nearest Pag-IBIG office and have a staff guide you in your quick registration. Fill out the form with valid and accurate information.
                     </p>
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     2. Take note of your tracking number
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
-                  Regardless of whether you applied online or in person, a registration tracking number (RTN) will be sent to your mobile number or email address after your registration. Your RTN can now be used to avail or register for Pag-IBIG services.  
+                        Regardless of whether you applied online or in person, a registration tracking number (RTN) will be sent to your mobile number or email address after your registration. Your RTN can now be used to avail or register for Pag-IBIG services.  
                     </p>
-                    <ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     3.Get your MID Number
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
                     </ion-item>
                     <p>
-                   If necessary, visit the Pag-IBIG Fund Service website again and choose the "View Registration Option." Enter your RTN and name, and input the code. View or print your Member's Data Form, and look for the MID No. on the top right of the document.
+                        If necessary, visit the Pag-IBIG Fund Service website again and choose the "View Registration Option." Enter your RTN and name, and input the code. View or print your Member's Data Form, and look for the MID No. on the top right of the document.
                     </p>
             </div>
             

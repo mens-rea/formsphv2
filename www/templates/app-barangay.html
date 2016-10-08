@@ -16,18 +16,18 @@
                 </a>
             </div>
     </div>
-    <ion-content class="has-tabs has-header"  ng-controller="ProgCtrl as progs">
+    <ion-content class="has-tabs has-header">
         <div class="tab-views">
             
-            <p style="display: none;">{{ progress + "%"}}</p>
+            <p style="display: none;">{{ barangay.progress + "%"}}</p>
             <div class="progress-cont">
                 <progress max="100" value="{{progress}}"></progress>
             </div>
-            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ barangay.progress + "%"}}</label>
             <div class="save-cont">
                 <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
-                <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
-                <button class="button button-forms" ng-click="select('death')">Load Progress</button>
+                <button class="button button-forms" ng-click="insert('barangay',0)">Save Progress</button>
+                <button class="button button-forms" ng-click="select('barangay')">Load Progress</button>
                 <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
             </div>
 
@@ -82,6 +82,7 @@
                     <p>
                         After paying, your fingerprint and photo will be taken by the staff. Also affix your signature when asked to.   
                     </p>
+                </ion-list>
             </div>
             
             <div ng-show="activeButton === 'req'">

@@ -16,7 +16,7 @@
                 </a>
             </div>
     </div>
-    <ion-content class="has-tabs has-header" ng-init="select('death')" ng-controller="ProgCtrl as progs">ss
+    <ion-content class="has-tabs has-header">
         <div class="tab-views">
 
             <p style="display: none;">{{ progress + "%"}}</p>
@@ -75,6 +75,7 @@
 
             <div class="tab-views" ng-show="activeButton === 'proc'">
                 <h3>Procedures</h3>
+
                 <ion-list>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                         1.  Fill up application form
@@ -85,12 +86,17 @@
                             </div>
                         </label>
                     </ion-item>
-                <p>
-                Warning: please be warned that business permits are stil subject to change based on city's ordinancce that may differ from place to place.
-                </p>
-                <ion-list>
-                    <ion-item>
-                    1. Register your business
+                    <p>
+                    Warning: please be warned that business permits are stil subject to change based on city's ordinancce that may differ from place to place.
+                    </p>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        2. Register your business
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
                     </ion-item>
                         <p>
                             Register your business with the DTI and obtain a Business Name Registration Certificate.
@@ -100,54 +106,98 @@
                         </p>
                         </br></br>
 
-                    <ion-item>
-                    2. Secure barangay/municipal/regional clearance
-                    </ion-item>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        3. Secure clearance
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item class="item-toggle" style="font-size: 22px;">
                         <p>
+                            for barangay/municipal/regional clearance</br>
                             Present your Business Name Registration Certificate, two (2) valid IDs and proof of address of business location to the concerned local government where you plan to setup the business.
                         </p>
 
-                    <ion-item>
-                    3. Get a business permit
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        4. Get a business permit
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
                     </ion-item>
                         <p>
                         Visit the mayor's office and present your Business Name Registration Certificate, two (2) valid IDs, a map or sketch of the location of the business and your community tax certificate (in some cases).
                         </p>
 
-                    <ion-item>
-                    4. Visit the BIR
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        5. Visit the BIR
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check5" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
                     </ion-item>
                         <p>
                         Go to the Bureau of Internal Revenue (BIR) district office where your business will be located and present the following: Business Name Registration Certificate, Mayor's Permit, Barangay Clearance, Proof of your business address (e.g. lease/rental agreement, land title), Book of Accounts, and receipts and invoices from BIR accredited print shops, to be stamped by the BIR.
                         </p>
 
-                    <ion-item>
-                    5. Apply for TIN and SSS
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        6. Apply for TIN and SSS
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check6" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
                     </ion-item>
                         <p>
                         As a requirement, you are required to secure a Tax Identification Number and apply as a self-employed member of the Social Security System.
                         </p>
 
-                    <ion-item>
-                    6. Pay for your application
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        7. Pay for your application
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check7" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
                     </ion-item>
                         <p>
                         After the application has been turned over to the cashier, you are required to pay for the fees.
                         </p>
 
-                    <ion-item>
-                    7. Secure other permits
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        8. Secure other permits
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check8" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
                     </ion-item>
                         <p>
                         If necessary, you must secure other permits for your business. Present your paid application to the Bureau of Fire Protection (BFP), Health and Sanitary Office, and City Environment and Natural Resources Office (CENRO) to receive your fire permit, sanitary permit, and environment permit respectively.
                         </p>
 
-                    <ion-item>
-                    8. Claim your businness permit
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        9. Claim your businness permit
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check9" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
                     </ion-item>
                         <p>
                             Once the process is done, you will receive your license to operate. Take note that in some cities, permits may be issued differently.
                         </p>
+                </ion-list>
             </div>
         
             <div class="tab-views" ng-show="activeButton === 'req'">
