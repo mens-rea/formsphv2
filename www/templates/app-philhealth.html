@@ -60,7 +60,7 @@
                 <h3>Procedures</h3>
                 <ion-list>
                     <ion-item class="item-toggle" style="font-size: 22px;">
-                    1. Fill out two (2) copies Form
+                        1. Fill out two (2) copies Form
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
                             <div class="track">
@@ -69,11 +69,12 @@
                         </label>
                     </ion-item>
                     <p>
-                      PhilHealth Member Registration Form (PMRF)</br></br>
-                      <a href="https://www.philhealth.gov.ph/downloads/membership/pmrf_revised.pdf" target="_blank"><button class="button button-assertive">Application Form</button></a>
+                        PhilHealth Member Registration Form (PMRF)</br></br>
+                        <a href="https://www.philhealth.gov.ph/downloads/membership/pmrf_revised.pdf" target="_blank"><button class="button button-assertive">Application Form</button></a>
                     </p>
-                     <ion-item class="item-toggle" style="font-size: 22px;">
-                    2. Submit your accomplished form
+
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        2. Submit your accomplished form
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
                             <div class="track">
@@ -84,8 +85,9 @@
                     <p>
                         Submit PMRF to the HR Department of employer
                     </p>
+
                     <ion-item class="item-toggle" style="font-size: 22px;">
-                    3. Wait for the result 
+                        3. Wait for the result 
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
                             <div class="track">
@@ -96,14 +98,18 @@
                     <p>
                         to get your Member Data Record and PhilHealth ID card</br></br>
                         For Newly Hired Employees with PIN</br></br> 
+
                         Report your PIN to your employer for them to indicate the same in their ER2.
                     </p>
+                </ion-list>
             </div>
-            
-            <div ng-show="activeButton === 'req'">
+        
+            <div class="tab-views" ng-show="activeButton === 'req'">
                 <h3>Requirements</h3>
                 <ion-checkbox ng-model="filter.printed1"> Photocopy of NSO Birth Certificate</ion-checkbox>
-                <ion-checkbox ng-model="filter.printed3"> Photocopy of valid ID </ion-checkbox>
+                 <ion-checkbox ng-model="filter.printed3"> Photocopy of valid ID </ion-checkbox>
+              
+                </p>
             </div>
 
             <h6>Sources: <a href="http://www.gov.ph/services/philhealth-formal-economy-membership/" target="_blank">http://www.gov.ph/services/philhealth-formal-economy-membership/</a> </h6>
