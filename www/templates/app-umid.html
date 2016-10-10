@@ -1,70 +1,226 @@
 
 
-<ion-view view-title="SSS ID/UMID card">
+<ion-view view-title="SSS ID/UMID CARD" ng-controller="TabCtrl">
 
     <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
             <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-umid-proc" onclick="document.getElementById('umid-proc').style.display='block';document.getElementById('umid-req').style.display='none';">
+                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                    <i class="icon ion-information-circled"></i>
+                    General
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
                     <i class="icon ion-gear-a"></i>
                     Procedures
                 </a>
-                <a class="tab-item tab-umid-req" onclick="document.getElementById('umid-req').style.display='block';document.getElementById('umid-proc').style.display='none';">
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
                     <i class="icon ion-unlocked"></i>
                     Requirements
                 </a>
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header">
+    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+                <button class="button button-positive" ng-click="reset()">Saved Progress</button>
+                <button class="button button-positive" ng-click="insert('death',66)">Save Progress</button>
+                <button class="button button-positive" ng-click="select('death')">Load Progress</button>
+                <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+            </div>
 
-        <div id="umid-proc" class="tab-views">
-            <h1>PROCEDURES</h1>
-            <ion-list>
-                <ion-item>
-                1. Visit any of the folllowing government agencies:
-                </ion-item>
-                <p>
-                Social Security System (SSS) – See all SSS Offices within Metro Manila</br>
-                PhilHealth</br>
-                Government Service Insurance System (GSIS)</br>
-                Pag-Ibig – See all Pag-Ibig Offices within Metro Manila
-                </p>
-                <ion-item>
-                2.  Fill out the form
-                </ion-item>
-                <p>
-                Forms are available at enrollment centers . It can also be downloaded online via GSIS (government employee)  or SSS website (private employee or self-employed or OFW).
-                </p>
-                <ion-item>
-                3.  Verify UMID form
-                </ion-item>
-                <p>
-                Submit your form along with your valid IDs.
-                </p>
-                <ion-item>
-                4.  ID capture, fingerprint and signature
-                </ion-item>
-                <p>
-                Once you’ve got verified, you’ll be asked to transfer to another window for an ID picture, to scan your fingerprints and to sign on the signature pad.
-                </p>
-                <ion-item>
-                5.  Wait for UMID card to arrive by mail
-                </ion-item>
-                <p>
-                After your ID capture, you will have to wait for 30 days to receive your UMID ID by mail. If you fail to receive the ID after 30 days, inquire to your nearest SSS Branch Office.
-                </p>
-            </ion-list>
-        </div>
-        
-        <div id="umid-req" style="display: none;" class="tab-views">
-          	<h1>REQUIREMENTS</h1>
-            <ion-checkbox ng-model="filter.printed2">One (1) Primary Valid ID or Two (2) Secondary Valid IDs</ion-checkbox>
-        </div>
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                        UMID a.k.a. Unified Multi-purpose ID is the single ID card for all SSS, GSIS, Pagibig and Philhealth members so it is important to have one. How to get and apply for UMID card? It is simple and very easy. You cannot get or apply UMID online in the moment as you need to do it personally. 
 
-        <h6>Source: <a href="http://www.iweb.ph/how-to-apply-umid-card" target="_blank">http://www.iweb.ph/how-to-apply-umid-card</a></h6>
+                    </br>UMID system is in compliance with Executive Order No. 420 dated April 13, 2005 which required all government agencies and government owned and controlled corporations (GOCCs) to streamline and harmonize their identification systems, and Executive Order No. 700 dated January 16, 2008 which identified the social security identification system as the core of the UMID system and directed the SSS to implement the streamlining and harmonization of the ID systems of all government agencies and GOCCs. GSIS is the first to adopt the Unified Multi-purpose ID card.
 
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+                        
+                    </p>
+                </ion-list>
+
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
+                    
+                    Main Branch: SSS Building East Avenue Diliman, Quezon City 
+
+                    </br>Or go to the nearest SSS Branch Office
+
+                    </p>
+                </ion-list>
+
+                <h3>Contact</h3>
+                <ion-list>
+                    <p>
+
+                        </br>
+                            Tel #: 0920-6401, 920-6446
+                        </br>Website: www.sss.gov.ph
+                        </br>Email: ssemail@info.com.ph
+
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        1.  Visit Goverment Agenciess
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                        <p>
+                            </br>Social Security System (SSS) – See all SSS Offices within Metro Manila
+                            </br>PhilHealth
+                            </br>Government Service Insurance System (GSIS)
+                            </br>Pag-Ibig – See all Pag-Ibig Offices within Metro Manila
+                        </p>
+                        
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        2.  Accomplish Form
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                        <p>
+                                Forms are available at enrollment centers . It can also be downloaded online via GSIS (government employee)  or SSS website (private employee or self-employed or OFW).
+                        </p>
+                        </br></br>
+                        <h4>UMID card application form for GSIS members</h4>
+                        <a href="http://www.gsis.gov.ph/umid/download/Application_Form_EXISTING.pdf"><button class="button button-assertive" target="_blank">Download Form</button></a>
+                        </br></br>
+
+                        <h4>UMID card application form for SSS members</h4>
+
+                        <a href="https://www.sss.gov.ph/sss/DownloadContent?fileName=SSSForms_UMID_Application.pdf"><button class="button button-assertive" target="_blank">Download Form</button></a>
+                        </br></br>
+
+
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    3.  Submit Application Form
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                    </br>
+                            Submit your form along with your valid IDs.
+                    </p>
+                    </br></br>
+
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    4.  Have Your Identity Taken
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(4)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                    </br>
+                            Once you’ve got verified, you’ll be asked to transfer to another window for an ID picture, to scan your fingerprints and to sign on the signature pad.
+                    </p>
+                    </br></br>
+
+                     <ion-item class="item-toggle" style="font-size: 22px;">
+                    5.  Claim Registration ID
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(5)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                    </br>
+                            After your ID capture, you will have to wait for 30 days to receive your UMID ID by mail. If you fail to receive the ID after 30 days, inquire to your nearest SSS Branch Office.
+                    </p>
+                    </br></br>
+
+                </ion-list>
+           
+
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+
+                <ion-item class="item-toggle" style="font-size: 18px;">
+                    Bring any of the primary valid id's
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                </ion-item>
+
+
+                <ion-checkbox ng-model="filter.id" ng-value="1">Passport</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Driver’s License</ion-checkbox>
+                <ion-checkbox ng-model="filter.fee">Professional Regulation Commission (PRC) card</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Seafarer’s Identification and Record Book, </br>or Seaman’s book</ion-checkbox>
+
+                <ion-item class="item-toggle" style="font-size: 18px;">
+                    In the absence of any of the </br>above documents, 
+                you may present 2 of any </br>of the documents listed below:
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                </ion-item>
+
+                <ion-checkbox ng-model="filter.id" ng-value="1">Company ID</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">School ID</ion-checkbox>
+                <ion-checkbox ng-model="filter.fee">Postal ID</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Philhealth ID Card</ion-checkbox>
+                <ion-checkbox ng-model="filter.id" ng-value="1">GSIS Card</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">GSIS Certificate of Membership</ion-checkbox>
+                <ion-checkbox ng-model="filter.fee">Tax Identification Card</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Voter’s Identification Card</ion-checkbox>
+                <ion-checkbox ng-model="filter.id" ng-value="1">NSO Birth Certificate</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Marriage Contract</ion-checkbox>
+                <ion-checkbox ng-model="filter.fee">NBI Clearance</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Police Clearance</ion-checkbox>
+                <ion-checkbox ng-model="filter.id" ng-value="1">Senior Citizen Card</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Pag-Ibig Member’s Data Form</ion-checkbox>
+                <ion-checkbox ng-model="filter.fee">Overseas Workers Welfare Administration </br>(OWWA) Card</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">ID Card issued by Local Government Units </br>(e.g. Barangay, Municipality, or City)</ion-checkbox>
+                <ion-checkbox ng-model="filter.id" ng-value="1">ID Card issued by Professional Associations</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Baptismal Certificate</ion-checkbox>
+                <ion-checkbox ng-model="filter.fee">Alien Certificate of Registration</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Transcript of School Records</ion-checkbox>
+                <ion-checkbox ng-model="filter.id" ng-value="1">Permit to Carry Firearms issued </br>by the Firearms and Explosive Unit of PNP</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Temporary License issued </br>by Land Transportation Office (LTO)</ion-checkbox>
+                <ion-checkbox ng-model="filter.fee">Permanent Residency ID</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Office of the Southern/</br>Northern Cultural Communities Certificate</ion-checkbox>
+                <ion-checkbox ng-model="filter.id" ng-value="1">Office of Muslim Affairs Certificate</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Certificate of Licensure/Qualification Documents/</br>Seafarer’s ID and Record Book </br>from Maritime Industry Authority</ion-checkbox>
+                <ion-checkbox ng-model="filter.fee">Certificate of Naturalization </br>from the Bureau of Immigration</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">Bank Account Passbook</ion-checkbox>
+
+            </div>
+
+            <h6>Sources: http://www.philippinecountry.com/SSS/</h6>
         </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

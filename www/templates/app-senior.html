@@ -1,47 +1,97 @@
 
 
-<ion-view view-title="Senior Citizen's ID">
+<ion-view view-title="Senior Citizen's ID" ng-controller="TabCtrl">
 
     <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
             <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-senior-proc" onclick="document.getElementById('senior-proc').style.display='block';document.getElementById('senior-req').style.display='none';">
+                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                    <i class="icon ion-information-circled"></i>
+                    General
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
                     <i class="icon ion-gear-a"></i>
                     Procedures
                 </a>
-                <a class="tab-item tab-senior-req" onclick="document.getElementById('senior-req').style.display='block';document.getElementById('senior-proc').style.display='none';">
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
                     <i class="icon ion-unlocked"></i>
                     Requirements
                 </a>
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header">
+    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+                <button class="button button-positive" ng-click="reset()">Saved Progress</button>
+                <button class="button button-positive" ng-click="insert('death',66)">Save Progress</button>
+                <button class="button button-positive" ng-click="select('death')">Load Progress</button>
+                <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+            </div>
 
-        <div id="senior-proc" class="tab-views">
-            <h1>PROCEDURES</h1>
-            <ion-list>
-                <ion-item>
-                1. Fill up application form
-                </ion-item>
-                <p>
-                go to your Municipal’s Office of the Senior Citizens Affair and apply for an ID.
-                </p>
-                <ion-item>
-                2.  Claim the identification card
-                </ion-item>
-                <p>
-                Wait for processing to claim your senior citizen's ID card.
-                </p>
-            </ion-list>
-        </div>
-        
-        <div id="senior-req" style="display: none;" class="tab-views">
-          	<h1>REQUIREMENTS</h1>
-            <ion-checkbox ng-model="filter.validid">Birth Certificate</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed">1X1 colored photo (latest)</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed2">One (1) Valid ID</ion-checkbox>
-        </div>
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                        As provided in our Constitution, the state is duty-bound to recognize the rights of senior citizens by providing support though various social systems. Thus, senior citizens are granted benefits and privileges that range from 20% discount and VAT exemption to mandatory membership in the government’s healthcare system, Philhealth.This page lists down the benefits, privileges, as well as forms of assistance that can be availed by senior citizens.One thing people couldn’t have before 60 is the Senior Citizen’s ID. If you’re 60 and above and you still don’t have this ID,well you must get one now because you deserve it and all the benefits our government is offering you.Senior citizens are granted several benefits and privileges (which are listed in the next tab) under Republic Act No. 9994 and Republic Act No. 10645. In order to avail of these benefits, the senior citizen or his/her authorized representative shall present a valid and original Senior Citizens’ Identification Card.A Senior Citizens’ Identification Card is issued by the Office of Senior Citizens Affairs (OSCA) in the city or municipality where the senior citizen resides. Documentary requirements vary per municipality, but the basic qualifications based on RA 9994 are as follows:
 
-        <button class="button button-positive">Save Progress</button>
-      </ion-content>
+
+                 <p>
+                    </br>
+                        </br>Must be a Filipino citizen who is a resident of the Philippines
+                        </br>Must be 60 years old or above
+                        </br>May apply to senior citizens with dual citizenship provided that they prove their Filipino citizenship and have at least six months residency in the Philippines
+
+                    </p>
+                    </br></br>
+
+                        
+                    </p>
+                </ion-list>
+
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
+
+                    In Municipal Office you are registered.
+
+                    </p>
+                </ion-list>
+
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        1.  Accomplish Application
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                        <p>
+                            Just go to your Municipal’s Office of the Senior Citizens Affair and apply for an ID. Please ask someone from your kin – your “apo” or your son or daughter to accompany you. The staff will just fill the card with your personal info like complete name, birth date and address. They will also ask you to sign the ID. Double check if the details are all correct and make sure your signature is the same as the signatures you use to your other IDs. 
+
+                </ion-list>
+           
+
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <ion-checkbox ng-model="filter.id" ng-value="1">Birth Certificate</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">1X1 colored photo (latest))</ion-checkbox>
+                <ion-checkbox ng-model="filter.fee">2 Valid IDs</ion-checkbox>
+            </div>
+
+            <h6>Sources: http://www.gov.ph/services/senior-citizens/</h6>
+        </div>
+    </ion-content>
 </ion-view>

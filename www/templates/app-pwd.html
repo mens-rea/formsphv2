@@ -1,69 +1,132 @@
 
 
-<ion-view view-title="PWD ID">
+<ion-view view-title="PWD ID" ng-controller="TabCtrl">
 
     <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
             <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-pwd-proc" onclick="document.getElementById('pwd-proc').style.display='block';document.getElementById('pwd-req').style.display='none';">
+                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                    <i class="icon ion-information-circled"></i>
+                    General
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
                     <i class="icon ion-gear-a"></i>
                     Procedures
                 </a>
-                <a class="tab-item tab-pwd-req" onclick="document.getElementById('pwd-req').style.display='block';document.getElementById('pwd-proc').style.display='none';">
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
                     <i class="icon ion-unlocked"></i>
                     Requirements
                 </a>
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header">
+    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+                <button class="button button-positive" ng-click="reset()">Saved Progress</button>
+                <button class="button button-positive" ng-click="insert('death',66)">Save Progress</button>
+                <button class="button button-positive" ng-click="select('death')">Load Progress</button>
+                <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+            </div>
 
-        <div id="pwd-proc" class="tab-views">
-            <h1>PROCEDURES</h1>
-            <ion-list>
-                <ion-item>
-                1. Fill up application form
-                </ion-item>
-                <p>
-                Applicant or care-giver must fill up the application form, attaching the 2 1×1 ID pictures and signed clinical abstract.
-                Forms may be obtained in any of the following offices:
-                </br></br>
-                -Office of the Mayor</br>
-                -Office of the Barangay Captain</br>
-                -National Council on Disability Affairs (NCDA) or its regional counterpart</br>
-                -DSWD Offices</br>
-                -Participating organizations with memorandum of agreements with the Department of Health</br>
-                </p>
-                <ion-item>
-                2.  Submit or upload the application to the nearest office
-                </ion-item>
-                <p>
-                pplicant, care-giver, or registration center personnel must then bring or upload the application to the nearest City of Municipal Health Office or its satellite offices or stations at the barangay for verification.
-                Note: If PWD is not ambulatory, the receiving health officer shall do a home visit to validate the entries and disability.
-                </p>
-                <ion-item>
-                2.  Claim the identification card
-                </ion-item>
-                <p>
-                Once verified, the forms will be sent to the Health Officer of the Main City or Municipal Health Center. The Health Officer will then fill up a certification form, affix a control number, and upload the information to the Philippine Registry for Persons with Disabilities that can be downloaded from the DOH National Office Website.
-                Applicant must bring the duly approved application form and certificate of disability to the City or Municipal Social Welfare Office or NCDA for issuance of the identification card.
-                </p>
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                        As provided in the Magna Carta of Disabled Persons, the state is duty-bound to recognize the rights, protect, and support Persons With Disabilities (PWDs) through various social systems. PWDs are granted benefits and privileges such as 20% discounts at restaurants and hospitals, to transportation benefits.
+                        
+                    </p>
+                </ion-list>
 
-                <p>
-                Applications that were disapproved shall be advised regarding the deficiencies and shall be allowed to reapply until complied.
-                </p>
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
 
-            </ion-list>
+                    NCDA Building, Isidora Street, Barangay Holy Spirit, Diliman, Quezon City, Philippines 1127 
+
+                    </p>
+                </ion-list>
+
+                <h3>Contact</h3>
+                <ion-list>
+                    <p>
+
+                    Email: council@ncda.gov.ph 
+                    </br>Tel.: (632) 9326422
+                    </br>Fax: (632) 9516033 
+
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        1.  Accomplish form
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                        <p>
+                            Applicant or care-giver must fill up the application form, attaching the 2 1×1 ID pictures and signed clinical abstract.
+
+
+                            </br>Applicant, care-giver, or registration center personnel must then bring or upload the application to the nearest City of Municipal Health Office or its satellite offices or stations at the barangay for verification. 
+
+                            Note: 
+                            </br>If PWD is not ambulatory, the receiving health officer shall do a home visit to validate the entries and disability.
+
+
+                        </p>
+                        <a href="http://pwd.doh.gov.ph/additional/files/pdf.pdf"><button class="button button-assertive" target="_blank">Download Form</button></a>
+                        </br></br>
+
+
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    2.  Submit Application Form
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                    </br>
+                            Once verified, the forms will be sent to the Health Officer of the Main City or Municipal Health Center. The Health Officer will then fill up a certification form, affix a control number, and upload the information to the Philippine Registry for Persons with Disabilities that can be downloaded from the DOH National Office Website.
+
+                            </br>Applicant must bring the duly approved application form and certificate of disability to the City or Municipal Social Welfare Office or NCDA for issuance of the identification card.
+
+                    </p>
+                    </br></br>
+
+
+                </ion-list>
+           
+
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <ion-checkbox ng-model="filter.id" ng-value="1">Bring two 1×1 pictures</ion-checkbox>
+                <ion-checkbox ng-model="filter.id" ng-value="1">Bring one 2×2 picture</ion-checkbox>
+                <ion-checkbox ng-model="filter.id" ng-value="1">One whole body picture</ion-checkbox>
+                <ion-checkbox ng-model="filter.id" ng-value="1">Medical Certificate</ion-checkbox>
+                <ion-checkbox ng-model="filter.id" ng-value="1">photo copy of birth certificate/Two valid I.D.</ion-checkbox>
+                
+                 <p>
+                    </br>
+                            A duly signed clinical abstract by any licensed private, government clinic, or hospital-based physician
+                    </p>
+                    </br></br>
+
+            <h6>http://www.ncda.gov.ph/</h6>
         </div>
-        
-        <div id="pwd-req" style="display: none;" class="tab-views">
-          	<h1>REQUIREMENTS</h1>
-            <ion-checkbox ng-model="filter.validid">Filled out application form, either by applicant or care-giver</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed">Two (2) 1×1 ID pictures</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed2">A duly signed clinical abstract by any licensed private, government clinic, or hospital-based physician</ion-checkbox>
-        </div>
-
-        <h6>Source: PSA.gov.ph</h6>
-
-        <button class="button button-positive">Save Progress</button>
-      </ion-content>
+    </ion-content>
 </ion-view>

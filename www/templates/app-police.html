@@ -1,5 +1,3 @@
-
-
 <ion-view view-title="Police Clearance" ng-controller="TabCtrl">
 
     <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
@@ -48,7 +46,7 @@
             <h3>Procedures</h3>
             <ion-list>
                 <ion-item class="item-toggle" style="font-size: 22px;">
-                1. Go to your local barangay hall
+                1. Go to nearest
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
                             <div class="track">
@@ -57,10 +55,10 @@
                         </label>
                 </ion-item>
                 <p>
-               Find the barangay secretary and inform them that you need a barangay clearance. Be prepared to answer a few short questions about your residency and purpose for getting a barangay clearance.
+                    police station usually it’s always on your municipal hall too.
                 </p>
                  <ion-item class="item-toggle" style="font-size: 22px;">
-                2. Submit your accomplished form
+                2. Accomplish application form
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
                             <div class="track">
@@ -69,7 +67,7 @@
                         </label>
                 </ion-item>
                 <p>
-                Fill out and complete an application form with accurate details. Some barangays will only ask for your signature while others require a thumb print and will even take your picture.
+                Ask for an application form for police clearance and fill it out carefully.
                 </p>
                 <ion-item class="item-toggle" style="font-size: 22px;">
                 3. Pay the necessary fees
@@ -81,7 +79,44 @@
                         </label>
                 </ion-item>
                 <p>
-               After completing the application form and supplying your details, submit all the requirements and pay the processing fees. It is advised that you bring between P50-P100. Once paid, just wait for 20 to 30 minutes and you will be given your barangay clearance.
+                    Pay the necessary fees at the Treasury Office. The amount will vary based on the application purpose.
+                </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                4. Submit application form
+                 <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                </ion-item>
+                <p>
+                    After the payment process, the applicant should go back to the police clearance office to go through the fingerprinting process on the form.<br><br>
+                    Next is the payment for the police clearance ID. Applicants now receive a police clearance valid ID, not just a certificate.
+                </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                5. Have your identity taken
+                 <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                </ion-item>
+                <p>
+                   Once the payment is done, the applicant will head to the encoding area, where the person’s basic details will be verified to be encoded. A picture will also be taken for the ID, and thumb prints will be scanned.
+                </p>
+                 <ion-item class="item-toggle" style="font-size: 22px;">
+                6. Claim registration/id
+                 <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                </ion-item>
+                <p>
+                   After this step, the applicant will be sent to the holding area where all applicants wait for the release of the police clearance.
                 </p>
         </div>
         
@@ -89,15 +124,8 @@
             <h3>Requirements</h3>
             <ion-checkbox ng-model="filter.printed1"> Accomplished Form</ion-checkbox>
             <ion-checkbox ng-model="filter.printed2"> Recent Cedula (Community Tax Certificate) </ion-checkbox>
-             <ion-checkbox ng-model="filter.printed3"> Photocopy of valid ID </ion-checkbox>
-
-            <p>
-            <strong>Additional Requirement</strong></br></br>
-
-            Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
-               <em>* might require for new residents or new applicants with no barangay records.</em>
-
-            </p>
+            <ion-checkbox ng-model="filter.printed3"> Photocopy of valid ID </ion-checkbox>
+            <ion-checkbox ng-model="filter.printed4"> Barangay Clearance </ion-checkbox>
         </div>
 
         <h6>Sources: <a href="http://www.gsis.gov.ph/default.php?id=73" target="_blank">http://www.gsis.gov.ph/default.php?id=73</a>, <a href="http://www.quezoncity.gov.ph" target="_blank">http://www.quezoncity.gov.ph</a>, <a href="http://www.powerpinoys.com" target="_blank">http://www.powerpinoys.com</a>, <a href="http://www.faq.ph" target="_blank">http://www.faq.ph</a>, <a href="http://thinkpesos.com" target="_blank">http://www.thinkpesos.com</a> </h6>

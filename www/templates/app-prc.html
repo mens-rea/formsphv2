@@ -1,74 +1,295 @@
 
 
-<ion-view view-title="PRC ID">
+<ion-view view-title="PRC ID" ng-controller="TabCtrl">
 
     <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
             <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-prc-proc" onclick="document.getElementById('prc-proc').style.display='block';document.getElementById('prc-req').style.display='none';">
+                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                    <i class="icon ion-information-circled"></i>
+                    General
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
                     <i class="icon ion-gear-a"></i>
                     Procedures
                 </a>
-                <a class="tab-item tab-prc-req" onclick="document.getElementById('prc-req').style.display='block';document.getElementById('prc-proc').style.display='none';">
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
                     <i class="icon ion-unlocked"></i>
                     Requirements
                 </a>
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header">
+    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+                <button class="button button-positive" ng-click="reset()">Saved Progress</button>
+                <button class="button button-positive" ng-click="insert('death',66)">Save Progress</button>
+                <button class="button button-positive" ng-click="select('death')">Load Progress</button>
+                <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+            </div>
+
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                        The Professional Regulation Commission is responsible for the administration, implementation and enforcement of regulatory policies on the regulation and licensing of various professions and occupations under its jurisdiction. It is the instrument of the Filipino people in securing for the nation a reliable, trustworthy, and progressive system of developing professionals whose personal integrity and spiritual values are solid and respected, whose competencies are globally competitive, and whose commitment to serve the Filipino nation and the whole community is strong and steadfast.
+                        
+                    </p>
+                </ion-list>
+
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
+
+                <table>
+                  <tr>
+                    <th colspan='2'><strong>REGIONAL OFFICES</strong></th>
+                  </tr>
+                  <tr>
+                    <td>Baguio City</td>
+                    <td>CTLL Building, 141 Abanao Extension, Baguio City</td>
+                  </tr>
+                  <tr>
+                    <td>Cagayan de Oro City</td>
+                    <td>Elfante Building, General Antonio Luna St., Cagayan de Oro City</td>
+                  </tr>
+                  <tr>
+                    <td>Cebu City</td>
+                    <td>HVG Arcade, Subangdaku, Mandaue City, Cebu</td>
+                  </tr>
+                  <tr>
+                    <td>Davao City</td>
+                    <td>2nd Floor Granland Business Center, Rafael Castillo St., Davao City</td>
+                  </tr>
+                  <tr>
+                    <td>Iloilo City</td>
+                    <td>2nd Floor N.B. Building, Lopez Jaena St., Jaro, Iloilo City</td>
+                  </tr>
+                  <tr>
+                    <td>Legaspi City</td>
+                    <td>Regional Office No. V, Regional Government Center Site, Rawis, Legaspi City</td>
+                  </tr>
+                  <tr>
+                    <td>Lucena City</td>
+                    <td>2nd Floor Grand Central Terminal, Ilayang Dupay, Lucena City</td>
+                  </tr>
+                  <tr>
+                    <td>Tacloban City</td>
+                    <td>3rd Floor, Uytingkoc Bldg., Sen. Enage Street, Tacloban City, Leyte</td>
+                  </tr>
+                  <tr>
+                    <td>Tuguegarao City</td>
+                    <td>Regional Government Center, Carig Sur, Tuguegarao City, Cagayan</td>
+                  </tr>
+                  <tr>
+                    <td>Pagadian City</td>
+                    <td>149 F. S. Pajares St., Pagadian City</td>
+                  </tr>
+                  
+                </table>
+
+                    </p>
+                </ion-list>
+
+                <h3>Contact</h3>
+                <ion-list>
+                    <p>
+
+                <table>
+                  <tr>
+                    <th colspan='2'><strong>OFFICE NUMBERS </strong></th>
+                  </tr>
+                  <tr>
+                    <td>Hotline</td>
+                    <td>(+63 2) 310-0026 or 310-1047</td>
+                    </tr>
+                  <tr>
+                    <td>Baguio City</td>
+                    <td>Tel.: (074) 3043080, 3043028, 3043180, 4245053
+                        Telefax: (074) 4447603
+                        Email: prc.baguio@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>Cagayan de Oro City</td>
+                    <td>Tel: (088) 2313723, (08822) 721917
+                        Fax: (08822) 712772
+                        Email: prc.cag@mozcom.com, prc@magnet.ph</td>
+                  </tr>
+                  <tr>
+                    <td>Cebu City</td>
+                    <td>Tel: (032) 2557397, (032) 2535330
+                        Fax: (032) 2543497
+                        Email: prc.cebucity@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>Davao City</td>
+                    <td>Tel: (082) 2340007 to 08
+                        Fax: (082) 2340006
+                        Email: prc.davao@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>Iloilo City</td>
+                    <td>Tel: (033) 3292730, (033) 3292733, (033) 3293705
+                        Telefax: (033) 3292410
+                        Email: prc.iloilo@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>Legaspi City</td>
+                    <td>Tel: (052) 4813079
+                        Fax: (082) 481-3323
+                        Email: prc.legazpicity@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>Lucena City</td>
+                    <td>Tel: (042) 3737316
+                        Fax: (042) 3737305
+                        Email: prc.lucena@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>Tacloban City</td>
+                    <td>Tel: (053) 3239729,
+                        (053) 8322519
+                        (053) 832-2520
+                        Email: prc.taclobancity@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>Tuguegarao City</td>
+                    <td>Telefax: (078) 3040701, (078) 3043703
+                        Email: prc.tuguegarao@gmail.com
+                        pcrtug.ord@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>Pagadian City</td>
+                    <td>Telefax: (062) 9250080
+                        Email: prc9armm@gmail.com</td>
+                  </tr>
+                  
+                </table>
+
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        1.  Accomplish form
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                        <p>
+                            Initial registrants are advised to observe the following steps:
 
 
-        <div id="prc-proc" class="tab-views">
-            <h1>PROCEDURES</h1>
-            <ion-list>
-                <ion-item>
-                1. Download your oath form at the nearest PRC office and bring the following
-                </ion-item>
-                <ion-item>
-                2. Present duly accomplished or downloaded oath form
-                </ion-item>
-                <p>
-                    Present duly accomplished or downloaded oath form at designated counter/window (verification officer) for assessment of prescribed fees.
-                </p>
-                <ion-item>
-                3. Pay your fees
-                </ion-item>
-                <p>
-                    Proceed to the cashier window to pay the prescribed fee. Cashiers’ windows are located at the 3rd, 4th, and 5th floors of the PRC Annex Bldg and/or at the ground floor of the PRC Main Bldg.. 
-                </p>
-                <ion-item>
-                4. Accomplish registry form
-                </ion-item>
-                <p>
-                    After payment, proceed to the designated Registration counter/window. The Registration Officer will print Registry Sheet with assigned Registration / License Number to be signed and thumb marked by the Registrant.
-                </p>
-                <ion-item>
-                5. Get your claim slip
-                </ion-item>
-                <p>
-                    Upon completion of the Registry Sheet, issuance officer shall issue claim slip/stub.
-                </p>
-                <ion-item>
-                4. Claim your PRC card
-                </ion-item>
-                <p>
-                    Receive claim slip/stub and claim your Professional Identification Card as scheduled indicated on your claim slip/stub.
-                </p>
-                
-            </ion-list>
+                            </br>Present duly accomplished or downloaded oath form at designated counter/window (verification officer) for assessment of prescribed fees. 
+
+
+                        </p>
+                        <a href="http://www.prc.gov.ph/uploaded/documents/RD%20renewal%20form%20051012.pdf"><button class="button button-assertive" target="_blank">Download Form</button></a>
+                        </br></br>
+
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    2.  Pay Fees
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                    </br>
+                            Proceed to the cashier window to pay the prescribed fee. Cashiers’ windows are located at the 3rd, 4th, and 5th floors of the PRC Annex Bldg and/or at the ground floor of the PRC Main Bldg.
+                    </p>
+                    </br></br>
+
+                <h4>Table of Fees</h4>
+
+                <table>
+            
+                  <tr>
+                    <td></td>
+                    <td>Registration Fee</td>
+                    <td>Annual Fee</td>
+                    </tr>
+                  <tr>
+                    <td>Baccalaureate</td>
+                    <td>600</td>
+                    <td>450</td>
+                  </tr>
+                  <tr>
+                    <td>Non-Baccalaureate</td>
+                    <td>450</td>
+                    <td>420</td>
+                  
+                </table>
+
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    3.  Submit Application Form
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                    </br>
+                            After payment, proceed to the designated Registration counter/window. The Registration Officer will print Registry Sheet with assigned Registration / License Number to be signed and thumb marked by the Registrant.
+                    </p>
+                    </br></br>
+
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    4.  Have Your Identity Taken
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                    </br>
+                            Upon completion of the Registry Sheet, issuance officer shall issue claim slip/stub.
+                    </p>
+                    </br></br>
+
+                     <ion-item class="item-toggle" style="font-size: 22px;">
+                    5.  Claim Registration ID
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                    </br>
+                            Receive claim slip/stub and claim your Professional Identification Card as scheduled indicated on your claim slip/stub.
+                    </p>
+                    </br></br>
+
+                </ion-list>
+           
+
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <ion-checkbox ng-model="filter.id" ng-value="1">One (1) documentary stamp</ion-checkbox>
+                <ion-checkbox ng-model="filter.form">One (1) passport size picture in plain background with complete name tag (for Registry of Professionals)</ion-checkbox>
+                <ion-checkbox ng-model="filter.fee">Current Community Tax Certificate (cedula) </ion-checkbox>
+            </div>
+
+            <h6>Sources: http://prc.gov.ph/about/?id=13</h6>
         </div>
-        
-        <div id="prc-req" style="display: none;" class="tab-views">
-          	<h1>REQUIREMENTS</h1>
-            <ion-checkbox ng-model="filter.printed2"> One (1) documentary stamp</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed3"> One (1) passport size picture in plain background with complete name tag (for Registry of Professionals)</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed4"> Current Community Tax Certificate (cedula) </ion-checkbox>
-        </div>
-
-        <h6>Source: <a href="http://www.prc.gov.ph/registration/?id=28" target="_blank">http://www.prc.gov.ph/registration/?id=28</a></h6>
-
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
-        </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

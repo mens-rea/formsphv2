@@ -1,47 +1,176 @@
 
 
-<ion-view view-title="Tax Identification Number (TIN)">
+<ion-view view-title="TIN ID" ng-controller="TabCtrl">
 
     <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">    
             <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-tin-proc" onclick="document.getElementById('tin-proc').style.display='block';document.getElementById('tin-req').style.display='none';">
+                <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                    <i class="icon ion-information-circled"></i>
+                    General
+                </a>
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
                     <i class="icon ion-gear-a"></i>
                     Procedures
                 </a>
-                <a class="tab-item tab-tin-req" onclick="document.getElementById('tin-req').style.display='block';document.getElementById('tin-proc').style.display='none';">
+                <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
                     <i class="icon ion-unlocked"></i>
                     Requirements
                 </a>
             </div>
     </div>
 
-    <ion-content class="has-tabs has-header">
+    <ion-content class="has-tabs has-header" ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+                <button class="button button-positive" ng-click="reset()">Saved Progress</button>
+                <button class="button button-positive" ng-click="insert('death',66)">Save Progress</button>
+                <button class="button button-positive" ng-click="select('death')">Load Progress</button>
+                <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+            </div>
+
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                        Any person, whether natural or juridical, required under the authority of the Internal Revenue Code to make, render or file a return, statement or other documents, shall be supplied with or assigned a Taxpayer Identification Number (TIN) to be indicated in the return, statement or document to be filed with the Bureau of Internal Revenue, for his proper identification for tax purposes (Sec. 236 (i) of the Tax Code).
+                        
+                    </p>
+                </ion-list>
+
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
+
+                    BIR National Office Bldg., BIR Road, Diliman, Quezon City, Philippines
+
+                    </p>
+                </ion-list>
+
+                <h3>Contact</h3>
+                <ion-list>
+                    <p>
+
+                    Trunkline: 9817000/981-8888  
+                    <br>Email: contact_us@cctr.bir.gov.ph
+
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        1.  Accomplish form
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                        <p>
+                             Accomplish BIR Form 1901 and submit the same together with the documentary requirements to the RDO having jurisdiction over the place where the head office and branch, respectively.
+                        </p>
+                        <a href="ftp://ftp.bir.gov.ph/webadmin1/pdf/20361901pg1.pdf"><button class="button button-assertive" target="_blank">Download Form</button></a>
+                        <br><br>
 
 
-        <div id="tin-proc" class="tab-views">
-            <h1>PROCEDURES</h1>
-            <ion-list>
-                <ion-item>
-                1. Go to your BIR branch
-                </ion-item>
-                <ion-item>
-                2. Inquire about your classification
-                </ion-item>
-                <ion-item>
-                3. Pay your fees according to your classication
-                </ion-item>
-            </ion-list>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    2.  Pay Fees
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                    <br>
+                            Pay the Annual Registration Fee (P500.00) at the Authorized Agent Banks (AABs) of the concerned RDO.
+                            <br>Pay Documentary Stamp Tax (DST) (loose DST / BIR Form 2000* for DST on Contract of Lease, etc). Present proofs of payment.
+
+                    </p>
+                    
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    3.  Submit Application Form
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                    <br>
+                            Submit requirements for ATP and registration of books of accounts.
+
+                    </p>
+
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    4.  Orientation
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                    <br>
+                            Attend the taxpayer’s initial briefing to be conducted by the RDO concerned for new registrants in order to apprise them of their rights and duties/responsibilities.
+
+                    </p>
+
+                     <ion-item class="item-toggle" style="font-size: 22px;">
+                    5.  Claim Registration
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                    <br>
+                            The RDO shall then issue the Certificate of Registration (Form 2303) together with the “Ask for Receipt” notice, Authority to Print and Books of Accounts.
+
+                    </p>
+
+                </ion-list>
+           
+
+            </div>
+            
+           <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                    <p>For single proprietors, mixed income earners</p>
+                <ion-checkbox ng-value="1">Photocopy of Mayor’s Business Permit</ion-checkbox>
+                <ion-checkbox ng-value="2">NSO Certified Birth Certificate of the applicant</ion-checkbox><br>
+                    <p>For Professionals where PTR is not required <br>(e.i. Consultants, Agents, Artist, <br>Underwriters and the like):</p>
+                <ion-checkbox ng-value="3">Occupational Tax Receipt (OTR)/<br>Professional Tax Receipt (PTR);</ion-checkbox>
+                <ion-checkbox ng-value="4">NSO Birth Certificate</ion-checkbox>
+                <ion-checkbox ng-value="5">Marriage Contract, if the applicant is a married woman</ion-checkbox>
+                <ion-checkbox ng-value="6">Contract/Company Certification</ion-checkbox>
+                <ion-checkbox ng-value="7">Contract of Lease</ion-checkbox>
+                <ion-checkbox ng-value="8">DTI Certificate of Registration Business Name</ion-checkbox>
+                <ion-checkbox ng-value="9">Certificate of Authority <br>if Barangay Micro Business Enterprises <br>(BMBE) registered entity</ion-checkbox>
+                <ion-checkbox ng-value="10">Proof of Registration/Permit</ion-checkbox>
+                <ion-checkbox ng-value="11">Sworn Statement of Capital</ion-checkbox>
+                <ion-checkbox ng-value="12">Waiver of husband to claim additional exemption</ion-checkbox>
+                <ion-checkbox ng-value="13">Marriage Contract</ion-checkbox>
+                <ion-checkbox ng-value="14">NSO Certified Birth Certificate of declared dependents</ion-checkbox>
+                    <p>For Non-Residents</p>
+                <ion-checkbox ng-value="15">Working Permit</ion-checkbox>
+                    <p>For Franchise Holders/Franchisees</p>
+                <ion-checkbox ng-value="16">Photocopy of the Franchise Agreement</ion-checkbox>
+
+            </div>
+
+            <h6>Sources: http://www.bir.gov.ph/</h6>
         </div>
-        
-        <div id="tin-req" style="display: none;" class="tab-views">
-          	<h1>REQUIREMENTS</h1>
-            <ion-checkbox ng-model="filter.printed2">Requirements vary according to your classification</ion-checkbox>
-        </div>
-
-        <h6>Source: <a href="http://www.bir.gov.ph/index.php/registration-requirements/primary-registration/application-for-tin.html" target="_blank">http://www.bir.gov.ph/index.php/registration-requirements/primary-registration/application-for-tin.html/</a></h6>
-
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
-        </div>
-      </ion-content>
+    </ion-content>
 </ion-view>
