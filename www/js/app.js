@@ -81,13 +81,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
       $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id integer primary key, docname text unique, prog integer, proc integer, req integer, checkreq integer)");
 
-      /*var query = "DROP TABLE documents";
+      var query = "DROP TABLE documents";
       $cordovaSQLite.execute(db, query).then(function(res) {
       }, function (err) {
         alert("error1:"+err.message);
-      });*/
+      });
 
-      /*var query = "DELETE FROM documents WHERE docname = 'police'";
+      var query = "DELETE FROM documents WHERE docname = 'police'";
 
       $cordovaSQLite.execute(db, query).then(function(res) {
       }, function (err) {
@@ -99,7 +99,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       $cordovaSQLite.execute(db, query).then(function(res) {
       }, function (err) {
         alert("error1:"+err.message);
-      });*/
+      });
 
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (1,'police',0,3,3,0)";
 
