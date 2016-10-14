@@ -15,7 +15,7 @@
             </a>
         </div>
     </div>
-    <ion-content class="has-tabs has-header" ng-init="select('death')" ng-controller="ProgCtrl as progs">
+    <ion-content class="has-tabs has-header" ng-init="select(0)" ng-controller="ProgCtrl as progs">
         <div class="tab-views">
             
             <p style="display: none;">{{ progress + "%"}}</p>
@@ -25,8 +25,8 @@
             <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
             <div class="save-cont">
                 <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
-                <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
-                <button class="button button-forms" ng-click="select('death')">Load Progress</button>
+                <button class="button button-forms" ng-click="insert(0,0)">Save Progress</button>
+                <button class="button button-forms" ng-click="select(0)">Load Progress</button>
                 <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
             </div>
 

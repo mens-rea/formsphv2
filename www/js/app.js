@@ -85,7 +85,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3)";
 
       $cordovaSQLite.execute(db, query).then(function(res) {
-        alert("inserted! death");  
+        /*alert("inserted! death");*/  
       }, function (err) {
         alert("error1:"+err.message);
       });
@@ -93,7 +93,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       var query = "INSERT INTO documents (docname, prog, proc) VALUES ('police',0,3)";
 
       $cordovaSQLite.execute(db, query).then(function(res) {
-        alert("inserted! police");  
+        /*alert("inserted! police");*/  
       }, function (err) {
         alert("error1:"+err.message);
       });
