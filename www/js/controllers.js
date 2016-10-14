@@ -68,6 +68,7 @@ angular.module('starter.controllers', ['ngCordova'])
 	$scope.proc = 3;
 	$scope.checkproc = 0;
 	$scope.prog = 33;
+	$scope.required = 0;
 
 	$scope.chats = Docs.all();
 
@@ -134,7 +135,7 @@ angular.module('starter.controllers', ['ngCordova'])
  
     $scope.select = function(ided) {
 
-        var query = "SELECT docname, prog, proc FROM documents WHERE id = ?";
+        var query = "SELECT docname, prog, proc, checkreq FROM documents WHERE id = ?";
         $cordovaSQLite.execute(db, query, [ided]).then(function(res) {
             if(res.rows.length > 0) {
                 console.log("SELECTED -> " + res.rows.item(0).prog + " " + res.rows.item(0).proc);
@@ -142,6 +143,7 @@ angular.module('starter.controllers', ['ngCordova'])
 
 				$scope.progress = res.rows.item(0).prog;
 				$scope.proc = res.rows.item(0).proc;
+				$scope.required = res.rows.item(0).checkreq;
 				$scope.prog = (100 / $scope.proc);
 			    $scope.checkproc = Math.ceil($scope.progress / $scope.prog);
 			    console.log("SELECTED -> " + res.rows.item(0).docname + " " + $scope.proc + " " + $scope.progress + " " + $scope.checkproc);
@@ -157,6 +159,19 @@ angular.module('starter.controllers', ['ngCordova'])
 			    		$scope.check3 = true;
 			    	}
 			    }
+
+			    for (var y = 0; y < $scope.required; y++) {
+			    	if (y==0){
+			    		$scope.req = true;
+			    	}
+			    	else if (y==1){
+			    		$scope.req2 = true;
+			    	}
+			    	else if (y==2){
+			    		$scope.req3 = true;
+			    	}
+			    }
+
             } else {
                 console.log("No results found");
             }
@@ -225,6 +240,60 @@ angular.module('starter.controllers', ['ngCordova'])
     		if(res.rows.length > 0) {
     			for(var i = 0; i < res.rows.length; i++){
     				/*alert("success!" + res.rows.item(0).docname + " " + res.rows.item(0).prog);*/
+    			}
+
+            } else {
+                console.log("No results found");
+            }
+        }, function (err) {
+           console.error(err.message);
+        });
+	}
+
+	$scope.UpdateBox = function(val, ided){
+		if (val==1){
+			if($scope.req){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.floor(($scope.required - 1));
+			}
+		}
+		else if (val==2){
+			if($scope.req2){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.floor(($scope.required - 1));
+			}
+		}
+		else if (val==3){
+			if($scope.req3){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+
+		// update records
+		var query = "UPDATE documents SET checkreq = ? WHERE id = ?";
+        $cordovaSQLite.execute(db, query, [$scope.required, ided]).then(function(res) {
+        	/*alert("inserted!"+ided + " " + prog);*/	
+        }, function (err) {
+			alert("error");
+        });
+
+		/*alert("success");*/
+
+        var s_query = "SELECT * FROM documents";
+    	$cordovaSQLite.execute(db, s_query).then(function(res) {
+    		if(res.rows.length > 0) {
+    			for(var i = 0; i < res.rows.length; i++){
+    				alert("success!" + res.rows.item(i).docname + " " + res.rows.item(i).checkreq);
     			}
 
             } else {
