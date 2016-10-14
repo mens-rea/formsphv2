@@ -98,7 +98,7 @@ angular.module('starter.controllers', ['ngCordova'])
     	$cordovaSQLite.execute(db, s_query).then(function(res) {
     		if(res.rows.length > 0) {
     			for(var i = 0; i < res.rows.length; i++){
-    				alert("success!" + res.rows.item(0).docname + " " + res.rows.item(0).prog);
+    				/*alert("success!" + res.rows.item(0).docname + " " + res.rows.item(0).prog);*/
     			}
 
             } else {

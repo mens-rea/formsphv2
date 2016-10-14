@@ -81,22 +81,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
       $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id integer primary key, docname text, prog integer, proc integer)");
     
+              var s_query = "SELECT * FROM documents WHERE docname = 'death'";
+            $cordovaSQLite.execute(db, s_query).then(function(res) {
+              if(res.rows.length > 0) {
+                // if not empty
+                for(var i = 0; i < res.rows.length; i++){
+                  /*alert("success!" + res.rows.item(0).docname + " " + res.rows.item(0).prog);*/
+                }
+              } 
+              else {
+                // if empty insert values
+                var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3)";
 
-      var query = "INSERT INTO documents (docname, prog, proc) VALUES ('death',0,3)";
+                $cordovaSQLite.execute(db, query).then(function(res) {
+                  /*alert("inserted!"+docname + " " + prog);  */
+                }, function (err) {
+                  alert("error1:"+err.message);
+                });
 
-      $cordovaSQLite.execute(db, query).then(function(res) {
-        /*alert("inserted! death");*/  
-      }, function (err) {
-        alert("error1:"+err.message);
-      });
-
-      var query = "INSERT INTO documents (docname, prog, proc) VALUES ('police',0,3)";
-
-      $cordovaSQLite.execute(db, query).then(function(res) {
-        /*alert("inserted! police");*/  
-      }, function (err) {
-        alert("error1:"+err.message);
-      });
+              }
+            }, function (err) {
+              // output the error message
+              console.error("error in checking existing data: " + err.message);
+            });
     /*}*/
     
         
