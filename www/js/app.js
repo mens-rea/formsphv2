@@ -22,14 +22,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
 
     if(window.cordova) {
-      try {     
+      /*try {     
 
-          if (window.sqlitePlugin !== undefined) {
+          if (window.sqlitePlugin !== undefined) {*/
             // If sqlitePlugin is not defined
             db = window.sqlitePlugin.openDatabase({ name: "populated.db", location: 2, createFromLocation: 1 });
             alert('unique database');
           
-          } 
+          /*} 
           else {
 
             // For debugging in the browser
@@ -74,7 +74,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       } catch (error) {
         // failure of whole process of getting database
         alert("catch: "+error);
-      }
+      }*/
       console.log("android");
     }
     else{
