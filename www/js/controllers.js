@@ -92,7 +92,7 @@ angular.module('starter.controllers', ['ngCordova'])
 			alert("error");
         });
 
-		alert("success");
+		/*alert("success");*/
 
         var s_query = "SELECT * FROM documents";
     	$cordovaSQLite.execute(db, s_query).then(function(res) {
@@ -138,7 +138,7 @@ angular.module('starter.controllers', ['ngCordova'])
         $cordovaSQLite.execute(db, query, [ided]).then(function(res) {
             if(res.rows.length > 0) {
                 console.log("SELECTED -> " + res.rows.item(0).prog + " " + res.rows.item(0).proc);
-                alert("SELECTED -> " + res.rows.item(0).prog + " " + res.rows.item(0).proc);
+                /*alert("SELECTED -> " + res.rows.item(0).prog + " " + res.rows.item(0).proc);*/
 
 				$scope.progress = res.rows.item(0).prog;
 				$scope.proc = res.rows.item(0).proc;
@@ -175,7 +175,7 @@ angular.module('starter.controllers', ['ngCordova'])
 		});
 	};
 
-	$scope.UpdateToggle = function(val){
+	$scope.UpdateToggle = function(val, ided){
 		if (val==1){
 			if($scope.check){
 				$scope.check = false;
@@ -210,6 +210,30 @@ angular.module('starter.controllers', ['ngCordova'])
 				$scope.progress = Math.ceil(($scope.progress + $scope.prog));
 			}
 		}
+
+		// update records
+		var query = "UPDATE documents SET prog = ? WHERE id = ?";
+        $cordovaSQLite.execute(db, query, [$scope.progress, ided]).then(function(res) {
+        	alert("inserted!"+ided + " " + prog);	
+        }, function (err) {
+			alert("error");
+        });
+
+		/*alert("success");*/
+
+        var s_query = "SELECT * FROM documents";
+    	$cordovaSQLite.execute(db, s_query).then(function(res) {
+    		if(res.rows.length > 0) {
+    			for(var i = 0; i < res.rows.length; i++){
+    				/*alert("success!" + res.rows.item(0).docname + " " + res.rows.item(0).prog);*/
+    			}
+
+            } else {
+                console.log("No results found");
+            }
+        }, function (err) {
+           console.error(err.message);
+        });
 	}
 
 	$scope.saveData = function() {

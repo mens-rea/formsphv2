@@ -25,8 +25,8 @@
             <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
             <div class="save-cont">
                 <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
-                <button class="button button-forms" ng-click="insert(0,0)">Save Progress</button>
-                <button class="button button-forms" ng-click="select(0)">Load Progress</button>
+                <!-- <button class="button button-forms" ng-click="insert(0,0)">Save Progress</button>
+                <button class="button button-forms" ng-click="select(0)">Load Progress</button> -->
                 <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
             </div>
 
@@ -55,7 +55,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     1.  Fill up application form
                         <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,0)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
@@ -77,7 +77,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     2.  Submit your accomplished form
                         <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,0)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
@@ -92,7 +92,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     3.  Claim the death certificate
                         <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,0)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>

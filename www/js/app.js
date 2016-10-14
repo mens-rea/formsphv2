@@ -95,20 +95,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         alert("error1:"+err.message);
       });*/
 
-      var query = "INSERT INTO documents (id, docname, prog, proc) VALUES (0,'police',0,3)";
+      var query = "INSERT INTO documents (id, docname, prog, proc) VALUES (1,'police',0,3)";
 
       $cordovaSQLite.execute(db, query).then(function(res) {
         /*alert("inserted! death");*/  
       }, function (err) {
-        alert("error1:"+err.message);
+        /*alert("error1:"+err.message);*/
       });
 
-      var query = "INSERT INTO documents (id, docname, prog, proc) VALUES (1,'death',0,3)";
+      var query = "INSERT INTO documents (id, docname, prog, proc) VALUES (0,'death',0,3)";
 
       $cordovaSQLite.execute(db, query).then(function(res) {
         /*alert("inserted! death");*/  
       }, function (err) {
-        alert("error1:"+err.message);
+        /*alert("error1:"+err.message);*/
       });
 
             var s_query = "SELECT * FROM documents";
@@ -116,7 +116,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
               if(res.rows.length > 0) {
                 // if not empty
                 for(var i = 0; i < res.rows.length; i++){
-                  alert("success!" + res.rows.item(i).id + " " + res.rows.item(i).docname);
+                  /*alert("success!" + res.rows.item(i).id + " " + res.rows.item(i).docname);*/
                 }
               } 
               else {
