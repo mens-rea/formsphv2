@@ -65,7 +65,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
               }
             }, function (err) {
               // output the error message
-              console.error("error in checking existing data: " err.message);
+              console.error("error in checking existing data: " + err.message);
             });
 
             alert('normal database');
