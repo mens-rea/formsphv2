@@ -132,10 +132,10 @@ angular.module('starter.controllers', ['ngCordova'])
         });
     }
  
-    $scope.select = function(docname) {
+    $scope.select = function(ided) {
 
-        var query = "SELECT docname, prog, proc FROM documents WHERE docname = ?";
-        $cordovaSQLite.execute(db, query, [docname]).then(function(res) {
+        var query = "SELECT docname, prog, proc FROM documents WHERE id = ?";
+        $cordovaSQLite.execute(db, query, [ided]).then(function(res) {
             if(res.rows.length > 0) {
                 console.log("SELECTED -> " + res.rows.item(0).prog + " " + res.rows.item(0).proc);
 
