@@ -138,6 +138,7 @@ angular.module('starter.controllers', ['ngCordova'])
         $cordovaSQLite.execute(db, query, [ided]).then(function(res) {
             if(res.rows.length > 0) {
                 console.log("SELECTED -> " + res.rows.item(0).prog + " " + res.rows.item(0).proc);
+                alert("SELECTED -> " + res.rows.item(0).prog + " " + res.rows.item(0).proc);
 
 				$scope.progress = res.rows.item(0).prog;
 				$scope.proc = res.rows.item(0).proc;
