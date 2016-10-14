@@ -79,8 +79,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
     else{*/
       db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
-      $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id integer primary key, docname text, prog integer, proc integer)");
+      $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id integer primary key, docname text unique, prog integer, proc integer)");
     
+      var query = "DELETE FROM documents WHERE docname = 'police'";
+
+      $cordovaSQLite.execute(db, query).then(function(res) {
+      }, function (err) {
+        alert("error1:"+err.message);
+      });
+
+      var query = "DELETE FROM documents WHERE docname = 'death'";
+
+      $cordovaSQLite.execute(db, query).then(function(res) {
+      }, function (err) {
+        alert("error1:"+err.message);
+      });
 
       var query = "INSERT INTO documents (id, docname, prog, proc) VALUES (0,'police',0,3)";
 
@@ -97,14 +110,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }, function (err) {
         alert("error1:"+err.message);
       });
-
-      /*var query = "DELETE FROM documents WHERE docname = 'police'";
-
-      $cordovaSQLite.execute(db, query).then(function(res) {
-      }, function (err) {
-        alert("error1:"+err.message);
-      });*/
-
 
             var s_query = "SELECT * FROM documents";
             $cordovaSQLite.execute(db, s_query).then(function(res) {
