@@ -185,7 +185,6 @@ angular.module('starter.controllers', ['ngCordova'])
 			else{
 				$scope.check = true;
 				$scope.progress = Math.floor(($scope.progress + $scope.prog));
-				alert($scope.progress);
 			}
 		}
 		else if (val==2){
@@ -214,7 +213,7 @@ angular.module('starter.controllers', ['ngCordova'])
 		// update records
 		var query = "UPDATE documents SET prog = ? WHERE id = ?";
         $cordovaSQLite.execute(db, query, [$scope.progress, ided]).then(function(res) {
-        	alert("inserted!"+ided + " " + prog);	
+        	/*alert("inserted!"+ided + " " + prog);*/	
         }, function (err) {
 			alert("error");
         });

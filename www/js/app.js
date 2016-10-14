@@ -79,8 +79,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
     else{*/
       db = window.openDatabase("populated.db", 0, 'populated', 1024 * 1024 * 100);
-      $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id integer primary key, docname text unique, prog integer, proc integer)");
-    
+      $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS documents (id integer primary key, docname text unique, prog integer, proc integer, req integer, checkreq integer)");
+
+      /*var query = "DROP TABLE documents";
+      $cordovaSQLite.execute(db, query).then(function(res) {
+      }, function (err) {
+        alert("error1:"+err.message);
+      });*/
+
       /*var query = "DELETE FROM documents WHERE docname = 'police'";
 
       $cordovaSQLite.execute(db, query).then(function(res) {
@@ -95,7 +101,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         alert("error1:"+err.message);
       });*/
 
-      var query = "INSERT INTO documents (id, docname, prog, proc) VALUES (1,'police',0,3)";
+      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (1,'police',0,3,3,0)";
 
       $cordovaSQLite.execute(db, query).then(function(res) {
         /*alert("inserted! death");*/  
@@ -103,7 +109,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         /*alert("error1:"+err.message);*/
       });
 
-      var query = "INSERT INTO documents (id, docname, prog, proc) VALUES (0,'death',0,3)";
+      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (0,'death',0,3,3,0)";
 
       $cordovaSQLite.execute(db, query).then(function(res) {
         /*alert("inserted! death");*/  
@@ -116,7 +122,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
               if(res.rows.length > 0) {
                 // if not empty
                 for(var i = 0; i < res.rows.length; i++){
-                  /*alert("success!" + res.rows.item(i).id + " " + res.rows.item(i).docname);*/
+                  /*alert("success!" + res.rows.item(i).id + " " + res.rows.item(i).docname + " " + res.rows.item(i).checkreq + " " + res.rows.item(i).req);*/
                 }
               } 
               else {
