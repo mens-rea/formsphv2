@@ -1,45 +1,118 @@
-<ion-view view-title="Tax Identification Number (TIN)">
-
+<ion-view view-title="Tax Identification Number (TIN)" ng-controller="TabCtrl">
     <div class="tabs-striped tabs-top background-forms tabs-color-light">    
-            <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-tin-proc" onclick="document.getElementById('tin-proc').style.display='block';document.getElementById('tin-req').style.display='none';">
-                    <i class="icon ion-gear-a"></i>
-                    Procedures
-                </a>
-                <a class="tab-item tab-tin-req" onclick="document.getElementById('tin-req').style.display='block';document.getElementById('tin-proc').style.display='none';">
-                    <i class="icon ion-unlocked"></i>
-                    Requirements
-                </a>
-            </div>
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                <i class="icon ion-information-circled"></i>
+                General
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                <i class="icon ion-gear-a"></i>
+                Procedures
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                <i class="icon ion-unlocked"></i>
+                Requirements
+            </a>
+        </div>
     </div>
-
+    
     <ion-content class="has-tabs has-header">
+        <div class="tab-views">
+            
+            <p style="display: none;">{{ barangay.progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ barangay.progress + "%"}}</label>
+            <div class="save-cont">
+                <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
+                <button class="button button-forms" ng-click="insert('barangay',0)">Save Progress</button>
+                <button class="button button-forms" ng-click="select('barangay')">Load Progress</button>
+                <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
+            </div>
 
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                        Barangay clearance is a document that certify an individual that he/she is a resident of that barangay. More importantly, it also proves the applicant that he/she doesn’t have any bad records and in good moral character.</br></br>
 
-        <div id="tin-proc" class="tab-views">
-            <h1>PROCEDURES</h1>
-            <ion-list>
-                <ion-item>
-                1. Go to your BIR branch
-                </ion-item>
-                <ion-item>
-                2. Inquire about your classification
-                </ion-item>
-                <ion-item>
-                3. Pay your fees according to your classication
-                </ion-item>
-            </ion-list>
+                        Barangay clearance is one of the requirements needed when you are processing a legal documents or financial documents. Sometimes, it is being requested when you are applying for a job, ID application, supporting documents or any other legal purpose it that requires. This certificate is stamped and sealed with the Barangay Official Seal and signed by the Barangay. captain.
+                    </p>
+                </ion-list>
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        1. Know your classification
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                    <p>
+                        Each type of TIN application has different requirements. Once you are aware of the
+                        type of TIN you are applying for; whichever is necessary, online or from the BIR.
+                        </br></br>
+                        1901: self-employed and mixed-income individuals.
+                        </br></br>
+                        1902: individuals earning purely compensation income, or non-resident citizens or residents or resident allen employees.
+                        </br></br>
+                        1903: corporations and partnerships.
+                        </br></br>
+                        1904: one-time taxpayer or transact with any government office.
+                    </p>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        2. Accomplish your application form
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                    <p>
+                        After receiving or printing the form that you need, fill it out with valid and accurate information. 
+                    </p>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        3. Submit the requirements
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                    <p>
+                        Submit your application form together with the documentary requirements depending on your application. Do not hesitate to ask the office or visit the BIR website (bir.gov.ph) for a list of documentary requirements.  
+                    </p>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        4. Claim your tin
+                            <label class="toggle toggle-balanced">
+                                <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(4)">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                    </ion-item>
+                    <p>
+                        After a short processing time, your name will be called to claim your TIN ID.   
+                    </p>
+                </ion-list>
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <ion-checkbox ng-model="filter.printed2"> NSO Birth Certificate (original copy) </ion-checkbox>
+                <ion-checkbox ng-model="filter.printed3"> Accomplished Application Form </ion-checkbox>
+            </div>
+
+            <h6>Sources: <a href="http://www.bir.gov.ph/index.php/registration-requirements/primary-registration/application-for-tin.html" target="_blank">http://www.bir.gov.ph/index.php/registration-requirements/primary-registration/application-for-tin.html/</a> </h6>
+
         </div>
-        
-        <div id="tin-req" style="display: none;" class="tab-views">
-          	<h1>REQUIREMENTS</h1>
-            <ion-checkbox ng-model="filter.printed2">Requirements vary according to your classification</ion-checkbox>
-        </div>
-
-        <h6>Source: <a href="http://www.bir.gov.ph/index.php/registration-requirements/primary-registration/application-for-tin.html" target="_blank">http://www.bir.gov.ph/index.php/registration-requirements/primary-registration/application-for-tin.html/</a></h6>
-
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
-        </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

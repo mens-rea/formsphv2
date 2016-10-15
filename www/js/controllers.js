@@ -69,7 +69,6 @@ angular.module('starter.controllers', ['ngCordova'])
 	$scope.checkproc = 0;
 	$scope.prog = 33;
 	$scope.required = 0;
-
 	$scope.chats = Docs.all();
 
 	$scope.Clean = function(){
@@ -80,20 +79,12 @@ angular.module('starter.controllers', ['ngCordova'])
 
 	$scope.insert = function(ided, prog) {
 
-		/*if($scope.progress == 0){
-			$scope.progress = 0;
-		}*/
-
-		/*var query = "INSERT INTO documents (docname, prog, proc) VALUES (?,?,?)";
-		$cordovaSQLite.execute(db, query, [docname, $scope.progress, 3]).then(function(res) {*/
 		var query = "UPDATE documents SET prog = ? WHERE id = ?";
         $cordovaSQLite.execute(db, query, [$scope.progress, ided]).then(function(res) {
         	alert("inserted!"+ided + " " + prog);	
         }, function (err) {
 			alert("error");
         });
-
-		/*alert("success");*/
 
         var s_query = "SELECT * FROM documents";
     	$cordovaSQLite.execute(db, s_query).then(function(res) {
@@ -109,29 +100,6 @@ angular.module('starter.controllers', ['ngCordova'])
            console.error(err.message);
         });
     }
-
-    $scope.reset = function() {
-    	var s_query = "SELECT * FROM documents";
-    	$cordovaSQLite.execute(db, s_query).then(function(res) {
-    		if(res.rows.length > 0) {
-    			for(var i = 0; i < res.rows.length; i++){
-    				console.log("success!" + res.rows.item(0).docname + " " + res.rows.item(0).prog);
-    			}
-
-            } else {
-                console.log("No results found");
-            }
-        }, function (err) {
-            console.error(err.message);
-        });
-
-    	var query = "DELETE FROM documents";
-    	$cordovaSQLite.execute(db, query).then(function(res) {
-    		console.log("successfully updated the database");
-        }, function (err) {
-            console.error(err.message);
-        });
-    }
  
     $scope.select = function(ided) {
 
@@ -139,7 +107,7 @@ angular.module('starter.controllers', ['ngCordova'])
         $cordovaSQLite.execute(db, query, [ided]).then(function(res) {
             if(res.rows.length > 0) {
                 console.log("SELECTED -> " + res.rows.item(0).prog + " " + res.rows.item(0).proc);
-                /*alert("SELECTED -> " + res.rows.item(0).prog + " " + res.rows.item(0).proc);*/
+                alert("SELECTED -> " + res.rows.item(0).docname + " " + res.rows.item(0).proc  + " " + res.rows.item(0).req);
 
 				$scope.progress = res.rows.item(0).prog;
 				$scope.proc = res.rows.item(0).proc;
@@ -158,6 +126,21 @@ angular.module('starter.controllers', ['ngCordova'])
 			    	else if (x==2){
 			    		$scope.check3 = true;
 			    	}
+			    	else if (x==3){
+			    		$scope.check4 = true;
+			    	}
+			    	else if (x==4){
+			    		$scope.check5 = true;
+			    	}
+			    	else if (x==5){
+			    		$scope.check6 = true;
+			    	}
+			    	else if (x==6){
+			    		$scope.check7 = true;
+			    	}
+			    	else if (x==7){
+			    		$scope.check8 = true;
+			    	}
 			    }
 
 			    for (var y = 0; y < $scope.required; y++) {
@@ -169,6 +152,45 @@ angular.module('starter.controllers', ['ngCordova'])
 			    	}
 			    	else if (y==2){
 			    		$scope.req3 = true;
+			    	}
+			    	else if (y==3){
+			    		$scope.req4 = true;
+			    	}
+			    	else if (y==4){
+			    		$scope.req5 = true;
+			    	}
+			    	else if (y==5){
+			    		$scope.req6 = true;
+			    	}
+			    	else if (y==6){
+			    		$scope.req7 = true;
+			    	}
+			    	else if (y==7){
+			    		$scope.req8 = true;
+			    	}
+			    	else if (y==8){
+			    		$scope.req9 = true;
+			    	}
+			    	else if (y==9){
+			    		$scope.req10 = true;
+			    	}
+			    	else if (y==10){
+			    		$scope.req11 = true;
+			    	}
+			    	else if (y==11){
+			    		$scope.req12 = true;
+			    	}
+			    	else if (y==12){
+			    		$scope.req13 = true;
+			    	}
+			    	else if (y==13){
+			    		$scope.req14 = true;
+			    	}
+			    	else if (y==14){
+			    		$scope.req15 = true;
+			    	}
+			    	else if (y==15){
+			    		$scope.req16 = true;
 			    	}
 			    }
 
@@ -221,6 +243,61 @@ angular.module('starter.controllers', ['ngCordova'])
 			}
 			else{
 				$scope.check3 = true;
+				$scope.progress = Math.ceil(($scope.progress + $scope.prog));
+			}
+		}
+		else if (val==4){
+			if($scope.check4){
+				$scope.check5 = false;
+				$scope.progress = Math.ceil(($scope.progress - $scope.prog));
+				$scope.Clean();
+			}
+			else{
+				$scope.check4 = true;
+				$scope.progress = Math.ceil(($scope.progress + $scope.prog));
+			}
+		}
+		else if (val==5){
+			if($scope.check5){
+				$scope.check5 = false;
+				$scope.progress = Math.ceil(($scope.progress - $scope.prog));
+				$scope.Clean();
+			}
+			else{
+				$scope.check5 = true;
+				$scope.progress = Math.ceil(($scope.progress + $scope.prog));
+			}
+		}
+		else if (val==6){
+			if($scope.check6){
+				$scope.check6 = false;
+				$scope.progress = Math.ceil(($scope.progress - $scope.prog));
+				$scope.Clean();
+			}
+			else{
+				$scope.check6 = true;
+				$scope.progress = Math.ceil(($scope.progress + $scope.prog));
+			}
+		}
+		else if (val==7){
+			if($scope.check7){
+				$scope.check7 = false;
+				$scope.progress = Math.ceil(($scope.progress - $scope.prog));
+				$scope.Clean();
+			}
+			else{
+				$scope.check7 = true;
+				$scope.progress = Math.ceil(($scope.progress + $scope.prog));
+			}
+		}
+		else if (val==8){
+			if($scope.check8){
+				$scope.check8 = false;
+				$scope.progress = Math.ceil(($scope.progress - $scope.prog));
+				$scope.Clean();
+			}
+			else{
+				$scope.check8 = true;
 				$scope.progress = Math.ceil(($scope.progress + $scope.prog));
 			}
 		}
@@ -278,6 +355,123 @@ angular.module('starter.controllers', ['ngCordova'])
 				$scope.required = Math.ceil(($scope.required - 1));
 			}
 		}
+		else if (val==4){
+			if($scope.req4){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==5){
+			if($scope.req5){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==6){
+			if($scope.req6){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==7){
+			if($scope.req7){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==8){
+			if($scope.req8){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==9){
+			if($scope.req9){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==10){
+			if($scope.req10){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==11){
+			if($scope.req11){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==12){
+			if($scope.req12){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==13){
+			if($scope.req13){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==14){
+			if($scope.req14){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==15){
+			if($scope.req15){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==16){
+			if($scope.req16){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
 
 		// update records
 		var query = "UPDATE documents SET checkreq = ? WHERE id = ?";
@@ -293,7 +487,7 @@ angular.module('starter.controllers', ['ngCordova'])
     	$cordovaSQLite.execute(db, s_query).then(function(res) {
     		if(res.rows.length > 0) {
     			for(var i = 0; i < res.rows.length; i++){
-    				alert("success!" + res.rows.item(i).docname + " " + res.rows.item(i).checkreq);
+    				/*alert("success!" + res.rows.item(i).docname + " " + res.rows.item(i).checkreq);*/
     			}
 
             } else {

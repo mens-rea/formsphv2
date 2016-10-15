@@ -16,7 +16,7 @@
         </div>
     </div>
     
-    <ion-content class="has-tabs has-header">
+    <ion-content class="has-tabs has-header" ng-init="select(1)" ng-controller="ProgCtrl as progs">
         <div class="tab-views">
 
             <p style="display: none;">{{ progress + "%"}}</p>
@@ -25,10 +25,6 @@
             </div>
             <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
             <div class="save-cont">
-                <!-- <button class="button button-forms" ng-click="reset()">Saved Progress</button> -->
-                <button class="button button-forms" ng-click="insert('death',0)">Save Progress</button>
-                <button class="button button-forms" ng-click="select('death')">Load Progress</button>
-                <!-- <button class="button button-positive" ng-click="loadData('death')">Load Progress</button> -->
             </div>
 
             <div ng-show="activeButton === 'gen'">
@@ -73,13 +69,13 @@
                 </ion-list>
             </div>
 
-            <div class="tab-views" ng-show="activeButton === 'proc'">
+            <div ng-show="activeButton === 'proc'">
                 <h3>Procedures</h3>
                 <ion-list>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                         1.  Fill up application form
                             <label class="toggle toggle-balanced">
-                                <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1)">
+                                <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,1)">
                                 <div class="track">
                                     <div class="handle"></div>
                                 </div>
@@ -91,7 +87,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                         2. Register your business
                             <label class="toggle toggle-balanced">
-                                <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2)">
+                                <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,1)">
                                 <div class="track">
                                     <div class="handle"></div>
                                 </div>
@@ -108,7 +104,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                         3. Secure clearance
                             <label class="toggle toggle-balanced">
-                                <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3)">
+                                <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,1)">
                                 <div class="track">
                                     <div class="handle"></div>
                                 </div>
@@ -122,7 +118,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                         4. Get a business permit
                             <label class="toggle toggle-balanced">
-                                <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(1)">
+                                <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4,1)">
                                 <div class="track">
                                     <div class="handle"></div>
                                 </div>
@@ -135,7 +131,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                         5. Visit the BIR
                             <label class="toggle toggle-balanced">
-                                <input type="checkbox" ng-model="check5" ng-change="UpdateToggle(1)">
+                                <input type="checkbox" ng-model="check5" ng-change="UpdateToggle(5,1)">
                                 <div class="track">
                                     <div class="handle"></div>
                                 </div>
@@ -148,7 +144,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                         6. Apply for TIN and SSS
                             <label class="toggle toggle-balanced">
-                                <input type="checkbox" ng-model="check6" ng-change="UpdateToggle(1)">
+                                <input type="checkbox" ng-model="check6" ng-change="UpdateToggle(6,1)">
                                 <div class="track">
                                     <div class="handle"></div>
                                 </div>
@@ -161,7 +157,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                         7. Pay for your application
                             <label class="toggle toggle-balanced">
-                                <input type="checkbox" ng-model="check7" ng-change="UpdateToggle(1)">
+                                <input type="checkbox" ng-model="check7" ng-change="UpdateToggle(7,1)">
                                 <div class="track">
                                     <div class="handle"></div>
                                 </div>
@@ -174,7 +170,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                         8. Secure other permits
                             <label class="toggle toggle-balanced">
-                                <input type="checkbox" ng-model="check8" ng-change="UpdateToggle(1)">
+                                <input type="checkbox" ng-model="check8" ng-change="UpdateToggle(8,1)">
                                 <div class="track">
                                     <div class="handle"></div>
                                 </div>
@@ -187,7 +183,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                         9. Claim your businness permit
                             <label class="toggle toggle-balanced">
-                                <input type="checkbox" ng-model="check9" ng-change="UpdateToggle(1)">
+                                <input type="checkbox" ng-model="check9" ng-change="UpdateToggle(9,1)">
                                 <div class="track">
                                     <div class="handle"></div>
                                 </div>
@@ -199,7 +195,7 @@
                 </ion-list>
             </div>
         
-            <div class="tab-views" ng-show="activeButton === 'req'">
+            <div ng-show="activeButton === 'req'">
                 <h3>Requirements</h3>
                 <ion-checkbox ng-model="filter.printed1"> At least one of the following documents:</ion-checkbox>
                 <p>
