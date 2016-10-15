@@ -1,72 +1,143 @@
-<ion-view view-title="PRC ID">
-
+<ion-view view-title="SSS ID/UMID card" ng-controller="TabCtrl">
     <div class="tabs-striped tabs-top background-forms tabs-color-light">    
-            <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-prc-proc" onclick="document.getElementById('prc-proc').style.display='block';document.getElementById('prc-req').style.display='none';">
-                    <i class="icon ion-gear-a"></i>
-                    Procedures
-                </a>
-                <a class="tab-item tab-prc-req" onclick="document.getElementById('prc-req').style.display='block';document.getElementById('prc-proc').style.display='none';">
-                    <i class="icon ion-unlocked"></i>
-                    Requirements
-                </a>
-            </div>
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                <i class="icon ion-information-circled"></i>
+                General
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                <i class="icon ion-gear-a"></i>
+                Procedures
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                <i class="icon ion-unlocked"></i>
+                Requirements
+            </a>
+        </div>
     </div>
+    <ion-content class="has-tabs has-header" ng-init="select(2)" ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
+            
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+            </div>
 
-    <ion-content class="has-tabs has-header">
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                        Lorem Ipsum contents.
+                    </p>
+                </ion-list>
 
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
+                        <img src="img/maps-screenshot.png" style="width: 100%;"/></br></br>
+                        <h5>Solicarel Bldg. R. Magsaysay Blvd. Sta. Mesa Manila, San Juan, Metro Manila</h5>
+                    </p>
+                </ion-list>
+            </div>
 
-        <div id="prc-proc" class="tab-views">
-            <h1>PROCEDURES</h1>
-            <ion-list>
-                <ion-item>
-                1. Download your oath form at the nearest PRC office and bring the following
-                </ion-item>
-                <ion-item>
-                2. Present duly accomplished or downloaded oath form
-                </ion-item>
-                <p>
-                    Present duly accomplished or downloaded oath form at designated counter/window (verification officer) for assessment of prescribed fees.
-                </p>
-                <ion-item>
-                3. Pay your fees
-                </ion-item>
-                <p>
-                    Proceed to the cashier window to pay the prescribed fee. Cashiers’ windows are located at the 3rd, 4th, and 5th floors of the PRC Annex Bldg and/or at the ground floor of the PRC Main Bldg.. 
-                </p>
-                <ion-item>
-                4. Accomplish registry form
-                </ion-item>
-                <p>
-                    After payment, proceed to the designated Registration counter/window. The Registration Officer will print Registry Sheet with assigned Registration / License Number to be signed and thumb marked by the Registrant.
-                </p>
-                <ion-item>
-                5. Get your claim slip
-                </ion-item>
-                <p>
-                    Upon completion of the Registry Sheet, issuance officer shall issue claim slip/stub.
-                </p>
-                <ion-item>
-                4. Claim your PRC card
-                </ion-item>
-                <p>
-                    Receive claim slip/stub and claim your Professional Identification Card as scheduled indicated on your claim slip/stub.
-                </p>
-                
-            </ion-list>
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    1.  Download your oath form at the nearest PRC office and bring the following
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    </br></br>
+                    
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    2.  Present duly accomplished or downloaded oath form.
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                        Present duly accomplished or downloaded oath form at designated counter/window (verification officer) for assessment of prescribed fees.
+                    </p>
+                    </br></br>
+
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    3.  Pay your fees.
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                        Proceed to the cashier window to pay the prescribed fee. Cashiers’ windows are located at the 3rd, 4th, and 5th floors of the PRC Annex Bldg and/or at the ground floor of the PRC Main Bldg..
+                    </p>
+                    </br></br>
+
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    4.  Accomplish registry form.
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                        After payment, proceed to the designated Registration counter/window. The Registration Officer will print Registry Sheet with assigned Registration / License Number to be signed and thumb marked by the Registrant.
+                    </p>
+                    </br></br>
+
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    5.  Get your claim slip.
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                        Upon completion of the Registry Sheet, issuance officer shall issue claim slip/stub.
+                    </p>
+                    </br></br>
+
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    6.  Claim your PRC card.
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                        Receive claim slip/stub and claim your Professional Identification Card as scheduled indicated on your claim slip/stub.
+                    </p>
+                    </br></br>
+                </ion-list>
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,2)">One (1) documentary stamp</ion-checkbox>
+                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,2)">One (1) passport size picture in plain background with complete name tag (for Registry of Professionals)</ion-checkbox>
+                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,2)">Current Community Tax Certificate (cedula)</ion-checkbox>
+                </br></br>
+            </div>
+
+            <h6>Sources: <a href="http://www.prc.gov.ph/registration/?id=28" target="_blank">http://www.prc.gov.ph/registration/?id=28</a></h6>
         </div>
-        
-        <div id="prc-req" style="display: none;" class="tab-views">
-          	<h1>REQUIREMENTS</h1>
-            <ion-checkbox ng-model="filter.printed2"> One (1) documentary stamp</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed3"> One (1) passport size picture in plain background with complete name tag (for Registry of Professionals)</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed4"> Current Community Tax Certificate (cedula) </ion-checkbox>
-        </div>
-
-        <h6>Source: <a href="http://www.prc.gov.ph/registration/?id=28" target="_blank">http://www.prc.gov.ph/registration/?id=28</a></h6>
-
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
-        </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

@@ -1,67 +1,116 @@
-<ion-view view-title="PWD ID">
-
+<ion-view view-title="SSS ID/UMID card" ng-controller="TabCtrl">
     <div class="tabs-striped tabs-top background-forms tabs-color-light">    
-            <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-pwd-proc" onclick="document.getElementById('pwd-proc').style.display='block';document.getElementById('pwd-req').style.display='none';">
-                    <i class="icon ion-gear-a"></i>
-                    Procedures
-                </a>
-                <a class="tab-item tab-pwd-req" onclick="document.getElementById('pwd-req').style.display='block';document.getElementById('pwd-proc').style.display='none';">
-                    <i class="icon ion-unlocked"></i>
-                    Requirements
-                </a>
-            </div>
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                <i class="icon ion-information-circled"></i>
+                General
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                <i class="icon ion-gear-a"></i>
+                Procedures
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                <i class="icon ion-unlocked"></i>
+                Requirements
+            </a>
+        </div>
     </div>
+    <ion-content class="has-tabs has-header" ng-init="select(2)" ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
+            
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+            </div>
 
-    <ion-content class="has-tabs has-header">
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                        Lorem Ipsum contents.
+                    </p>
+                </ion-list>
 
-        <div id="pwd-proc" class="tab-views">
-            <h1>PROCEDURES</h1>
-            <ion-list>
-                <ion-item>
-                1. Fill up application form
-                </ion-item>
-                <p>
-                Applicant or care-giver must fill up the application form, attaching the 2 1×1 ID pictures and signed clinical abstract.
-                Forms may be obtained in any of the following offices:
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
+                        <img src="img/maps-screenshot.png" style="width: 100%;"/></br></br>
+                        <h5>Solicarel Bldg. R. Magsaysay Blvd. Sta. Mesa Manila, San Juan, Metro Manila</h5>
+                    </p>
+                </ion-list>
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    1.  Fill up application form
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                        Applicant or care-giver must fill up the application form, attaching the 2 1×1 ID pictures and signed clinical abstract.
+                        Forms may be obtained in any of the following offices:
+                        </br></br>
+                        -Office of the Mayor</br>
+                        -Office of the Barangay Captain</br>
+                        -National Council on Disability Affairs (NCDA) or its regional counterpart</br>
+                        -DSWD Offices</br>
+                        -Participating organizations with memorandum of agreements with the Department of Health
+                    </p>
+                    </br></br>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    2.  Submit or upload the application to the nearest office.
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                        Applicant, care-giver, or registration center personnel must then bring or upload the application to the nearest City of Municipal Health Office or its satellite offices or stations at the barangay for verification.</br></br>
+                        <b>Note</b>: If PWD is not ambulatory, the receiving health officer shall do a home visit to validate the entries and disability.
+                    </p>
+                    </br></br>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    3.  Claim the identification card.
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,2)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                        Once verified, the forms will be sent to the Health Officer of the Main City or Municipal Health Center. The Health Officer will then fill up a certification form, affix a control number, and upload the information to the Philippine Registry for Persons with Disabilities that can be downloaded from the DOH National Office Website.</br></br>
+                    
+                        Applicant must bring the duly approved application form and certificate of disability to the City or Municipal Social Welfare Office or NCDA for issuance of the identification card.
+                    </p>
+
+                    <p>
+                        Applications that were disapproved shall be advised regarding the deficiencies and shall be allowed to reapply until complied.
+                    </p>
+                    </br></br>
+                </ion-list>
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,2)">Filled out application form, either by applicant or care-giver</ion-checkbox>
+                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,2)">Two (2) 1×1 ID pictures</ion-checkbox>
+                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,2)">A duly signed clinical abstract by any licensed private, government clinic, or hospital-based physician</ion-checkbox>
                 </br></br>
-                -Office of the Mayor</br>
-                -Office of the Barangay Captain</br>
-                -National Council on Disability Affairs (NCDA) or its regional counterpart</br>
-                -DSWD Offices</br>
-                -Participating organizations with memorandum of agreements with the Department of Health</br>
-                </p>
-                <ion-item>
-                2.  Submit or upload the application to the nearest office
-                </ion-item>
-                <p>
-                pplicant, care-giver, or registration center personnel must then bring or upload the application to the nearest City of Municipal Health Office or its satellite offices or stations at the barangay for verification.
-                Note: If PWD is not ambulatory, the receiving health officer shall do a home visit to validate the entries and disability.
-                </p>
-                <ion-item>
-                2.  Claim the identification card
-                </ion-item>
-                <p>
-                Once verified, the forms will be sent to the Health Officer of the Main City or Municipal Health Center. The Health Officer will then fill up a certification form, affix a control number, and upload the information to the Philippine Registry for Persons with Disabilities that can be downloaded from the DOH National Office Website.
-                Applicant must bring the duly approved application form and certificate of disability to the City or Municipal Social Welfare Office or NCDA for issuance of the identification card.
-                </p>
+            </div>
 
-                <p>
-                Applications that were disapproved shall be advised regarding the deficiencies and shall be allowed to reapply until complied.
-                </p>
-
-            </ion-list>
+            <h6>Sources: PSA.gov.ph</h6>
         </div>
-        
-        <div id="pwd-req" style="display: none;" class="tab-views">
-          	<h1>REQUIREMENTS</h1>
-            <ion-checkbox ng-model="filter.validid">Filled out application form, either by applicant or care-giver</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed">Two (2) 1×1 ID pictures</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed2">A duly signed clinical abstract by any licensed private, government clinic, or hospital-based physician</ion-checkbox>
-        </div>
-
-        <h6>Source: PSA.gov.ph</h6>
-
-        <button class="button button-positive">Save Progress</button>
-      </ion-content>
+    </ion-content>
 </ion-view>
