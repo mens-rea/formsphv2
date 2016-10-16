@@ -15,7 +15,7 @@
             </a>
         </div>
     </div>
-    <ion-content class="has-tabs has-header" ng-init="select(2)" ng-controller="ProgCtrl as progs">
+    <ion-content class="has-tabs has-header" ng-init="select(19)" ng-controller="ProgCtrl as progs">
         <div class="tab-views">
             
             <p style="display: none;">{{ progress + "%"}}</p>
@@ -49,7 +49,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     1.  Visit any of the folllowing government agencies:
                         <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,2)">
+                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,19)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
@@ -65,7 +65,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     2.  Fill out the form
                         <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,2)">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,19)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
@@ -78,7 +78,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     3.  Verify UMID form
                         <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,2)">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,19)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
@@ -91,7 +91,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     4.  ID capture, fingerprint and signature
                         <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,2)">
+                            <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4,19)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
@@ -104,7 +104,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     5.  Wait for UMID card to arrive by mail
                         <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,2)">
+                            <input type="checkbox" ng-model="check5" ng-change="UpdateToggle(5,19)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
@@ -119,7 +119,7 @@
             
             <div ng-show="activeButton === 'req'">
                 <h3>Requirements</h3>
-                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,2)">One (1) Primary Valid ID or Two (2) Secondary Valid IDs</ion-checkbox>
+                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,19)">One (1) Primary Valid ID or Two (2) Secondary Valid IDs</ion-checkbox>
             </div>
 
             <h6>Sources: <a href="http://www.iweb.ph/how-to-apply-umid-card" target="_blank">http://www.iweb.ph/how-to-apply-umid-card</a></h6>

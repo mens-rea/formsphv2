@@ -89,7 +89,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       });*/
 
       // Uncomment to reset tables
-      /*var query = "DELETE FROM documents WHERE docname = 'barangay'";
+      var query = "DELETE FROM documents WHERE docname = 'barangay'";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) { });
       var query = "DELETE FROM documents WHERE docname = 'business'";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) { });
@@ -130,7 +130,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       var query = "DELETE FROM documents WHERE docname = 'sss'";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) { });
       var query = "DELETE FROM documents WHERE docname = 'tin'";
-        $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) { });*/
+        $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) { });
 
       //Creation of Database
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (0,'barangay',0,5,3,0)";
