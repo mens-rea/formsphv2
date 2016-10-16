@@ -132,3 +132,11 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+ion-item:first-child{
+	margin-top: 0px;
+}
+ion-item{
+	margin-top: 30px;
+	margin-bottom: 15px;
+}

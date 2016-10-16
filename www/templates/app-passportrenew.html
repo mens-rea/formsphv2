@@ -1,43 +1,148 @@
-<ion-view view-title="Philippine Passport (renew)">
-
+<ion-view view-title="Philippine Passport (renew)" ng-controller="TabCtrl">
     <div class="tabs-striped tabs-top background-forms tabs-color-light">    
-            <div class="tabs tabs-icon-left">
-                <a class="tab-item tab-passportrenew-proc" onclick="document.getElementById('passportrenew-proc').style.display='block';document.getElementById('passportrenew-req').style.display='none';">
-                    <i class="icon ion-gear-a"></i>
-                    Procedures
-                </a>
-                <a class="tab-item tab-passportrenew-req" onclick="document.getElementById('passportrenew-req').style.display='block';document.getElementById('passportrenew-proc').style.display='none';">
-                    <i class="icon ion-unlocked"></i>
-                    Requirements
-                </a>
-            </div>
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                <i class="icon ion-information-circled"></i>
+                General
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                <i class="icon ion-gear-a"></i>
+                Procedures
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                <i class="icon ion-unlocked"></i>
+                Requirements
+            </a>
+        </div>
     </div>
+    <ion-content class="has-tabs has-header" ng-init="select(14)" ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
+            
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+            </div>
 
-    <ion-content class="has-tabs has-header">
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                        A Philippine passport is both a travel document and a primary national identity document issued to citizens of the Philippines since there is no national identity card system in the Philippines. It is issued by the Department of Foreign Affairs and Philippine diplomatic missions abroad, with certain exceptions.
+                    </p>
+                </ion-list>
 
-        <div id="passportrenew-proc" class="tab-views">
-            <h1>PROCEDURES</h1>
+                <h3>Address</h3>
+                <ion-list>
+                    <p>
+                        <img src="img/maps-screenshot.png" style="width: 100%;"/></br></br>
+                        <h5>Solicarel Bldg. R. Magsaysay Blvd. Sta. Mesa Manila, San Juan, Metro Manila</h5>
+                    </p>
+                </ion-list>
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
             <ion-list>
-                <ion-item>
-                1. Present yourself on your scheduled appointment with the requirements
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                1. Make an appointment
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,13)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
                 </ion-item>
-            </ion-list>
-        </div>
-        
-        <div id="passportrenew-req" style="display: none;" class="tab-views">
-          	<h1>REQUIREMENTS</h1>
-            <ion-checkbox ng-model="filter.printed2"> Personal appearance</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed3"> Confirmed appointment</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed4"> Duly accomplished application form </ion-checkbox>
-            <ion-checkbox ng-model="filter.printed5"> Most recent expiring or expired passport </ion-checkbox>
-            <ion-checkbox ng-model="filter.printed6"> Acceptable IDs at least one (1): for Brown, Green and MRP </ion-checkbox>
-            <ion-checkbox ng-model="filter.printed7"> Other supporting documents as necessary </ion-checkbox>
-        </div>
+                <p>
+                    To set an appointment with the DFA, you can either go to the nearest DFA office or visit the DFA Appointment Website. Whether done online or physically you will need to fill-out or present an already filled-out application form. Once finished, you will be given a reference number-REMEMBER THIS NUMBER.
+                </p>
+                 <ion-item class="item-toggle" style="font-size: 22px;">
+                2. Prepare all required documents
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,13)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </ion-item>
+                <p>
+                    Bring all of the required documents listed in the requirements section. Additional requirements may be needed for NEWLY-MARRIED WOMEN, SPOUSE OF FOREIGN NATIONALS, and MUSLIM applicants.
+                </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                3. Appear on your scheduled appointment
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,13)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </ion-item>
+                <p>
+                    Applicants must come on the designated time or come early as their slot can be quickly replaced. Bring your filled-up application form and present it to a DFA representative. You will be given a queue number. Wait until your number is called.
+                </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                4. Go through the process
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4,13)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </ion-item>
+                <p>
+                    Once your applicant number is called, you will be directed by a DFA official through a short process of finalizing your application.
+                </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                5. Process payment fee
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="check5" ng-change="UpdateToggle(5,13)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </ion-item>
+                <p>
+                    Applicant will be asked to pay a processing fee of Php 950.00 at the cashier for regular processing and will take about 15 WORKING days exclusive of holidays. A rush processing is also available at Php 1,200.00 for only 6 WORKING days EXCLUSIVE of holidays. If the application is for a lost and VALID passport, applicants will pay an additional Php 200.00 (please note that the DFA advises a 6 month allowance prior to travel in renewing your passport.)
+                </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                5. Encoding of Bio-Data
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="check5" ng-change="UpdateToggle(5,13)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </ion-item>
+                <p>
+                    Once all fees are secured, applicants will proceed to the ENCODING SECTION where their bio-data (fingerprints, picture, etc...) will be recorded and saved.
+                </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                6. Wait for the release of your passport
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="check6" ng-change="UpdateToggle(6,13)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </ion-item>
+                <p>
+                    Applicants must wait for either 7 or 15 days, more or less, depending on the volume of applications. Applicants can recieve their passport physically at the DFA branch or send it to their homes via a delivery service (normally inside or near the DFA office itself-this can be done on the day of application itself.)
+                </p>
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Procedures</h3>
+                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,14)"> Personal appearance</ion-checkbox>
+                <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,14)"> Confirmed appointment</ion-checkbox>
+                <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,14)"> Duly accomplished application form </ion-checkbox>
+                <ion-checkbox ng-model="req4" ng-value='1' ng-change="UpdateBox(4,14)"> Most recent expiring or expired passport </ion-checkbox>
+                <ion-checkbox ng-model="req5" ng-value='1' ng-change="UpdateBox(5,14)"> Acceptable IDs at least one (1): for Brown, Green and MRP </ion-checkbox>
+                <ion-checkbox ng-model="req6" ng-value='1' ng-change="UpdateBox(6,14)"> Other supporting documents as necessary </ion-checkbox>
+            </div>
 
-        <h6>Source: <a href="http://www.dfa.gov.ph/renewal-of-passport-requirements" target="_blank">http://www.dfa.gov.ph</a></h6>
-
-        <div ng-controller="PopupCtrl">
-            <button class="button button-positive" ng-click="showAlert()">Save Progress</button>
+            <h6>Sources: <a href="http://www.prc.gov.ph/registration/?id=28" target="_blank">http://www.prc.gov.ph/registration/?id=28</a>, <a href="https://en.wikipedia.org/wiki/Philippine_passport">Wikipedia</a></h6>
         </div>
-      </ion-content>
+    </ion-content>
 </ion-view>

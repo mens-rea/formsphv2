@@ -38,15 +38,11 @@
 
             <h3>Address</h3>
             <ion-list>
-                <p>
-                    
-                </p>
-
-            <h3>Other information</h3>
-            <ion-list>
-                <p>
-                    
-                </p>
+                <ion-list>
+                    <p>
+                        <img src="img/maps-screenshot.png" style="width: 100%;"/></br></br>
+                        <h5>Solicarel Bldg. R. Magsaysay Blvd. Sta. Mesa Manila, San Juan, Metro Manila</h5>
+                    </p>
             </ion-list>
         </div>
 
@@ -54,7 +50,7 @@
             <h3>Procedures</h3>
             <ion-list>
                 <ion-item class="item-toggle" style="font-size: 22px;">
-                1. Go to your local barangay hall
+                1. Make an appointment
                     <label class="toggle toggle-balanced">
                         <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,13)">
                         <div class="track">
@@ -63,10 +59,10 @@
                     </label>
                 </ion-item>
                 <p>
-                    Find the barangay secretary and inform them that you need a barangay clearance. Be prepared to answer a few short questions about your residency and purpose for getting a barangay clearance.
+                    To set an appointment with the DFA, you can either go to the nearest DFA office or visit the DFA Appointment Website. Answer the application form, and reference number will be given to you after submission. Whether done online or in person, have your accomplished application form printed.
                 </p>
                  <ion-item class="item-toggle" style="font-size: 22px;">
-                2. Submit your accomplished form
+                2. Prepare all required documents
                     <label class="toggle toggle-balanced">
                         <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,13)">
                         <div class="track">
@@ -75,10 +71,10 @@
                     </label>
                 </ion-item>
                 <p>
-                    Fill out and complete an application form with accurate details. Some barangays will only ask for your signature while others require a thumb print and will even take your picture.
+                    Ensure that all the general requirements are ready before your appointment with the DFA. In case of no birth record, other documents may be required as a substitute for the birth certificate.
                 </p>
                 <ion-item class="item-toggle" style="font-size: 22px;">
-                3. Pay the necessary fees
+                3. Visit the DFA Office
                     <label class="toggle toggle-balanced">
                         <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,13)">
                         <div class="track">
@@ -87,26 +83,56 @@
                     </label>
                 </ion-item>
                 <p>
-                    After completing the application form and supplying your details, submit all the requirements and pay the processing fees. It is advised that you bring between P50-P100. Once paid, just wait for 20 to 30 minutes and you will be given your barangay clearance.
+                    Go to the DFA Consular Office on your scheduled date and time. If applicable, visit the most convenient DFA satellites and Philippine Embassy Consulate as per your appointment. Do not forget to present your application form and wait for your turn.
+                </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                4. Pay for your application
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4,13)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </ion-item>
+                <p>
+                    Proceed to the cashier or the payment section to settle your application and processing fees.
+                </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                5. Submit for recording
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="check5" ng-change="UpdateToggle(5,13)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </ion-item>
+                <p>
+                    Proceed to encoding section and have your photo and other information taken by the staff.
+                </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                6. Wait for your passport
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="check6" ng-change="UpdateToggle(6,13)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </ion-item>
+                <p>
+                    The processing of your passport can take up to thirty (30) days. If available, you can proceed to the delivery counter and provide your delivery information, so you can have the passport delivered to you. You may also opt to claim your passport in person.
                 </p>
         </div>
         
         <div ng-show="activeButton === 'req'">
             <h3>Requirements</h3>
-            <ion-checkbox ng-model="filter.printed1"> Accomplished Form</ion-checkbox>
-            <ion-checkbox ng-model="filter.printed2"> Recent Cedula (Community Tax Certificate) </ion-checkbox>
-             <ion-checkbox ng-model="filter.printed3"> Photocopy of valid ID </ion-checkbox>
-
-            <p>
-            <strong>Additional Requirement</strong></br></br>
-
-            Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
-               <em>* might require for new residents or new applicants with no barangay records.</em>
-
-            </p>
+            <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,13)"> Accomplished Form</ion-checkbox>
+            <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,13)"> NSO Birth Certificate</ion-checkbox>
+                <p>Original copy</p>
+            <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,13)"> One (1) valid id or three (3) documents</ion-checkbox>
+            <ion-checkbox ng-model="req4" ng-value='1' ng-change="UpdateBox(4,13)"> Two (2) photocopies of each document</ion-checkbox>
         </div>
 
-        <h6>Sources: <a href="http://www.gsis.gov.ph/default.php?id=73" target="_blank">http://www.gsis.gov.ph/default.php?id=73</a>, <a href="http://www.quezoncity.gov.ph" target="_blank">http://www.quezoncity.gov.ph</a>, <a href="http://www.powerpinoys.com" target="_blank">http://www.powerpinoys.com</a>, <a href="http://www.faq.ph" target="_blank">http://www.faq.ph</a>, <a href="http://thinkpesos.com" target="_blank">http://www.thinkpesos.com</a> </h6>
+        <h6>Sources: Official Gazette, filipiknow.net, <a href="https://en.wikipedia.org/wiki/Philippine_passport">Wikipedia</a> </h6>
         </div>
     </ion-content>
 </ion-view>
