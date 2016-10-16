@@ -133,7 +133,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) { });*/
 
       //Creation of Database
-      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (0,'barangay',0,5,3,0)";
+      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (0,'barangay',0,3,3,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (1,'business',0,8,4,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});

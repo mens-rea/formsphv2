@@ -159,21 +159,21 @@
             
             <div ng-show="activeButton === 'req'">
                 <h3>Requirements</h3>
-                <ion-checkbox ng-model="filter.printed1">Accomplished application form for driver’s license</ion-checkbox>
-                <ion-checkbox ng-model="filter.printed2"> Valid student permit </ion-checkbox>
+                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,3)">Accomplished application form for driver’s license</ion-checkbox>
+                <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,3)"> Valid student permit </ion-checkbox>
                 <p>
                     (at least one month old)
                 </p>
-                 <ion-checkbox ng-model="filter.printed3"> Medical certificate </ion-checkbox>
+                 <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,3)"> Medical certificate </ion-checkbox>
                   <p>
                     with official receipt from any duly-licensed and practicing physician (Note: The LTO will not accept medical certificates which are over 15 days old.)
                 </p>
-                <ion-checkbox ng-model="filter.printed4"> Negative drugtest result </ion-checkbox>
+                <ion-checkbox ng-model="req4" ng-value='1' ng-change="UpdateBox(4,3)"> Negative drugtest result </ion-checkbox>
                 <p>
                    (from a DOH accredited drug testing center & Government Hospital)
                 </p>
-                <ion-checkbox ng-model="filter.printed5"> If employed: Taxpayer’s Identification Number (TIN) </ion-checkbox>
-                <ion-checkbox ng-model="filter.printed6"> Must have passed the written and practical examinations. </ion-checkbox>
+                <ion-checkbox ng-model="req5" ng-value='1' ng-change="UpdateBox(5,3)"> If employed: Taxpayer’s Identification Number (TIN) </ion-checkbox>
+                <ion-checkbox ng-model="req6" ng-value='1' ng-change="UpdateBox(6,3)"> Must have passed the written and practical examinations. </ion-checkbox>
             </div>
 
             <h6>Sources: <a href="http://www.gov.ph/services/driverslicense/new-license-how-to-apply-for-a-non-professional-license/" target="_blank">http://www.gov.ph/services</a> </h6>

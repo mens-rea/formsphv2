@@ -103,57 +103,57 @@
         
         <div ng-show="activeButton === 'req'">
             <h3>Requirements-Local</h3>
-            <ion-checkbox ng-model="filter.printed1"> Original and photocopy of passport </ion-checkbox>
+            <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,10)"> Original and photocopy of passport </ion-checkbox>
             <p>
               (must be valid about six months before date of travel.)
             </p>
-            <ion-checkbox ng-model="filter.printed2"> Original and photocopy of visa </ion-checkbox>
-            <ion-checkbox ng-model="filter.printed3"> One 2x2 or passport-size ID </ion-checkbox>
-            <ion-checkbox ng-model="filter.printed4"> One valid ID with photograph </ion-checkbox>
+            <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,10)"> Original and photocopy of visa </ion-checkbox>
+            <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,10)"> One 2x2 or passport-size ID </ion-checkbox>
+            <ion-checkbox ng-model="req4" ng-value='1' ng-change="UpdateBox(4,10)"> One valid ID with photograph </ion-checkbox>
             <p>
               (e.g. SSS ID, GSIS eCard, PRC ID, driver's license, postal ID, ARC, etc.)
             </p>
             <h3>Requirements-USA-bound Immigrant</h3>
-             <ion-checkbox ng-model="filter.printed5"> Photocopy of Immigrant Data Summary </ion-checkbox>
+             <ion-checkbox ng-model="req5" ng-value='1' ng-change="UpdateBox(5,10)"> Photocopy of Immigrant Data Summary </ion-checkbox>
              <p>
               (must not be detached from visa packet) except for K visa holder.
             </p>
             <h3>Requirements-Canada-bound emigrant</h3>
-            <ion-checkbox ng-model="filter.printed6"> Original and photocopy of </ion-checkbox>
+            <ion-checkbox ng-model="req6" ng-value='1' ng-change="UpdateBox(6,10)"> Original and photocopy of </ion-checkbox>
              <p>
               Confirmation of Permanent Residence (must not be torn or signed before departure)
             </p>
             <h3>Requirements-Japan-bound emigrant</h3>
-             <ion-checkbox ng-model="filter.printed7"> Original and photocopy of Certificate of Eligibility </ion-checkbox>
+             <ion-checkbox ng-model="req7" ng-value='1' ng-change="UpdateBox(7,10)"> Original and photocopy of Certificate of Eligibility </ion-checkbox>
              <p>
            
             </p>
             <h3>Requirements-Italy-bound emigrants</h3>
-            <ion-checkbox ng-model="filter.printed8"> Original and photocopy of Certificate </ion-checkbox>
+            <ion-checkbox ng-model="req8" ng-value='1' ng-change="UpdateBox(8,10)"> Original and photocopy of Certificate </ion-checkbox>
             <p>
               Nulla Osta
             </p>
             <h3>Requirements-New Zealand-bound emigrants</h3>
-            <ion-checkbox ng-model="filter.printed9"> Original and photocopy of Certificate </ion-checkbox>
+            <ion-checkbox ng-model="req9" ng-value='1' ng-change="UpdateBox(9,10)"> Original and photocopy of Certificate </ion-checkbox>
             <p>
               letter of approval for Work to Residence visa.
             </p>
              <h3>Requirements-Australia-bound emigrants</h3>
-            <ion-checkbox ng-model="filter.printed10"> Printed copy of Visa Grant Notification Letter.</ion-checkbox>
+            <ion-checkbox ng-model="req10" ng-value='1' ng-change="UpdateBox(10,10)"> Printed copy of Visa Grant Notification Letter.</ion-checkbox>
              <p>
             </p>
             <h3>Requirements-immigrant workers</h3>
-            <ion-checkbox ng-model="filter.printe11"> Photocopy of  employment contract </ion-checkbox>
+            <ion-checkbox ng-model="req11" ng-value='1' ng-change="UpdateBox(10,10)"> Photocopy of  employment contract </ion-checkbox>
             <p>
               employment contract
             </p>
             <h3>Requirements-immigrant workers</h3>
-            <ion-checkbox ng-model="filter.printed12"> Duly completed registration </ion-checkbox>
+            <ion-checkbox ng-model="req12" ng-value='1' ng-change="UpdateBox(11,10)"> Duly completed registration </ion-checkbox>
             <p>
               for Emigrants or for Immigrant workers.
             </p>
-            <ion-checkbox ng-model="filter.printed13"> Payment of P400.00 registration fee </ion-checkbox>
-            <ion-checkbox ng-model="filter.printed14">Attendance in the PDOS</ion-checkbox>
+            <ion-checkbox ng-model="req13" ng-value='1' ng-change="UpdateBox(12,10)"> Payment of P400.00 registration fee </ion-checkbox>
+            <ion-checkbox ng-model="req14" ng-value='1' ng-change="UpdateBox(13,10)">Attendance in the PDOS</ion-checkbox>
             <p>
               guidance counseling or peer counseling session
             </p>

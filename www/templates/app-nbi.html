@@ -123,11 +123,11 @@
             
             <div ng-show="activeButton === 'req'">
                 <h3>Requirements</h3>
-                <ion-checkbox ng-model="filter.printed1">Two (2) valid IDs:</ion-checkbox>
+                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,7)">Two (2) valid IDs:</ion-checkbox>
                 <p>
                      Passport, voter's ID, driver's license, PRC license, SSS ID, GSIS, UMID, School ID, Tax Identification Number (TIN) ID, Philhealth ID, NSO Authenticated Birth Certificate, Alien Certificate Registration, Senior Citizen's ID, or previous copy of NBI Clearance  
                 </p>
-                <ion-checkbox ng-model="filter.printed2"> Accomplished Form </ion-checkbox>
+                <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,7)"> Accomplished Form </ion-checkbox>
             </div>
 
             <h6>Sources: <a href="http://www.gsis.gov.ph/default.php?id=73" target="_blank">http://www.gsis.gov.ph/default.php?id=73</a> </h6>

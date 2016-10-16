@@ -173,8 +173,8 @@
                      <strong>Single Proprietorship</strong>
                 </p>
 
-                <ion-checkbox ng-model="filter.printed1"> Must be a Filipino citizen, at least 18 years old </ion-checkbox>
-                <ion-checkbox ng-model="filter.printed2"> For Filipinos whose names are suggestive of alien nationality </ion-checkbox>
+                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,4)"> Must be a Filipino citizen, at least 18 years old </ion-checkbox>
+                <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,4)"> For Filipinos whose names are suggestive of alien nationality </ion-checkbox>
                 <p>
                     must submit proof of citizenship such as birth certificate, PRC ID, voter's ID, passport(a)if the applicant has a foreign sounding name, acquired Filipino citizenship by naturalization, election or by other means provided by law, he must submit proof of his Filipino citizenship such as: Naturalization certificate and Oath of Allegiance, Affidavit of election or ID card issued by the Bureau of Immigration and Deportation, or Valid ID card issued by the Integrated Bar of the Philippines (IBP) or Professional Regulatory Commission (PRC)
 
@@ -185,17 +185,17 @@
                      <strong>Single Proprietorship (foreign) </strong>
                 </p>
 
-                <ion-checkbox ng-model="filter.printed1"> Photocopy of Alien Certificate of Registration (ACR) </ion-checkbox>
+                <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,4)"> Photocopy of Alien Certificate of Registration (ACR) </ion-checkbox>
                 <p>
                     updated the current year. Present original for comparison. 
                 </p>
-                <ion-checkbox ng-model="filter.printed2"> Accomplished DTI Form No. 17 under R.A. 7042 </ion-checkbox>
-                <ion-checkbox ng-model="filter.printed3"> Current written appointment of Filipino Residential Agent. </ion-checkbox>
-                <ion-checkbox ng-model="filter.printed4"> Clearance from other involved agencies </ion-checkbox>
+                <ion-checkbox ng-model="req4" ng-value='1' ng-change="UpdateBox(4,4)"> Accomplished DTI Form No. 17 under R.A. 7042 </ion-checkbox>
+                <ion-checkbox ng-model="req5" ng-value='1' ng-change="UpdateBox(5,4)"> Current written appointment of Filipino Residential Agent. </ion-checkbox>
+                <ion-checkbox ng-model="req6" ng-value='1' ng-change="UpdateBox(6,4)"> Clearance from other involved agencies </ion-checkbox>
                 <p>
                     such as Department of Science and Technology (DOST), PNP, etc. 
                 </p>
-                <ion-checkbox ng-model="filter.printed5"> In case of alien retailer, current year's permit to engage in retail business per R.A. 1180
+                <ion-checkbox ng-model="req7" ng-value='1' ng-change="UpdateBox(7,4)"> In case of alien retailer, current year's permit to engage in retail business per R.A. 1180
                 </ion-checkbox>
             </div>
 
