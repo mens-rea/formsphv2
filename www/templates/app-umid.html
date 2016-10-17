@@ -119,7 +119,9 @@
             
             <div ng-show="activeButton === 'req'">
                 <h3>Requirements</h3>
-                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,19)">One (1) Primary Valid ID or Two (2) Secondary Valid IDs</ion-checkbox>
+                <ion-list>
+                    <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,19)">One (1) Primary Valid ID or Two (2) Secondary Valid IDs</ion-checkbox>
+                <ion-list>
             </div>
 
             <h6>Sources: <a href="http://www.iweb.ph/how-to-apply-umid-card" target="_blank">http://www.iweb.ph/how-to-apply-umid-card</a></h6>

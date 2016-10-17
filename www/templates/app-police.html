@@ -99,16 +99,17 @@
             
             <div ng-show="activeButton === 'req'">
                 <h3>Requirements</h3>
-                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,15)"> Accomplished Form</ion-checkbox>
-                <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,15)"> Recent Cedula (Community Tax Certificate) </ion-checkbox>
-                 <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(3,15)"> Photocopy of valid ID </ion-checkbox>
 
-                <p>
-                    <strong>Additional Requirement</strong></br></br>
-                    Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
-                    <em>* might require for new residents or new applicants with no barangay records.</em>
-
-                </p>
+                <ion-list>
+                    <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,15)"> Accomplished Form</ion-checkbox>
+                    <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,15)"> Recent Cedula (Community Tax Certificate) </ion-checkbox>
+                     <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,15)"> Photocopy of valid ID </ion-checkbox>
+                    <p>
+                        <strong>Additional Requirement</strong></br></br>
+                        Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
+                        <em>* might require for new residents or new applicants with no barangay records.</em>
+                    </p>
+                </ion-list>
             </div>
 
             <h6>Sources: <a href="http://www.gsis.gov.ph/default.php?id=73" target="_blank">http://www.gsis.gov.ph/default.php?id=73</a>, <a href="http://www.quezoncity.gov.ph" target="_blank">http://www.quezoncity.gov.ph</a>, <a href="http://www.powerpinoys.com" target="_blank">http://www.powerpinoys.com</a>, <a href="http://www.faq.ph" target="_blank">http://www.faq.ph</a>, <a href="http://thinkpesos.com" target="_blank">http://www.thinkpesos.com</a> </h6>

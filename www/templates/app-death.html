@@ -99,9 +99,11 @@
             
             <div ng-show="activeButton === 'req'">
                 <h3>Requirements</h3>
-                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,2)">One (1) valid ID</ion-checkbox>
-                <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,2)">Accomplished application form</ion-checkbox>
-                <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,2)">Php 330/copy</ion-checkbox>
+                <ion-list>
+                    <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,2)">One (1) valid ID</ion-checkbox>
+                    <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,2)">Accomplished application form</ion-checkbox>
+                    <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,2)">Php 330/copy</ion-checkbox>
+                </ion-list>
             </div>
 
             <h6>Sources: PSA.gov.ph, http://www.iweb.ph/how-to-apply-for-nso-death-certificate</h6>

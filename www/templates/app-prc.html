@@ -74,7 +74,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     3.  Pay your fees.
                         <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(2,16)">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,16)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
@@ -88,7 +88,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     4.  Accomplish registry form.
                         <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(2,16)">
+                            <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4,16)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
@@ -102,7 +102,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     5.  Get your claim slip.
                         <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check5" ng-change="UpdateToggle(2,16)">
+                            <input type="checkbox" ng-model="check5" ng-change="UpdateToggle(5,16)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
@@ -116,7 +116,7 @@
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     6.  Claim your PRC card.
                         <label class="toggle toggle-balanced">
-                            <input type="checkbox" ng-model="check6" ng-change="UpdateToggle(2,16)">
+                            <input type="checkbox" ng-model="check6" ng-change="UpdateToggle(6,16)">
                             <div class="track">
                                 <div class="handle"></div>
                             </div>
@@ -131,10 +131,13 @@
             
             <div ng-show="activeButton === 'req'">
                 <h3>Requirements</h3>
-                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,15)">One (1) documentary stamp</ion-checkbox>
-                <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,15)">One (1) passport size picture in plain background with complete name tag (for Registry of Professionals)</ion-checkbox>
-                <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,15)">Current Community Tax Certificate (cedula)</ion-checkbox>
-                </br></br>
+                
+                <ion-list>
+                    <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,15)">One (1) documentary stamp</ion-checkbox>
+                    <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,15)">One (1) passport size picture in plain background with complete name tag (for Registry of Professionals)</ion-checkbox>
+                    <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,15)">Current Community Tax Certificate (cedula)</ion-checkbox>
+                    </br></br>
+                </ion-list>
             </div>
 
             <h6>Sources: <a href="http://www.prc.gov.ph/registration/?id=28" target="_blank">http://www.prc.gov.ph/registration/?id=28</a></h6>

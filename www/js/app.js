@@ -159,10 +159,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (12,'philhealth',0,3,2,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
-      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (13,'passport',0,3,3,0)";
+      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (13,'passport',0,6,3,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
       //finalize passportrenew
-      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (14,'passportrenew',0,3,3,0)";
+      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (14,'passportrenew',0,8,3,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (15,'police',0,3,3,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
