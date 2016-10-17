@@ -15,7 +15,7 @@
             </a>
         </div>
     </div>
-    <ion-content class="has-tabs has-header" ng-init="select(16)" ng-controller="ProgCtrl as progs">
+    <ion-content class="has-header" ng-init="select(16)" ng-controller="ProgCtrl as progs">
         <div class="tab-views">
             
             <p style="display: none;">{{ progress + "%"}}</p>
@@ -30,15 +30,7 @@
                 <h3>General</h3>
                 <ion-list>
                     <p>
-                        Lorem Ipsum contents.
-                    </p>
-                </ion-list>
-
-                <h3>Address</h3>
-                <ion-list>
-                    <p>
-                        <img src="img/maps-screenshot.png" style="width: 100%;"/></br></br>
-                        <h5>Solicarel Bldg. R. Magsaysay Blvd. Sta. Mesa Manila, San Juan, Metro Manila</h5>
+                        The Professional Regulation Commission is responsible for the administration, implementation and enforcement of regulatory policies on the regulation and licensing of various professions and occupations under its jurisdiction. It is the instrument of the Filipino people in securing for the nation a reliable, trustworthy, and progressive system of developing professionals whose personal integrity and spiritual values are solid and respected, whose competencies are globally competitive, and whose commitment to serve the Filipino nation and the whole community is strong and steadfast.
                     </p>
                 </ion-list>
             </div>
@@ -47,7 +39,7 @@
                 <h3>Procedures</h3>
                 <ion-list>
                     <ion-item class="item-toggle" style="font-size: 22px;">
-                    1.  Download your oath form at the nearest PRC office and bring the following
+                    1.  Download Oath Form
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,16)">
                             <div class="track">
@@ -55,8 +47,14 @@
                             </div>
                         </label>
                     </ion-item>
-                    </br></br>
-                    
+                    </br>
+                    <p>
+                        Go to the nearest PRC office and bring the following: </br></br>
+                        1.1 One (1) documentary stamp</br>
+                        1.2 One (1) passport size picture in plain background with complete name tag (for Registry of Professionals)</br>
+                        1.3 Current Community Tax Certificate (cedula) 
+                    </p>
+                    </br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     2.  Present duly accomplished or downloaded oath form.
                         <label class="toggle toggle-balanced">
@@ -66,11 +64,11 @@
                             </div>
                         </label>
                     </ion-item>
+                    </br>
                     <p>
                         Present duly accomplished or downloaded oath form at designated counter/window (verification officer) for assessment of prescribed fees.
                     </p>
-                    </br></br>
-
+                    </br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     3.  Pay your fees.
                         <label class="toggle toggle-balanced">
@@ -80,11 +78,11 @@
                             </div>
                         </label>
                     </ion-item>
+                    </br>
                     <p>
                         Proceed to the cashier window to pay the prescribed fee. Cashiers’ windows are located at the 3rd, 4th, and 5th floors of the PRC Annex Bldg and/or at the ground floor of the PRC Main Bldg..
                     </p>
-                    </br></br>
-
+                    </br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     4.  Accomplish registry form.
                         <label class="toggle toggle-balanced">
@@ -94,11 +92,11 @@
                             </div>
                         </label>
                     </ion-item>
+                    </br>
                     <p>
                         After payment, proceed to the designated Registration counter/window. The Registration Officer will print Registry Sheet with assigned Registration / License Number to be signed and thumb marked by the Registrant.
                     </p>
-                    </br></br>
-
+                    </br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     5.  Get your claim slip.
                         <label class="toggle toggle-balanced">
@@ -108,11 +106,11 @@
                             </div>
                         </label>
                     </ion-item>
+                    </br>
                     <p>
                         Upon completion of the Registry Sheet, issuance officer shall issue claim slip/stub.
                     </p>
-                    </br></br>
-
+                    </br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     6.  Claim your PRC card.
                         <label class="toggle toggle-balanced">
@@ -122,16 +120,17 @@
                             </div>
                         </label>
                     </ion-item>
+                    </br>
                     <p>
                         Receive claim slip/stub and claim your Professional Identification Card as scheduled indicated on your claim slip/stub.
                     </p>
-                    </br></br>
+                    </br>
                 </ion-list>
             </div>
             
             <div ng-show="activeButton === 'req'">
                 <h3>Requirements</h3>
-                
+
                 <ion-list>
                     <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,15)">One (1) documentary stamp</ion-checkbox>
                     <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,15)">One (1) passport size picture in plain background with complete name tag (for Registry of Professionals)</ion-checkbox>

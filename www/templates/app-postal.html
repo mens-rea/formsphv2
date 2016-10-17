@@ -1,0 +1,169 @@
+<ion-view view-title="Postal ID" ng-controller="TabCtrl">
+    <div class="tabs-striped tabs-top background-forms tabs-color-light">    
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item tab-death-proc" ng-class="{ 'active': activeButton === 'gen' }" ng-click="showGen()" style="font-size: 14px;">
+                <i class="icon ion-information-circled"></i>
+                General
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'proc' }" ng-click="showProcs()" style="font-size: 14px;">
+                <i class="icon ion-gear-a"></i>
+                Procedures
+            </a>
+            <a class="tab-item" ng-class="{ 'active': activeButton === 'req' }" ng-click="showReqs()" style="font-size: 14px;">
+                <i class="icon ion-unlocked"></i>
+                Requirements
+            </a>
+        </div>
+    </div>
+    <ion-content class="has-header" ng-init="select(21)" ng-controller="ProgCtrl as progs">
+        <div class="tab-views">
+            
+            <p style="display: none;">{{ progress + "%"}}</p>
+            <div class="progress-cont">
+                <progress max="100" value="{{progress}}"></progress>
+            </div>
+            <label style="font-size: 18px; float: left; padding-left: 15px;">{{ progress + "%"}}</label>
+            <div class="save-cont">
+            </div>
+
+            <div ng-show="activeButton === 'gen'">
+                <h3>General</h3>
+                <ion-list>
+                    <p>
+                        All Filipinos living in the Philippines and living abroad but were in the Philippines at the time of the application are eligible to get an improved PID. Foreign residents living in the country for at least six (6) months may also apply.
+                    </p>
+                </ion-list>
+
+                <!-- <h3>Address</h3>
+                <ion-list>
+                    <p>
+                        <img src="img/maps-screenshot.png" style="width: 100%;"/></br></br>
+                        <h5>Solicarel Bldg. R. Magsaysay Blvd. Sta. Mesa Manila, San Juan, Metro Manila</h5>
+                    </p>
+                </ion-list> -->
+            </div>
+
+            <div ng-show="activeButton === 'proc'">
+                <h3>Procedures</h3>
+                <ion-list>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    1.  Prepare the necessary document
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,17)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                        Go the nearest post office in your area and submit the requirements making sure to carry the original and photocopy versions.
+                    </p>
+                    </br></br>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    2.  Accomplish the application form 
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,17)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                        You can either download one online or simply get one from the post office you are applying to.
+                    </p>
+                    </br></br>
+                    <a href="https://www.phlpost.gov.ph/files/phlpost_docs_201523_a29ef3f9e7.pdf" target="_blank"><button class="button button-assertive">Download Form</button></a>
+                    </p>
+                    </br></br>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    3.  Pay the fees
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,17)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                        After submitting your documents, you will be asked to have your picture taken at an ID “capture” station. Your fingerprints will also be scanned.  Then pay the necessary fees of Php 504.00
+                    </p>
+                    </br></br>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    4.  Wait for your ID
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4,17)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                        In Metro Manila, it will take approximately fifteen (15) working days from application. For other major cities and municipalities it will take about twenty (20) working days and in island provinces and remote barangays about thirty (30) working days.
+                    </p>
+                    </br></br>
+                </ion-list>
+            </div>
+            
+            <div ng-show="activeButton === 'req'">
+                <h3>Requirements</h3>
+                <ion-list>
+                    <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,21)">Accomplished PID Application Form</ion-checkbox>
+                    <p>Two (2) copies of duly accomplished PID application form.</p>
+                    <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,21)">Proof of Identity</ion-checkbox>
+                    <p>a. Submit any one of the following:</p>
+                    <ul>
+                    <li>Birth certificate issued by the NSO or Local Civil Registry; GSIS or SSS UMID Card; Driver’s License; or Passport</li> 
+                    <li>Married females must bring their marriage certificate to validate change of name from birth document</li>
+                    </ul>
+                    <p>b. Applicants with no Birth Certificate, UMID Card, Driver’s License or Passport may submit any two (2) of the following documents, at least one of which should bear the applicant’s photo and signature:</p>
+                    <ul>
+                        <li>BIR ID;</li> 
+                        <li>Baptismal Certificate;</li> 
+                        <li>Certificate of Birth from the</li>
+                        <li>National Commission for Indigenous Peoples (NCIP) for</li>
+                        <li>Filipinos belonging to indigenous people;</li> 
+                        <li>Certificates of  Birth from the National Commission for Muslim Filipinos</li>
+                        <li>(NCMF) for Muslim Filipinos;</li>
+                        <li>Certificates of Marriage from the NCIP for Filipino belonging to indigenous people;</li>
+                        <li>Certificates of Marriage from the NCMF for Muslim Filipinos;</li>
+                        <li>College or Post-Graduate Transcript of Records with readable dry seal;</li> 
+                        <li>Confirmation Certificate;</li>
+                        <li>Elementary or High School Form 137 with readable dry seal for applicants who are 18 years old and below;</li>
+                        <li>Marriage Certificate in SECPA issued by NSO for those male and female married applicants;</li> 
+                        <li>Marriage Certificate issued by LCR for those male and female married applicants;</li>
+                        <li>Valid Alumni ID;</li>
+                        <li>Valid Basic Postal ID;</li>
+                        <li>Valid College, School or University ID;</li>
+                        <li>Valid Company ID;</li>
+                        <li>Valid Integrated Bar of the Philippines (IBP) ID;</li> 
+                        <li>Valid NBI Clearance bearing digitized photo; Valid OWWA ID;</li>
+                        <li>Valid Pag-Ibig ID;</li> 
+                        <li>Valid PhilHealth ID;</li>
+                        <li>Valid PRC ID;</li> 
+                        <li>Valid Paper-based Postal ID;</li> 
+                        <li>Valid Police Clearance with or without digitized photo;</li> 
+                        <li>Valid Seaman’s Book;</li> 
+                        <li>Valid Senior Citizen ID;</li> 
+                        <li>Valid Tax Identification Number card;</li>
+                        <li>Valid Voter’s ID.</li>
+                    </ul>
+                    <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,21)">Proof of address</ion-checkbox>
+                    <p>a. Submit any one of the following:</p>
+                    <ul>
+                        <li>Barangay certificate of Residency issued within three (3) months prior to PID application</li>
+                        <li>Certified True Copy of Lease</li>
+                        <li>Certified True Copy of Titles issued by the Land Registration Authority (LRA)</li>
+                        <li>Certified True Copy of Real Estate Tax Receipt</li>
+                        <li>Bank Statement</li> 
+                        <li>Credit card statement</li>
+                        <li>School billing statement</li>
+                        <li>Or Utility Bill (cable, electric, internet, landline, telephone, water)</li>
+                    </ul>
+                    </br></br>
+                </ion-list>
+            </div>
+
+            <h6>Sources: PSA.gov.ph</h6>
+        </div>
+    </ion-content>
+</ion-view>

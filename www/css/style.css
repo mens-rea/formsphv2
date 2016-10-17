@@ -31,6 +31,7 @@ p{
 }
 .tab-views{
 	padding: 60px 0px;
+	padding-bottom: 0px;
 }
 .tab-views ion-item{
 	font-size: 22px;
