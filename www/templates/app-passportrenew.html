@@ -107,9 +107,9 @@
                     Applicant will be asked to pay a processing fee of Php 950.00 at the cashier for regular processing and will take about 15 WORKING days exclusive of holidays. A rush processing is also available at Php 1,200.00 for only 6 WORKING days EXCLUSIVE of holidays. If the application is for a lost and VALID passport, applicants will pay an additional Php 200.00 (please note that the DFA advises a 6 month allowance prior to travel in renewing your passport.)
                 </p>
                 <ion-item class="item-toggle" style="font-size: 22px;">
-                5. Encoding of Bio-Data
+                6. Encoding of Bio-Data
                     <label class="toggle toggle-balanced">
-                        <input type="checkbox" ng-model="check5" ng-change="UpdateToggle(5,13)">
+                        <input type="checkbox" ng-model="check6" ng-change="UpdateToggle(6,13)">
                         <div class="track">
                             <div class="handle"></div>
                         </div>
@@ -119,9 +119,9 @@
                     Once all fees are secured, applicants will proceed to the ENCODING SECTION where their bio-data (fingerprints, picture, etc...) will be recorded and saved.
                 </p>
                 <ion-item class="item-toggle" style="font-size: 22px;">
-                6. Wait for the release of your passport
+                7. Wait for the release of your passport
                     <label class="toggle toggle-balanced">
-                        <input type="checkbox" ng-model="check6" ng-change="UpdateToggle(6,13)">
+                        <input type="checkbox" ng-model="check7" ng-change="UpdateToggle(7,13)">
                         <div class="track">
                             <div class="handle"></div>
                         </div>
@@ -130,12 +130,25 @@
                 <p>
                     Applicants must wait for either 7 or 15 days, more or less, depending on the volume of applications. Applicants can recieve their passport physically at the DFA branch or send it to their homes via a delivery service (normally inside or near the DFA office itself-this can be done on the day of application itself.)
                 </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                8. Contact the DFA office
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="check8" ng-change="UpdateToggle(8,13)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </ion-item>
+                <p>
+                    Should the applicant not recieve their passport in the set amount of time, remember that it is your right to be able to contact and ask for clarity from the DFA office.
+                </p>
             </div>
             
             <div ng-show="activeButton === 'req'">
                 <h3>Procedures</h3>
                 <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,14)"> Personal appearance</ion-checkbox>
                 <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,14)"> Confirmed appointment</ion-checkbox>
+                <p>if done online</p>
                 <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,14)"> Duly accomplished application form </ion-checkbox>
                 <ion-checkbox ng-model="req4" ng-value='1' ng-change="UpdateBox(4,14)"> Most recent expiring or expired passport </ion-checkbox>
                 <ion-checkbox ng-model="req5" ng-value='1' ng-change="UpdateBox(5,14)"> Acceptable IDs at least one (1): for Brown, Green and MRP </ion-checkbox>

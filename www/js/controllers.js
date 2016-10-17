@@ -72,8 +72,11 @@ angular.module('starter.controllers', ['ngCordova'])
 	$scope.chats = Docs.all();
 
 	$scope.Clean = function(){
-		if($scope.progress<10){
+		if($scope.progress<5){
 			$scope.progress = 0;
+		}
+		else if ($scope.progress>100){
+			$scope.progress = 100;
 		}
 	}
 
