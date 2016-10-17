@@ -225,6 +225,7 @@ angular.module('starter.controllers', ['ngCordova'])
 			else{
 				$scope.check = true;
 				$scope.progress = Math.floor(($scope.progress + $scope.prog));
+				$scope.Clean();
 			}
 		}
 		else if (val==2){
@@ -236,6 +237,7 @@ angular.module('starter.controllers', ['ngCordova'])
 			else{
 				$scope.check2 = true;
 				$scope.progress = Math.floor(($scope.progress + $scope.prog));
+				$scope.Clean();
 			}
 		}
 		else if (val==3){
@@ -247,6 +249,7 @@ angular.module('starter.controllers', ['ngCordova'])
 			else{
 				$scope.check3 = true;
 				$scope.progress = Math.ceil(($scope.progress + $scope.prog));
+				$scope.Clean();
 			}
 		}
 		else if (val==4){
@@ -258,6 +261,7 @@ angular.module('starter.controllers', ['ngCordova'])
 			else{
 				$scope.check4 = true;
 				$scope.progress = Math.ceil(($scope.progress + $scope.prog));
+				$scope.Clean();
 			}
 		}
 		else if (val==5){
@@ -269,6 +273,7 @@ angular.module('starter.controllers', ['ngCordova'])
 			else{
 				$scope.check5 = true;
 				$scope.progress = Math.ceil(($scope.progress + $scope.prog));
+				$scope.Clean();
 			}
 		}
 		else if (val==6){
@@ -280,6 +285,7 @@ angular.module('starter.controllers', ['ngCordova'])
 			else{
 				$scope.check6 = true;
 				$scope.progress = Math.ceil(($scope.progress + $scope.prog));
+				$scope.Clean();
 			}
 		}
 		else if (val==7){
@@ -291,6 +297,7 @@ angular.module('starter.controllers', ['ngCordova'])
 			else{
 				$scope.check7 = true;
 				$scope.progress = Math.ceil(($scope.progress + $scope.prog));
+				$scope.Clean();
 			}
 		}
 		else if (val==8){
@@ -302,6 +309,7 @@ angular.module('starter.controllers', ['ngCordova'])
 			else{
 				$scope.check8 = true;
 				$scope.progress = Math.ceil(($scope.progress + $scope.prog));
+				$scope.Clean();
 			}
 		}
 
