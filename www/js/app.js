@@ -135,7 +135,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       //Creation of Database
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (0,'barangay',0,3,3,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
-      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (1,'business',0,9,4,0)";
+      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (1,'business',0,8,4,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (2,'death',0,3,3,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
@@ -143,13 +143,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (4,'dti',0,8,7,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
-      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (5,'gsis',0,3,2,0)";
+      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (5,'gsis',0,4,2,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (6,'marriage',0,3,2,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (7,'nbi',0,4,2,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
-      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (8,'birth',0,3,2,0)";
+      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (8,'birth',0,3,3,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (9,'pagibig',0,3,1,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
@@ -164,7 +164,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       //finalize passportrenew
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (14,'passportrenew',0,8,3,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
-      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (15,'police',0,3,3,0)";
+      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (15,'police',0,4,6,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
       // finalize prc
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (16,'prc',0,6,3,0)";
@@ -173,7 +173,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (17,'pwd',0,3,3,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
       // finalize senior
-      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (18,'senior',0,2,3,0)";
+      var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (18,'senior',0,4,4,0)";
         $cordovaSQLite.execute(db, query).then(function(res) { }, function (err) {});
       // finalize sss
       var query = "INSERT INTO documents (id, docname, prog, proc, req, checkreq) VALUES (19,'sss',0,5,1,0)";

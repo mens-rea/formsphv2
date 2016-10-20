@@ -329,7 +329,7 @@
                 <h3>Procedures</h3>
                 <ion-list>
                     <ion-item class="item-toggle" style="font-size: 22px;">
-                    1.  Fill up application form
+                    1.  Check your eligibility
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,18)">
                             <div class="track">
@@ -339,11 +339,11 @@
                     </ion-item>
                     </br>
                     <p>
-                        Go to your Municipal's Office of the Senior Citizens Affair and apply for an ID.
+                        To avail of senior citizen priveleges, you must be a Filipino citizen, at least 60 years old, and a resident in your city for at least 6 months prior to your application.
                     </p>
                     </br></br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
-                    2.  Claim the Identification Card.
+                    2.  Accomplish application form
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,18)">
                             <div class="track">
@@ -353,7 +353,35 @@
                     </ion-item>
                     </br>
                     <p>
-                        Wait for processing to claim you senior citizen's ID Card.
+                        The application form can be obtained from your local office of senior citizens affair (OSCA). Alternatively, some cities have a downloadable application form available from their website. Make sure to fill out the application form with valid and accurate information.
+                    </p>
+                    </br></br>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    3.  Turn over your requirements
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,18)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    </br>
+                    <p>
+                        Along with your recent ID pictures and other documents for identification, turn over your accomplished application to the person-in-charge.
+                    </p>
+                    </br></br>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    4.  Sign your senior citizen's id
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4,18)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    </br>
+                    <p>
+                        The person-in-charge will print your ID and show it to you. After reviewing your details, affix your signature on the ID before claiming it.
                     </p>
                     </br></br>
                 </ion-list>
@@ -364,7 +392,17 @@
                 <ion-list>
                     <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,18)">Birth Certificate</ion-checkbox>
                     <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,18)">1x1 colored photo</ion-checkbox>
-                    <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,18)">One (1) Valid ID</ion-checkbox>
+                    <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,18)">Photocopy of any of these documents</ion-checkbox>
+                    <ul>
+                        <li>Voter's ID</li>
+                        <li>Driver's License</li>
+                        <li>NBI Clearance</li>
+                        <li>Police Clearance</li>
+                        <li>Old Residence Certificate</li>
+                        <li>Postal ID</li>
+                        <li>or any combination of Identification documents with the applicant's name, birthdate, and present address</li>
+                    </ul>
+                    <ion-checkbox ng-model="req4" ng-value='1' ng-change="UpdateBox(4,18)">Accomplished application form</ion-checkbox>
                     </br></br>
                 </ion-list>
             </div>

@@ -50,7 +50,19 @@
             <h3>Procedures</h3>
             <ion-list>
                 <ion-item class="item-toggle" style="font-size: 22px;">
-                1. Make an appointment
+                1. Prepare all required documents
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,13)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </ion-item>
+                <p>
+                    Applicants must have their NSO birth certificate, a filled-up application form (can be printed online), at least three (3) valid IDs, and other supporting documents that identify the applicant. Make sure to have at least two (2) photocopies of each documents.
+                </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                2. Make an appointment
                     <label class="toggle toggle-balanced">
                         <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,13)">
                         <div class="track">
@@ -61,20 +73,8 @@
                 <p>
                     To set an appointment with the DFA, you can either go to the nearest DFA office or visit the DFA Appointment Website. Answer the application form, and reference number will be given to you after submission. Whether done online or in person, have your accomplished application form printed.
                 </p>
-                 <ion-item class="item-toggle" style="font-size: 22px;">
-                2. Prepare all required documents
-                    <label class="toggle toggle-balanced">
-                        <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,13)">
-                        <div class="track">
-                            <div class="handle"></div>
-                        </div>
-                    </label>
-                </ion-item>
-                <p>
-                    Ensure that all the general requirements are ready before your appointment with the DFA. In case of no birth record, other documents may be required as a substitute for the birth certificate.
-                </p>
                 <ion-item class="item-toggle" style="font-size: 22px;">
-                3. Visit the DFA Office
+                3. Appear on your scheduled appointment
                     <label class="toggle toggle-balanced">
                         <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,13)">
                         <div class="track">
@@ -86,7 +86,7 @@
                     Go to the DFA Consular Office on your scheduled date and time. If applicable, visit the most convenient DFA satellites and Philippine Embassy Consulate as per your appointment. Do not forget to present your application form and wait for your turn.
                 </p>
                 <ion-item class="item-toggle" style="font-size: 22px;">
-                4. Pay for your application
+                4. Go through the process
                     <label class="toggle toggle-balanced">
                         <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4,13)">
                         <div class="track">
@@ -95,12 +95,24 @@
                     </label>
                 </ion-item>
                 <p>
-                    Proceed to the cashier or the payment section to settle your application and processing fees.
+                    Once your queue numbers is called, you will be directed by a DFA official through a short process of finalizing their application.
                 </p>
                 <ion-item class="item-toggle" style="font-size: 22px;">
-                5. Submit for recording
+                5. Pay for your application
                     <label class="toggle toggle-balanced">
                         <input type="checkbox" ng-model="check5" ng-change="UpdateToggle(5,13)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </ion-item>
+                <p>
+                    Applicant will be asked to pay a processing fee at the cashier. A fee of <b>Php 950.00 for regular processing and will take about 25 working days</b> exclusive of holidays. A rush processing is also available at <b>Php 1,250.00 for only 15 working days</b> exclusive of holidays. If the application is for a lost and valid passport, applicants will pay an additional Php 200.00 (please note that the DFA advises an allowance of 6 months prior to travel in getting a passport.)
+                </p>
+                <ion-item class="item-toggle" style="font-size: 22px;">
+                6. Submit for recording
+                    <label class="toggle toggle-balanced">
+                        <input type="checkbox" ng-model="check6" ng-change="UpdateToggle(6,13)">
                         <div class="track">
                             <div class="handle"></div>
                         </div>
@@ -110,16 +122,19 @@
                     Proceed to encoding section and have your photo and other information taken by the staff.
                 </p>
                 <ion-item class="item-toggle" style="font-size: 22px;">
-                6. Wait for your passport
+                7. Wait for your passport
                     <label class="toggle toggle-balanced">
-                        <input type="checkbox" ng-model="check6" ng-change="UpdateToggle(6,13)">
+                        <input type="checkbox" ng-model="check7" ng-change="UpdateToggle(7,13)">
                         <div class="track">
                             <div class="handle"></div>
                         </div>
                     </label>
                 </ion-item>
                 <p>
-                    The processing of your passport can take up to thirty (30) days. If available, you can proceed to the delivery counter and provide your delivery information, so you can have the passport delivered to you. You may also opt to claim your passport in person.
+                    The processing of your passport can take up to thirty (30) days. If available, you can proceed to the delivery counter and provide your delivery information, so you can have the passport delivered to you. You may also opt to claim your passport in person.</br></br>
+                    <b>Should the applicant not recieve their passport.</b>
+                    </br></br>
+                    Should the applicant not recieve their passport in the set amount of time, remember that it is your right to be able to contact and ask for clarity from the DFA office.
                 </p>
         </div>
         

@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <ion-content class="has-tabs has-header" ng-init="select(4)" ng-controller="ProgCtrl as progs">
+    <ion-content class="has-header" ng-init="select(4)" ng-controller="ProgCtrl as progs">
         <div class="tab-views">
 
             <p style="display: none;">{{ progress + "%"}}</p>
@@ -76,6 +76,7 @@
                     <p>
                         Have at least three business names in case your first preference cannot be registered. Make sure not to choose one that is similar or confusingly similar to a registered business name, your next preferred business name will be considered. 
                     </p>
+                    </br></br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     2. What is an acceptable business name?
                         <label class="toggle toggle-balanced">
@@ -88,7 +89,8 @@
                     <p>
                         In determining whether a proposed business name for registration is acceptable, the following factors shall be considered:A. The root word or words of the name shall be considered (e.g. "Island" instead of "Islander")B. The business name should describe the nature of the business.C. It should be comprised solely of any or all of the following: Letters, numerals, and punctuation marks that are part of the English and Filipino language.
                     </p>
-                     <ion-item class="item-toggle" style="font-size: 22px;">
+                    </br></br>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     3.Search for a business name
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,4)">
@@ -100,7 +102,8 @@
                     <p>
                         An online search facility is provided in the WEBNRS for you to find registered business names in the Philippines (www.bnrs.dti.gov.ph). The search facility should not be used to determine the availability of a business name for registration. This can only be determined at the time of lodgment of an application to register a business name. There are two (2) search criteria available for the public, namely Begins With and Contains. You can conduct a search by typing the exact business name or a few words contained in a business name.
                     </p>
-                     <ion-item class="item-toggle" style="font-size: 22px;">
+                    </br></br>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
                     4.Register your business name
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4,4)">
@@ -128,6 +131,7 @@
                     <p>
                         The list of documentary requirements to be submitted to the proper DTI Office where your business is located is indicated in the Transaction Reference Number (TRN) Acknowledgement found in the last page of the online application form. The TRN Acknowledgement form should be signed and submitted to DTI also.
                     </p>
+                    </br></br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     6. Pay your application
                         <label class="toggle toggle-balanced">
@@ -140,6 +144,7 @@
                     <p>
                         Payment of application fee can be made at the DTI office indicated in your Transaction Reference Number (TRN) ackowledgement form. You have the option to pay through GCash. Business hours are Monday to Friday, 8:00 am to 5:00 pm.
                     </p>
+                    </br></br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     7. Secure other permits
                         <label class="toggle toggle-balanced">
@@ -152,6 +157,7 @@
                     <p>
                         If necessary, you must secure other permits for your business. Present your paid application to the Bureau of Fire Protection (BFP), Health and Sanitary Office, and City Environment and Natural Resources Office (CENRO) to receive your fire permit, sanitary permit, and environment permit respectively.  
                     </p>
+                    </br></br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     8. Claim your business permit
                         <label class="toggle toggle-balanced">
@@ -164,6 +170,7 @@
                     <p>
                         Once the process is done, you will receive your license to operate. Take note that in some cities, permits may be issued differently.
                     </p>
+                    </br></br>
                 </ion-list>
             </div>
             

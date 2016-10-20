@@ -83,19 +83,22 @@
             
             <div ng-show="activeButton === 'req'">
                 <h3>Requirements</h3>
-
                 <ion-list>
                     <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,0)"> Recent Cedula (Community Tax Certificate) </ion-checkbox>
-                     <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,0)"> Accomplished Application Form </ion-checkbox>
+                    <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,0)"> Accomplished Application Form </ion-checkbox>
+                    <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,0)"> Processing Fee </ion-checkbox>
                     <p>
-                        </br>
-                        </br>
-                        <strong>Additional Requirement</strong></br></br>
-
-                        Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
-                        <em>* might require for new residents or new applicants with no barangay records.</em>
-
+                        estimated Php 50-100
                     </p>
+                </ion-list>
+                <h3>Additional Requirements</h3>
+                <ion-list>
+                    <ion-checkbox ng-model="req4" ng-value='1' ng-change="UpdateBox(4,0)">
+                    Photocopy of latest utility billing</ion-checkbox>
+                        <p>
+                            Photocopy of any latest utility billing receipt under your name / relative’s name.</br>
+                        <em>* might require for new residents or new applicants with no barangay records.</em>
+                        </p>
                 </ion-list>
             </div>
 

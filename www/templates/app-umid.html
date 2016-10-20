@@ -123,7 +123,14 @@
             <div ng-show="activeButton === 'req'">
                 <h3>Requirements</h3>
                 <ion-list>
-                    <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,19)">One (1) Primary Valid ID or Two (2) Secondary Valid IDs</ion-checkbox>
+                    <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,19)">UMID application form</ion-checkbox>
+                    <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,19)">Any one (1) primary document</ion-checkbox>
+                    <ul>
+                        <li>Driver's License</li>
+                        <li>Passport</li>
+                        <li>Professional Regulation Commission (PRC) card</li>
+                        <li>Seaman's Book</li>
+                    </ul>
                 <ion-list>
             </div>
 

@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <ion-content class="has-tabs has-header" ng-init="select(5)" ng-controller="ProgCtrl as progs">
+    <ion-content class="has-header" ng-init="select(5)" ng-controller="ProgCtrl as progs">
         <div class="tab-views">
 
             <p style="display: none;">{{ progress + "%"}}</p>
@@ -52,20 +52,13 @@
                         For Smart/Sun/Talk 'N Text Users : 1-800-10-847-4747</br>
                         (flat rate of P8.00 / call from mobile phone)
                     </p>
-
-                <h3>Other information</h3>
-                <ion-list>
-                    <p>
-                        
-                    </p>
-                </ion-list>
             </div>
 
             <div ng-show="activeButton === 'proc'">
                 <h3>Procedures</h3>
                 <ion-list>
                     <ion-item class="item-toggle" style="font-size: 22px;">
-                        1. GO TO THE NEAREST GSIS OFFICE
+                        1. GO TO A GSIS OFFICE
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,5)">
                             <div class="track">
@@ -74,9 +67,7 @@
                         </label>
                     </ion-item>
                     <p>
-                        A. Bring two valid IDs (examples: company ID, LTO license, PRC license, passport, voter's registration ID) to the nearest GSIS office nearest you. </br></br>
-                        B. Accomplish an eCard enrollment form and submit it to the GSIS personnel assigned in the eCard enrollment area.</br></br>
-                        C. In a few weeks, you can either get your eCard from the GSIS office where you applied or through snail mail
+                        Obtain and accomplish the eCard enrollment form, and submit it to the GSIS personnel assigned in the eCard enrollment area.
                     </p>
                     <p>
                         </br>
@@ -93,15 +84,11 @@
                         </label>
                     </ion-item>
                     <p>
-                        <strong>Upon receiving your eCard</strong></br></br>
-
-                        A. Go to any GSIS Wireless Activated Processing System (G-W@PS) kiosk located at the nearest GSIS or major government office.</br></br>
-                        B. Place your eCard in the G-W@PS Kiosk card reader.</br></br>
-                        C. Touch the screen to select any of your pre-registered fingers.</br></br>
-                        D. Very lightly, put the finger you selected on the fingerprint scanner to activate your eCard
+                        You can either provide the GSIS office your delivery information and recieve your eCard through mail, or claim the eCard yourself from the GSIS office you applied in.
                     </p>
+                    </br></br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
-                        3. OTHER INFORMATION
+                        3. VISIT A G-W@PS KIOSK
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check3" ng-change="UpdateToggle(3,5)">
                             <div class="track">
@@ -110,8 +97,27 @@
                         </label>
                     </ion-item>
                     <p>
-                        <strong>Some friendly reminders</strong></br></br>
+                        <strong>Upon receiving your eCard</strong></br></br>
 
+                        Go to any GSIS Wireless Activated Processing System (G-W@PS) kiosk located at the nearest GSIS or major government office.</br></br>
+                    </p>
+                    </br></br>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                        4. ACTIVATE YOUR ECARD
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check4" ng-change="UpdateToggle(4,5)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                        <strong>To Activate your eCard</strong></br></br>
+                        A. Place your eCard in the G-W@PS Kiosk card reader.</br></br>
+                        B. Touch the screen to select any of your pre-registered fingers.</br></br>
+                        C. Very lightly, put the finger you selected on the fingerprint scanner to activate your eCard</br></br>
+
+                        <strong>Additional Information: </strong></br></br>
                         A. If the finger you selected fails to get scanned, simply select another pre-registered finger.</br></br>
                         B. You only need to activate your card once after you receive it.</br></br>
                         You can use your eCard after five (5) working days after activating it. You can check your membership account or apply for loans using your eCard Plus in any G-W@PS kiosk nearest you.

@@ -49,7 +49,7 @@
                 <h3>Procedures</h3>
                 <ion-list>
                     <ion-item class="item-toggle" style="font-size: 22px;">
-                    1.  Fill up application form
+                    1.  Accomplish application form
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check" ng-change="UpdateToggle(1,2)">
                             <div class="track">
@@ -58,7 +58,8 @@
                         </label>
                     </ion-item>
                     <p>
-                        </br>
+                        Visit a Serbilis Outlet or access the PSA website to obtain a copy of the application form. The accomplished form may be submitted to the screener's desk or online. For online applications, provide your TIN and accurate delivery details.
+                        </br></br>
                         <b>Provide the following information:</b></br></br>
                         Number of copies being death-requested</br>
                         Name of the deceased</br>
@@ -69,9 +70,14 @@
                         Purpose of your death-request</br></br>
                     </p>
                     <a href="https://www.ecensus.com.ph/Secure/Files/Death%20Application%20Form.pdf"><button class="button button-assertive" target="_blank">Download Form</button></a>
+                    <p>
+                        </br>
+                        You can go to your nearest NSO branch to submit your form or
+                    </p>
+                    <a href="https://www.ecensus.com.ph/Secure/Files/Death%20Application%20Form.pdf"><button class="button button-assertive" target="_blank">Apply Online</button></a>
                     </br></br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
-                    2.  Submit your accomplished form
+                    2.  Pay Application Fees
                         <label class="toggle toggle-balanced">
                             <input type="checkbox" ng-model="check2" ng-change="UpdateToggle(2,2)">
                             <div class="track">
@@ -80,10 +86,8 @@
                         </label>
                     </ion-item>
                     <p>
-                        </br>
-                        You can go to your nearest NSO branch or
+                        Payments may be made to the cashier or collecting officer for walk-in applications, or using VISA, Mastercard, Bancnet ATM, or Globe GCash, or via Metrobank or Bayad Center for online applications.
                     </p>
-                    <a href="https://www.ecensus.com.ph/Secure/Files/Death%20Application%20Form.pdf"><button class="button button-assertive" target="_blank">Submit Online</button></a>
                     </br></br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     3.  Claim the death certificate
@@ -94,6 +98,9 @@
                             </div>
                         </label>
                     </ion-item>
+                    <p>
+                        Walk in applicants will recieve the death certificate within 1 hour. Depending on the delivery conditions, online applicants will need to wait a few days to recieve their document.
+                    </p>
                 </ion-list>
             </div>
             
@@ -102,7 +109,7 @@
                 <ion-list>
                     <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,2)">One (1) valid ID</ion-checkbox>
                     <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,2)">Accomplished application form</ion-checkbox>
-                    <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,2)">Php 330/copy</ion-checkbox>
+                    <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,2)">Processing Fee - Php330/copy</ion-checkbox>
                 </ion-list>
             </div>
 

@@ -16,7 +16,7 @@
         </div>
     </div>
     
-    <ion-content class="has-tabs has-header" ng-init="select(3)" ng-controller="ProgCtrl as progs">
+    <ion-content class="has-header" ng-init="select(3)" ng-controller="ProgCtrl as progs">
         <div class="tab-views">
 
             <p style="display: none;">{{ progress + "%"}}</p>
@@ -75,7 +75,7 @@
 
                         <a href="http://www.gov.ph/downloads/2014/06jun/DOTC-LTO-Form-21.pdf" target="_blank"><button class="button button-assertive">Download Form</button></a>
                     </p>
-                
+                    </br></br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     2. Submit your requirements
                         <label class="toggle toggle-balanced">
@@ -88,6 +88,7 @@
                     <p>
                         When your number is called, proceed to the evaluator counter and submit all the required documents and have it checked for completeness and authenticity.
                     </p>
+                    </br></br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     3. Have your photo and signature taken
                         <label class="toggle toggle-balanced">
@@ -100,6 +101,7 @@
                     <p>
                         When your name is called, go to where your photo and signature will be taken.
                     </p>
+                    </br></br>
                      <ion-item class="item-toggle" style="font-size: 22px;">
                     4. Pay for your applicaton
                         <label class="toggle toggle-balanced">
@@ -142,6 +144,7 @@
                           </tr>
                         </table>
                     </p>
+                    </br></br>
                     <ion-item class="item-toggle" style="font-size: 22px;">
                     5. Take the exams
                         <label class="toggle toggle-balanced">
@@ -154,12 +157,40 @@
                     <p>
                        Go to the Examination Room for the lecture and written exam. After passing the written exam, wait for your name to be called for the practical exam.
                     </p>
+                    </br></br>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    6. Pay for other fees
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check6" ng-change="UpdateToggle(6,3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                       After passing the practical exam, go to the cashier when your name is called for payment of necessary fees and obtain an official receipt (OR).
+                    </p>
+                    </br></br>
+                    <ion-item class="item-toggle" style="font-size: 22px;">
+                    7. Claim your license
+                        <label class="toggle toggle-balanced">
+                            <input type="checkbox" ng-model="check7" ng-change="UpdateToggle(7,3)">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </ion-item>
+                    <p>
+                       Go to the releasing counter, wait for your name to be called and present the OR and claim the card type license.
+                    </p>
+                    </br></br>
                 </ion-list>
             </div>
             
             <div ng-show="activeButton === 'req'">
                 <h3>Requirements</h3>
-                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,3)">Accomplished application form for driver’s license</ion-checkbox>
+                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,3)">Accomplished application form</ion-checkbox>
+                <p>Duly Accomplished application form for driver's license (ADL)</p>
                 <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,3)"> Valid student permit </ion-checkbox>
                 <p>
                     (at least one month old)
@@ -172,7 +203,8 @@
                 <p>
                    (from a DOH accredited drug testing center & Government Hospital)
                 </p>
-                <ion-checkbox ng-model="req5" ng-value='1' ng-change="UpdateBox(5,3)"> If employed: Taxpayer’s Identification Number (TIN) </ion-checkbox>
+                <ion-checkbox ng-model="req5" ng-value='1' ng-change="UpdateBox(5,3)"> Taxpayer’s Identification Number (TIN) </ion-checkbox>
+                <p>If employed</p>
                 <ion-checkbox ng-model="req6" ng-value='1' ng-change="UpdateBox(6,3)"> Must have passed the written and practical examinations. </ion-checkbox>
             </div>
 
