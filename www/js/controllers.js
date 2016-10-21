@@ -254,7 +254,7 @@ angular.module('starter.controllers', ['ngCordova'])
 		}
 		else if (val==4){
 			if($scope.check4){
-				$scope.check5 = false;
+				$scope.check4 = false;
 				$scope.progress = Math.ceil(($scope.progress - $scope.prog));
 				$scope.Clean();
 			}
@@ -476,6 +476,205 @@ angular.module('starter.controllers', ['ngCordova'])
 		}
 		else if (val==16){
 			if($scope.req16){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		// count to 38
+		else if (val==17){
+			if($scope.req17){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==18){
+			if($scope.req18){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==19){
+			if($scope.req19){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==20){
+			if($scope.req20){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==21){
+			if($scope.req21){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==22){
+			if($scope.req22){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==23){
+			if($scope.req23){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==24){
+			if($scope.req24){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==25){
+			if($scope.req25){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==26){
+			if($scope.req26){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==27){
+			if($scope.req27){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==28){
+			if($scope.req28){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==29){
+			if($scope.req29){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==30){
+			if($scope.req30){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==31){
+			if($scope.req31){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==32){
+			if($scope.req32){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==33){
+			if($scope.req33){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==34){
+			if($scope.req34){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==35){
+			if($scope.req35){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==36){
+			if($scope.req36){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==37){
+			if($scope.req37){
+				$scope.required = Math.ceil(($scope.required + 1));
+				$scope.Clean();
+			}
+			else{
+				$scope.required = Math.ceil(($scope.required - 1));
+			}
+		}
+		else if (val==38){
+			if($scope.req38){
 				$scope.required = Math.ceil(($scope.required + 1));
 				$scope.Clean();
 			}

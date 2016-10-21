@@ -136,15 +136,252 @@
                     </br></br>
                     Should the applicant not recieve their passport in the set amount of time, remember that it is your right to be able to contact and ask for clarity from the DFA office.
                 </p>
+            </ion-list>
         </div>
         
         <div ng-show="activeButton === 'req'">
-            <h3>Requirements</h3>
-            <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,13)"> Accomplished Form</ion-checkbox>
-            <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,13)"> NSO Birth Certificate</ion-checkbox>
-                <p>Original copy</p>
-            <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,13)"> One (1) valid id or three (3) documents</ion-checkbox>
-            <ion-checkbox ng-model="req4" ng-value='1' ng-change="UpdateBox(4,13)"> Two (2) photocopies of each document</ion-checkbox>
+            <h3>General Requirements</h3>
+                <ion-checkbox ng-model="req" ng-value='1' ng-change="UpdateBox(1,13)">Personal Appearance</ion-checkbox>
+                <ion-checkbox ng-model="req2" ng-value='1' ng-change="UpdateBox(2,13)">Confirmed Appointment (if done online)</ion-checkbox>
+                <ion-checkbox ng-model="req3" ng-value='1' ng-change="UpdateBox(3,13)">Birth Certificate</ion-checkbox>
+                <p>
+                Birth Certificate in Security Paper (SECPA) issued by the National Statistics Office (NSO) or Certified True Copy (CTC) of BC Issued by the local civil registrar (LCR) and duly authenticated by NSO. Transcribed Birth Certificate from the LCR is required when entries in NSO Birth Certificate are blurred or unreadable. (Report of Birth duly authenticated by NSO if borhn abroad.)</br>
+                </p>
+                <ion-checkbox ng-model="req4" ng-value='1' ng-change="UpdateBox(4,13)">Valid picture IDs</ion-checkbox>
+                <p>with supporting documents to prove identity</p>
+                <ion-checkbox ng-model="req5" ng-value='1' ng-change="UpdateBox(5,13)">Processing Fee</ion-checkbox>
+                <p>
+                    Processing Fee</br>
+                    (Php 950.00 - Php 1,200.00)
+                </p>
+                <ion-checkbox ng-model="req6" ng-value='1' ng-change="UpdateBox(6,13)">Printed Application Forms</ion-checkbox>
+                <p>
+                From the DFA website www.dfa.gov.ph
+                </p>
+
+            <h3>For Minors</h3>
+                <ion-checkbox ng-model="req7" ng-value='1' ng-change="UpdateBox(7,13)">Confirmed Appointment</ion-checkbox>
+                <p>except for 1 year old and below</p>
+                <ion-checkbox ng-model="req8" ng-value='1' ng-change="UpdateBox(8,13)">Personal Appearance of the minor applicant</ion-checkbox>
+                <ion-checkbox ng-model="req9" ng-value='1' ng-change="UpdateBox(9,13)">Personal appearance of either parent</ion-checkbox>
+                <p>
+                NSO Marriage Contract and proper ID / valid passport of parents (if minor is legitimate child) Personal appearance of MOTHER and proper ID / valid passport of mother (if minor is illegitimate)
+                </p>
+                <ion-checkbox ng-model="req10" ng-value='1' ng-change="UpdateBox(10,13)">Passport of Companion</ion-checkbox>
+                <p>Original and Photocopy of valid passport of the person travelling with minor</p>
+                <ion-checkbox ng-model="req11" ng-value='1' ng-change="UpdateBox(11,13)">Notarized Affidavit</ion-checkbox>
+                <p>
+                Notarized affidavit of support and consent to travel from either parent (if minor is a legitimate child) / from mother (if minor is an illegitimate child.)</br>
+                </p>
+                <ion-checkbox ng-model="req12" ng-value='1' ng-change="UpdateBox(12,13)">Original Birth Certificate (BC)</ion-checkbox>
+                <p>
+                Original Birth Certificate of minor in Security Paper (SECPA) issued by NSO or certified true copy (CTC) of BC issued by the LCR & duly authenticated by NSO. Transcribed BC form the LCR is required when entries in NSO BC are blurred or unreadable. Report of Birth duly authenticated by NSO is required if minor was born abroad.</br>
+                </p>
+                <ion-checkbox ng-model="req13" ng-value='1' ng-change="UpdateBox(13,13)">Document of identity with photo</ion-checkbox>
+                <p>
+                If minor is 8-17 years old (for first time & renewal applicant) such as school ID or form 137 with readable dey seal, For minor applicants who never attended school, a Notarized affidavit of explanation executed by either parent (if minor is legitimate child) / by mother (if minor is an illegitimate child) detailing the reasons why the child is not in school is required.
+                </p>
+ 
+            <h3>Additional Requirements for Minors</h3>
+            <p>
+                <b>A. IF MINOR IS TRAVELLING WITH EITHER PARENT</b></br></br>
+                <ul>
+                    <li>
+                        Personal appearance of mother is required if minor is an illegitimate child.
+                    </li>
+                    <li>
+                        Affidavit of support and consent (ASC) executed by either parent indicating the name of travelling companion and relationship to the minor. If minor will be travelling alone, ASC must be executed by either parent, stating that his/her child will be travelling alone. If minor is illegitimate, mother should execute ASC.
+                    </li>
+                    <li>
+                        Original and photocopy of DSWD Clearance. There is no need to secure a DSWD clearance if the minor travelling aborad has parents who are in the foreign service or living abroad or are immigrants, provided he/she is holding a valid pass such as a dependent's visa/pass/identification card or permanent resident visa/pass/identification card which serves as proof that he/she is living with parents abroad
+                    </li>
+                </ul>
+                <b>B. IF BOTH PARENTS ARE ABROAD</b></br></br>
+                <ul>
+                    <li>
+                        Affidavit of support and consent (ASC) executed by either parent indicating the name of travelling companion and relationship to the minor. If minor will be travelling alone, ASC must be executed by either parent, stating that his/her child will be travelling alone. If minor is illegitimate, mother should execute ASC.
+                    </li>
+                    <li>
+                        Special power of attorney (SPA) with an attached photocopy of either parent's valid passport (authenticated by the nearest Philippine Embassy or Consulate General) authorizing a representative in assisting the child to apply for a passport. If minor is illegitimate, mother should execute the SPA.
+                    </li>
+                    <li>
+                        Original and photocopy of DSWD clearance. There is no need to secure a DSWD clearance if the minor travelling abroad has parents who are in the foreign service of living abroad or are immigrants, provided he/she is holding a valid pass such as a dependent's visa/pass/identification card or permanent resident visa/pass/identification card which serves as proof that he/she is living with parents abroad. 
+                    </li>
+                    <li>
+                        Proper ID of duly authorized representative (Please refer to the list of acceptable IDs)
+                    </li>
+                </ul>
+                <b>C. IF MINOR IS LEGITIMATED BY SUBSEQUENT MARRIAGE OF PARENTS</b></br></br>
+                <ul>
+                    <li>
+                        Authenticated Birth Certificate from NSO with annotation regarding new status as legitimated and the full name of the child.
+                    </li>
+                </ul>
+                <b>D. IF MINOR IS ILLEGITIMATE BUT ACKNOWLEDGE BY FATHER</b></br></br>
+                <ul>
+                    <li>
+                        Birth certification from NSO reflecting surname of father with Affidavit of Acknowledgement and consent to use surname of father.
+                    </li>
+                </ul>
+                <b>E. ORPHANED MINOR APPLICANT</b></br></br>
+                <ul>
+                    <li>
+                        Authenticated Death Certificate of parents from NSO
+                    </li>
+                    <li>
+                        Court order of awarding guardianship of the orphaned minor applicant or substitute parental authority under Article 214 & 216 of the family code.
+                    </li>
+                    <li>
+                        DSWD Clearance.
+                    </li>
+                </ul>
+                <b>F. ABANDONED MINOR APPLICANT</b></br></br>
+                <ul>
+                    <li>
+                        Court order of awarding guardianship of the orphaned minor applicant or substitute parental authority.
+                    </li>
+                    <li>
+                        DSWD Clearance
+                    </li>
+                </ul>
+                <b>G. FOUNDLING</b></br></br>
+                <ul>
+                    <li>
+                        Certificate of foundling authenticated by NSO
+                    </li>
+                    <li>
+                        DSWD Clearance
+                    </li>
+                    <li>
+                        Passport of the person who found the applicant
+                    </li>
+                    <li>
+                        Letter of authority or endorsement from DSWD for the issuance of passport
+                    </li>
+                </ul>
+                <b>H. LEGALLY ADOPTED</b></br></br>
+                <ul>
+                    <li>
+                        Original and certified true copy (CTC) of NSO Birth Certificate before adoption
+                    </li>
+                    <li>
+                        Original and certified true copy (CTC) of the NSO amended birth certificate after adoption
+                    </li>
+                    <li>
+                        Certified true copy (CTC) of the court decision or oder on adoption and certificate of finality.
+                    </li>
+                    <li>
+                        DSWD clearance for minor applicant, if travelling with the person
+                    </li>   
+                </ul>
+                <b>I. FOR ADOPTION BY FOREIGN PARENTS</b></br></br>
+                <ul>
+                    <li>Certified true copy of the court decree of abandonment of child</li>
+                    <li>NSO Death certificate of the child's parents of the or the deed of voluntary commitment executed after the birth of the child</li>
+                    <li>
+                        Endorsement of the child to the intercountry adoption board by the DSWD
+                    </li>
+                    <li>
+                        Authenticated birth or foundling certificate
+                    </li>
+                </ul>
+                <b>J. MINOR APPLICANT WHOSE PARENTS ARE ANULLED / DIVORCED</b></br></br>
+                <ul>
+                    <li>Court order awarding guardianship of the minor applicant or substitute parental authority</li>
+                    <li>DSWD Travel Clearance</li>
+                    <li>NSO Marriage Certificate with annoation on nullity or annulment decree</li>
+                </ul>
+                <b>K. MINOR APPLICANT WHOSE MOTHER IS LIKEWISE A MINOR</b></br></br>
+                <ul>
+                    <li>Personal appearance of mother and maternal grandparent/s</li>
+                    <li>NSO Birth Certificate of minor applicant and mother</li>
+                    <li>Affidavit of support and consent executed by the maternal grandparent/s indicating the name of travelling companion</li>
+                    <li>Proof of identity of mother and maternal grandparent/s (Please refer to list of acceptable IDs)</li>
+                </ul>
+                <b>L. FOR MUSLIM APPLICANTS</b></br></br>
+                <ul>
+                    <li>Same general requirements stated above</li>
+                </ul>
+                <b>M. FOR LATE REGISTERED MUSLIM APPLICANTS</b></br></br>
+                <ul>
+                    <li>Certificate of tribal affiliation from the national commision on muslim filipinos (NCMF)</li>
+                </ul>
+                <b>N. FOR CONVERTS WHO WOULD LIKE TO USE THEIR MUSLIM NAME</b></br></br>
+                <ul>
+                    <li>Annotated Birth Certificate (BC) in Security Paper (SECPA) issued by NSO bearing the muslim name</li>
+                    <li>NCMF / OMA Certificate of Conversion</li>
+                </ul>
+                </br>
+            </p>
+
+            <h3>In case of no birth record</h3>
+                <p><b>If born in or after 1950 (January 1, 1950 or After</b></p>
+                <ion-checkbox ng-model="req14" ng-value='1' ng-change="UpdateBox(14,13)">Delayed registration of birth</ion-checkbox>
+                <p>
+                    Apply for the delayed registration of birth at the local civil registry office located at the place of birth of applicant.
+                </p>
+                <ion-checkbox ng-model="req15" ng-value='1' ng-change="UpdateBox(15,13)">Authenticated Birth Certificate from NSO</ion-checkbox>
+                <p>
+                Submit Authenticated Birth Certificate from NSO and supporting public document/s upon the discretion of the processor or Consular office with correct date and place of birth.
+                </p>
+                <p></br></br><b>If born before 1950 and below (December 31, 1949 and below</b></p>
+                <ion-checkbox ng-model="req16" ng-value='1' ng-change="UpdateBox(16,13)">Certificate of Non-Availability of Record from NSO</ion-checkbox>
+                <ion-checkbox ng-model="req17" ng-value='1' ng-change="UpdateBox(17,13)">Notarized joint Birth Affidavit of Two Disinterested Persons.</ion-checkbox>
+                <ion-checkbox ng-model="req18" ng-value='1' ng-change="UpdateBox(18,13)">Any public document/s with correct full name, date and place of birth.</ion-checkbox>
+
+            <h3>For Married Women</h3>
+                <ion-checkbox ng-model="req19" ng-value='1' ng-change="UpdateBox(19,13)">Marriage Contract</ion-checkbox>
+                <p>
+                    Marriage Contract (MC) in Security Paper (SECPA) issued by the NSO or original and photocopy of the Certified True Copy (CTC) of MC Issued by the Local Civil Registrar (LCR) and duly authenticated by the NSO. Transcribed Marriage Contract from the LCR is required when entries in NSO Marriage Contract are blurred or unreadable.</br>
+                </p>
+                <ion-checkbox ng-model="req20" ng-value='1' ng-change="UpdateBox(20,13)">Report of Marriage</ion-checkbox>
+                <p>
+                    Duly authenticated by NSO if married abroad
+                </p>
+
+            <h3>For spouse of foreign national</h3>
+                <ion-checkbox ng-model="req21" ng-value='1' ng-change="UpdateBox(21,13)">Report of Marriage</ion-checkbox>
+                <p>duly authenticated by NSO if married abroad.</br></p>
+                <ion-checkbox ng-model="req22" ng-value='1' ng-change="UpdateBox(22,13)">Marriage Contract (MC)</ion-checkbox>
+                <p>
+                    Marriage Contract (MC) in Security Paper (SECPA) issued by the NSO or original and photocopy of the Certified True Copy (CTC) of MC Issued by the Local Civil Registrar (LCR) and duly authenticated by the NSO. Transcribed Marriage Contract from the LCR is required when entries in NSO Marriage Contract are blurred or unreadable.</br>
+                </p>
+                <ion-checkbox ng-model="req23" ng-value='1' ng-change="UpdateBox(23,13)">CPO Guidance and Counseling Certificate</ion-checkbox>
+                <p>
+                    Original and photocopy of Commission of Filipino Overseas (CPO) Guidance and Counseling Certificate of Attendance (required for first time applicants or renewal of passports to be used for the first time with the surname of the husband)</br>
+                </p>
+
+            <h3>Applicants who availed of dual citizenship or election of Philippine citizenship under RA 9225:</h3>
+                <ion-checkbox ng-model="req24" ng-value='1' ng-change="UpdateBox(24,13)">Identification Certification</ion-checkbox>
+                <ion-checkbox ng-model="req25" ng-value='1' ng-change="UpdateBox(25,13)">Oath of Allegiance</ion-checkbox>
+                <ion-checkbox ng-model="req26" ng-value='1' ng-change="UpdateBox(26,13)">Order of Approval</ion-checkbox>
+                <ion-checkbox ng-model="req27" ng-value='1' ng-change="UpdateBox(27,13)">Report of Birth (for those born abroad)</ion-checkbox>
+
+            <h3>Aliens who acquired Filipino citizenship or applicants with foreign sounding names (e.g. LIM, CHO, SY, SAMADI, SINGH, etc.)</h3>
+                <ion-checkbox ng-model="req28" ng-value='1' ng-change="UpdateBox(28,13)">Bureau of Immigration Identification Certification</ion-checkbox>
+                <ion-checkbox ng-model="req29" ng-value='1' ng-change="UpdateBox(29,13)">Certificate of Naturalization</ion-checkbox>
+                <ion-checkbox ng-model="req30" ng-value='1' ng-change="UpdateBox(30,13)">Either of this two documents</ion-checkbox>
+                <ion-checkbox ng-model="req31" ng-value='1' ng-change="UpdateBox(31,13)">Election of Filipino Citizenship / Oath of Allegiance</ion-checkbox>
+                <ion-checkbox ng-model="req32" ng-value='1' ng-change="UpdateBox(32,13)">Marriage Certificate of parents</ion-checkbox>
+                <p>duly authenticated by NSO</p>
+                <ion-checkbox ng-model="req33" ng-value='1' ng-change="UpdateBox(33,13)">NSO Birth Certificate of applicant's brother or sister</ion-checkbox>
+
+            <h3>If applicant is DOST scholar</h3>
+                <ion-checkbox ng-model="req34" ng-value='1' ng-change="UpdateBox(34,13)">Certification of Clearance from DOST</ion-checkbox>
+
+            <h3>For Muslim Applicants</h3>
+                <ion-checkbox ng-model="req35" ng-value='1' ng-change="UpdateBox(35,13)">Same as general requirements mentioned</ion-checkbox>
+
+            <h3>For late registered muslim applicants</h3>
+                <ion-checkbox ng-model="req36" ng-value='1' ng-change="UpdateBox(36,13)">Certificate of Tribal Affiliation</ion-checkbox>
+                <p>From the National Commision of Muslim Filipinos (NCMP)</p>
+
+            <h3>For converts who would like to use their muslim name</h3>
+                <ion-checkbox ng-model="req37" ng-value='1' ng-change="UpdateBox(37,13)">NCMF / OMA Certificate of Conversion</ion-checkbox>
+                <ion-checkbox ng-model="req38" ng-value='1' ng-change="UpdateBox(38,13)">Annotated Birth Certificate</ion-checkbox>
+                <p>
+                    Annotated Birth Certificate (BC) in Security Paper (SECPA) Issued by NSO bearing the Muslim Name
+                </p>
         </div>
 
         <h6>Sources: Official Gazette, filipiknow.net, <a href="https://en.wikipedia.org/wiki/Philippine_passport">Wikipedia</a> </h6>
