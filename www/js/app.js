@@ -234,6 +234,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   // Each tab has its own nav history stack:
 
+  .state('app.about', {
+    url: '/about',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/app-about.html',
+      }
+    }
+  })
+
   .state('app.barangay', {
     url: '/barangay',
     views: {
